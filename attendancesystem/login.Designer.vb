@@ -30,8 +30,9 @@ Partial Class login
         Me.btn_login = New System.Windows.Forms.Button()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.password = New System.Windows.Forms.TextBox()
-        Me.username = New System.Windows.Forms.TextBox()
+        Me.txtpassword = New System.Windows.Forms.TextBox()
+        Me.txtusername = New System.Windows.Forms.TextBox()
+        Me.Button1 = New System.Windows.Forms.Button()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -57,8 +58,8 @@ Partial Class login
         Me.Panel1.Controls.Add(Me.btn_login)
         Me.Panel1.Controls.Add(Me.Label2)
         Me.Panel1.Controls.Add(Me.Label1)
-        Me.Panel1.Controls.Add(Me.password)
-        Me.Panel1.Controls.Add(Me.username)
+        Me.Panel1.Controls.Add(Me.txtpassword)
+        Me.Panel1.Controls.Add(Me.txtusername)
         Me.Panel1.Location = New System.Drawing.Point(351, 65)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(356, 250)
@@ -115,21 +116,33 @@ Partial Class login
         Me.Label1.TabIndex = 2
         Me.Label1.Text = "ID"
         '
-        'password
+        'txtpassword
         '
-        Me.password.Location = New System.Drawing.Point(58, 123)
-        Me.password.Multiline = True
-        Me.password.Name = "password"
-        Me.password.Size = New System.Drawing.Size(295, 41)
-        Me.password.TabIndex = 1
+        Me.txtpassword.Location = New System.Drawing.Point(58, 123)
+        Me.txtpassword.Multiline = True
+        Me.txtpassword.Name = "txtpassword"
+        Me.txtpassword.Size = New System.Drawing.Size(295, 41)
+        Me.txtpassword.TabIndex = 1
         '
-        'username
+        'txtusername
         '
-        Me.username.Location = New System.Drawing.Point(58, 53)
-        Me.username.Multiline = True
-        Me.username.Name = "username"
-        Me.username.Size = New System.Drawing.Size(295, 41)
-        Me.username.TabIndex = 0
+        Me.txtusername.Location = New System.Drawing.Point(58, 53)
+        Me.txtusername.Multiline = True
+        Me.txtusername.Name = "txtusername"
+        Me.txtusername.Size = New System.Drawing.Size(295, 41)
+        Me.txtusername.TabIndex = 0
+        '
+        'Button1
+        '
+        Me.Button1.BackColor = System.Drawing.Color.Transparent
+        Me.Button1.BackgroundImage = Global.attendancesystem.My.Resources.Resources.img_469207
+        Me.Button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button1.Location = New System.Drawing.Point(677, 0)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(57, 31)
+        Me.Button1.TabIndex = 2
+        Me.Button1.UseVisualStyleBackColor = False
         '
         'login
         '
@@ -137,6 +150,7 @@ Partial Class login
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.ClientSize = New System.Drawing.Size(734, 360)
+        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.PictureBox1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
@@ -157,7 +171,8 @@ Partial Class login
     Friend WithEvents btn_login As Button
     Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label
-    Friend WithEvents password As TextBox
-    Friend WithEvents username As TextBox
+    Friend WithEvents txtpassword As TextBox
+    Friend WithEvents txtusername As TextBox
     Friend WithEvents PictureBox3 As PictureBox
+    Friend WithEvents Button1 As Button
 End Class

@@ -24,8 +24,8 @@ Partial Class attendance
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(attendance))
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
+        Me.btnIn = New System.Windows.Forms.Button()
+        Me.btnOut = New System.Windows.Forms.Button()
         Me.dgrid_emp_time_history = New System.Windows.Forms.DataGridView()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -34,43 +34,49 @@ Partial Class attendance
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.date1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.time1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.stat = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.dgrid_emp_time_history, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
-        'Button1
+        'btnIn
         '
-        Me.Button1.BackColor = System.Drawing.Color.Wheat
-        Me.Button1.BackgroundImage = Global.attendancesystem.My.Resources.Resources._800722
-        Me.Button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.Location = New System.Drawing.Point(325, 90)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(242, 102)
-        Me.Button1.TabIndex = 0
-        Me.Button1.Text = "TIME IN"
-        Me.Button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.Button1.UseVisualStyleBackColor = False
+        Me.btnIn.BackColor = System.Drawing.Color.Wheat
+        Me.btnIn.BackgroundImage = Global.attendancesystem.My.Resources.Resources._800722
+        Me.btnIn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.btnIn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnIn.Location = New System.Drawing.Point(325, 90)
+        Me.btnIn.Name = "btnIn"
+        Me.btnIn.Size = New System.Drawing.Size(242, 102)
+        Me.btnIn.TabIndex = 0
+        Me.btnIn.Text = "TIME IN"
+        Me.btnIn.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnIn.UseVisualStyleBackColor = False
         '
-        'Button2
+        'btnOut
         '
-        Me.Button2.BackColor = System.Drawing.Color.Wheat
-        Me.Button2.BackgroundImage = Global.attendancesystem.My.Resources.Resources._1267047
-        Me.Button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button2.Location = New System.Drawing.Point(579, 90)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(242, 102)
-        Me.Button2.TabIndex = 1
-        Me.Button2.Text = "TIME OUT"
-        Me.Button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.Button2.UseVisualStyleBackColor = False
+        Me.btnOut.BackColor = System.Drawing.Color.Wheat
+        Me.btnOut.BackgroundImage = Global.attendancesystem.My.Resources.Resources._1267047
+        Me.btnOut.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.btnOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnOut.Location = New System.Drawing.Point(579, 90)
+        Me.btnOut.Name = "btnOut"
+        Me.btnOut.Size = New System.Drawing.Size(242, 102)
+        Me.btnOut.TabIndex = 1
+        Me.btnOut.Text = "TIME OUT"
+        Me.btnOut.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnOut.UseVisualStyleBackColor = False
         '
         'dgrid_emp_time_history
         '
+        Me.dgrid_emp_time_history.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.dgrid_emp_time_history.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
         Me.dgrid_emp_time_history.BackgroundColor = System.Drawing.SystemColors.ControlLightLight
         Me.dgrid_emp_time_history.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgrid_emp_time_history.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.date1, Me.time1, Me.stat})
         Me.dgrid_emp_time_history.Location = New System.Drawing.Point(325, 216)
         Me.dgrid_emp_time_history.Name = "dgrid_emp_time_history"
         Me.dgrid_emp_time_history.RowTemplate.Height = 24
@@ -148,6 +154,21 @@ Partial Class attendance
         Me.Panel1.Size = New System.Drawing.Size(280, 180)
         Me.Panel1.TabIndex = 9
         '
+        'date1
+        '
+        Me.date1.HeaderText = "Date"
+        Me.date1.Name = "date1"
+        '
+        'time1
+        '
+        Me.time1.HeaderText = "Time"
+        Me.time1.Name = "time1"
+        '
+        'stat
+        '
+        Me.stat.HeaderText = "IN/OUT"
+        Me.stat.Name = "stat"
+        '
         'attendance
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -159,8 +180,8 @@ Partial Class attendance
         Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.dgrid_emp_time_history)
-        Me.Controls.Add(Me.Button2)
-        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.btnOut)
+        Me.Controls.Add(Me.btnIn)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "attendance"
         Me.Text = "attendance"
@@ -173,8 +194,8 @@ Partial Class attendance
 
     End Sub
 
-    Friend WithEvents Button1 As Button
-    Friend WithEvents Button2 As Button
+    Friend WithEvents btnIn As Button
+    Friend WithEvents btnOut As Button
     Friend WithEvents dgrid_emp_time_history As DataGridView
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
@@ -183,4 +204,7 @@ Partial Class attendance
     Friend WithEvents Timer1 As Timer
     Friend WithEvents Label3 As Label
     Friend WithEvents Panel1 As Panel
+    Friend WithEvents date1 As DataGridViewTextBoxColumn
+    Friend WithEvents time1 As DataGridViewTextBoxColumn
+    Friend WithEvents stat As DataGridViewTextBoxColumn
 End Class
