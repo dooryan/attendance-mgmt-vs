@@ -8,10 +8,46 @@
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btn_save.Click
+
+
+
+
+        Try
+            With command
+                .Parameters.Clear()
+                .CommandText = "prcAddEmployee"
+                .CommandType = CommandType.StoredProcedure
+                .Parameters.AddWithValue("fname", txtFname.Text)
+                .Parameters.AddWithValue("lname", txtLname.Text)
+                .Parameters.AddWithValue("address", txtAddress.Text)
+                .Parameters.AddWithValue("bdate", bdate.Value)
+                .Parameters.AddWithValue("datehired", dhired.Value)
+                .Parameters.AddWithValue("gender", cmbGender.Text)
+                .Parameters.AddWithValue("dept", cmbDept.Text)
+                .Parameters.AddWithValue("contact", txtContact.Text)
+                .ExecuteNonQuery()
+                MessageBox.Show("Successfully added Employee", "Add Employee", MessageBoxButtons.OK,
+                                MessageBoxIcon.Information)
+
+            End With
+            Me.Dispose()
+        Catch ex As Exception
+            MessageBox.Show("" & ex.Message)
+
+        End Try
+
+
+
+
         Me.Hide()
     End Sub
 
     Private Sub btn_cancel_Click(sender As Object, e As EventArgs) Handles btn_cancel.Click
         Me.Hide()
+    End Sub
+
+    Private Sub addEmployee_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        checkDatabaseConnection()
+
     End Sub
 End Class

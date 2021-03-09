@@ -13,9 +13,9 @@ Module modGlobalProcedure
             If conAttendanceSystem.State = ConnectionState.Closed Then
                 conAttendanceSystem = New MySqlConnection
 
-                strConnection = "SERVER-" & strServerName & "," _
-                                   & "DATABASE=" & strDatabaseName & "," _
-                                   & "USERNAME=" & strUserID & "," _
+                strConnection = "SERVER=" & strServerName & ";" _
+                                   & "DATABASE=" & strDatabaseName & ";" _
+                                   & "USERNAME=" & strUserID & ";" _
                                    & "Password=" & strUserPassword & ""
 
                 conAttendanceSystem.ConnectionString = strConnection
@@ -37,6 +37,18 @@ Module modGlobalProcedure
 
 
     End Function
+
+    Public Sub checkDatabaseConnection()
+        Try
+            If fncConnectDatabase() = True Then
+
+            Else
+                conAttendanceSystem.Open()
+            End If
+        Catch ex As Exception
+            MessageBox.Show("" & ex.Message)
+        End Try
+    End Sub
 
 
 End Module

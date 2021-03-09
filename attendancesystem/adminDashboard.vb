@@ -4,7 +4,9 @@
     End Sub
 
     Private Sub adminDashboard_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Timer1.Enabled = True
 
+        date1.Text = Date.Now.ToString("dd MMM yyy")
     End Sub
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
@@ -29,5 +31,9 @@
 
         oForm.Show()
         Me.Hide()
+    End Sub
+
+    Private Sub date1_Click(sender As Object, e As EventArgs) Handles date1.Click
+
     End Sub
 End Class

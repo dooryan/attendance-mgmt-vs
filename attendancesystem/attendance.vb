@@ -8,6 +8,7 @@ Public Class attendance
     End Sub
 
     Private Sub attendance_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Timer1.Enabled = True
 
 
     End Sub
@@ -20,5 +21,11 @@ Public Class attendance
         Dim oForm As New login
         oForm.Show()
         Me.Hide()
+    End Sub
+
+    Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
+        Label2.Text = Date.Now.ToString("dd MMM yyy")
+        Label3.Text = Date.Now.ToString("hh:mm:ss")
+
     End Sub
 End Class

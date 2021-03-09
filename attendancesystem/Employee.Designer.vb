@@ -23,48 +23,57 @@ Partial Class Form1
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
+        Me.btnAdd = New System.Windows.Forms.Button()
+        Me.btnUpdate = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Button5 = New System.Windows.Forms.Button()
         Me.Button4 = New System.Windows.Forms.Button()
-        Me.Button3 = New System.Windows.Forms.Button()
+        Me.btnRemove = New System.Windows.Forms.Button()
         Me.BackgroundWorker1 = New System.ComponentModel.BackgroundWorker()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.DirectorySearcher1 = New System.DirectoryServices.DirectorySearcher()
         Me.DirectorySearcher2 = New System.DirectoryServices.DirectorySearcher()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.textSearch = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Button6 = New System.Windows.Forms.Button()
+        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.id1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.deptID1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.fname1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.lname1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.add1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.bdate1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.gender1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.dHired1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.contact = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'Button1
+        'btnAdd
         '
-        Me.Button1.BackColor = System.Drawing.Color.Transparent
-        Me.Button1.BackgroundImage = CType(resources.GetObject("Button1.BackgroundImage"), System.Drawing.Image)
-        Me.Button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.Location = New System.Drawing.Point(23, 157)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(185, 45)
-        Me.Button1.TabIndex = 0
-        Me.Button1.TextAlign = System.Drawing.ContentAlignment.BottomRight
-        Me.Button1.UseVisualStyleBackColor = False
+        Me.btnAdd.BackColor = System.Drawing.Color.Transparent
+        Me.btnAdd.BackgroundImage = CType(resources.GetObject("btnAdd.BackgroundImage"), System.Drawing.Image)
+        Me.btnAdd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnAdd.Location = New System.Drawing.Point(23, 157)
+        Me.btnAdd.Name = "btnAdd"
+        Me.btnAdd.Size = New System.Drawing.Size(185, 45)
+        Me.btnAdd.TabIndex = 0
+        Me.btnAdd.TextAlign = System.Drawing.ContentAlignment.BottomRight
+        Me.btnAdd.UseVisualStyleBackColor = False
         '
-        'Button2
+        'btnUpdate
         '
-        Me.Button2.BackgroundImage = CType(resources.GetObject("Button2.BackgroundImage"), System.Drawing.Image)
-        Me.Button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button2.Location = New System.Drawing.Point(23, 208)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(185, 45)
-        Me.Button2.TabIndex = 1
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.btnUpdate.BackgroundImage = CType(resources.GetObject("btnUpdate.BackgroundImage"), System.Drawing.Image)
+        Me.btnUpdate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnUpdate.Location = New System.Drawing.Point(23, 208)
+        Me.btnUpdate.Name = "btnUpdate"
+        Me.btnUpdate.Size = New System.Drawing.Size(185, 45)
+        Me.btnUpdate.TabIndex = 1
+        Me.btnUpdate.UseVisualStyleBackColor = True
         '
         'Panel1
         '
@@ -72,9 +81,9 @@ Partial Class Form1
         Me.Panel1.Controls.Add(Me.PictureBox1)
         Me.Panel1.Controls.Add(Me.Button5)
         Me.Panel1.Controls.Add(Me.Button4)
-        Me.Panel1.Controls.Add(Me.Button3)
-        Me.Panel1.Controls.Add(Me.Button2)
-        Me.Panel1.Controls.Add(Me.Button1)
+        Me.Panel1.Controls.Add(Me.btnRemove)
+        Me.Panel1.Controls.Add(Me.btnUpdate)
+        Me.Panel1.Controls.Add(Me.btnAdd)
         Me.Panel1.Location = New System.Drawing.Point(723, 3)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(233, 517)
@@ -113,26 +122,16 @@ Partial Class Form1
         Me.Button4.TabIndex = 3
         Me.Button4.UseVisualStyleBackColor = True
         '
-        'Button3
+        'btnRemove
         '
-        Me.Button3.BackgroundImage = CType(resources.GetObject("Button3.BackgroundImage"), System.Drawing.Image)
-        Me.Button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button3.Location = New System.Drawing.Point(23, 259)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(185, 45)
-        Me.Button3.TabIndex = 2
-        Me.Button3.UseVisualStyleBackColor = True
-        '
-        'DataGridView1
-        '
-        Me.DataGridView1.BackgroundColor = System.Drawing.SystemColors.InactiveBorder
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(12, 72)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.RowTemplate.Height = 24
-        Me.DataGridView1.Size = New System.Drawing.Size(693, 439)
-        Me.DataGridView1.TabIndex = 1
+        Me.btnRemove.BackgroundImage = CType(resources.GetObject("btnRemove.BackgroundImage"), System.Drawing.Image)
+        Me.btnRemove.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.btnRemove.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnRemove.Location = New System.Drawing.Point(23, 259)
+        Me.btnRemove.Name = "btnRemove"
+        Me.btnRemove.Size = New System.Drawing.Size(185, 45)
+        Me.btnRemove.TabIndex = 2
+        Me.btnRemove.UseVisualStyleBackColor = True
         '
         'DirectorySearcher1
         '
@@ -146,12 +145,12 @@ Partial Class Form1
         Me.DirectorySearcher2.ServerPageTimeLimit = System.TimeSpan.Parse("-00:00:01")
         Me.DirectorySearcher2.ServerTimeLimit = System.TimeSpan.Parse("-00:00:01")
         '
-        'TextBox1
+        'textSearch
         '
-        Me.TextBox1.Location = New System.Drawing.Point(155, 29)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(293, 22)
-        Me.TextBox1.TabIndex = 2
+        Me.textSearch.Location = New System.Drawing.Point(155, 29)
+        Me.textSearch.Name = "textSearch"
+        Me.textSearch.Size = New System.Drawing.Size(293, 22)
+        Me.textSearch.TabIndex = 2
         '
         'Label1
         '
@@ -171,16 +170,81 @@ Partial Class Form1
         Me.Button6.Text = "Search"
         Me.Button6.UseVisualStyleBackColor = True
         '
+        'DataGridView1
+        '
+        Me.DataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
+        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.id1, Me.deptID1, Me.fname1, Me.lname1, Me.add1, Me.bdate1, Me.gender1, Me.dHired1, Me.contact})
+        Me.DataGridView1.Location = New System.Drawing.Point(16, 84)
+        Me.DataGridView1.Name = "DataGridView1"
+        Me.DataGridView1.RowTemplate.Height = 24
+        Me.DataGridView1.Size = New System.Drawing.Size(688, 363)
+        Me.DataGridView1.TabIndex = 5
+        '
+        'id1
+        '
+        Me.id1.HeaderText = "ID"
+        Me.id1.Name = "id1"
+        Me.id1.Width = 50
+        '
+        'deptID1
+        '
+        Me.deptID1.HeaderText = "Department ID"
+        Me.deptID1.Name = "deptID1"
+        Me.deptID1.Width = 128
+        '
+        'fname1
+        '
+        Me.fname1.HeaderText = "First Name"
+        Me.fname1.Name = "fname1"
+        Me.fname1.Width = 105
+        '
+        'lname1
+        '
+        Me.lname1.HeaderText = "Last Name"
+        Me.lname1.Name = "lname1"
+        Me.lname1.Width = 105
+        '
+        'add1
+        '
+        Me.add1.HeaderText = "Address"
+        Me.add1.Name = "add1"
+        Me.add1.Width = 89
+        '
+        'bdate1
+        '
+        Me.bdate1.HeaderText = "Birthdate"
+        Me.bdate1.Name = "bdate1"
+        Me.bdate1.Width = 94
+        '
+        'gender1
+        '
+        Me.gender1.HeaderText = "Gender"
+        Me.gender1.Name = "gender1"
+        Me.gender1.Width = 85
+        '
+        'dHired1
+        '
+        Me.dHired1.HeaderText = "Date Hired"
+        Me.dHired1.Name = "dHired1"
+        Me.dHired1.Width = 105
+        '
+        'contact
+        '
+        Me.contact.HeaderText = "Contact No"
+        Me.contact.Name = "contact"
+        Me.contact.Width = 107
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.ClientSize = New System.Drawing.Size(959, 523)
+        Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.Button6)
         Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.TextBox1)
-        Me.Controls.Add(Me.DataGridView1)
+        Me.Controls.Add(Me.textSearch)
         Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "Form1"
@@ -193,18 +257,27 @@ Partial Class Form1
 
     End Sub
 
-    Friend WithEvents Button1 As Button
-    Friend WithEvents Button2 As Button
+    Friend WithEvents btnAdd As Button
+    Friend WithEvents btnUpdate As Button
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Button4 As Button
-    Friend WithEvents Button3 As Button
+    Friend WithEvents btnRemove As Button
     Friend WithEvents BackgroundWorker1 As System.ComponentModel.BackgroundWorker
-    Friend WithEvents DataGridView1 As DataGridView
     Friend WithEvents DirectorySearcher1 As DirectoryServices.DirectorySearcher
     Friend WithEvents DirectorySearcher2 As DirectoryServices.DirectorySearcher
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents textSearch As TextBox
     Friend WithEvents Label1 As Label
     Friend WithEvents Button6 As Button
     Friend WithEvents Button5 As Button
     Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents id1 As DataGridViewTextBoxColumn
+    Friend WithEvents deptID1 As DataGridViewTextBoxColumn
+    Friend WithEvents fname1 As DataGridViewTextBoxColumn
+    Friend WithEvents lname1 As DataGridViewTextBoxColumn
+    Friend WithEvents add1 As DataGridViewTextBoxColumn
+    Friend WithEvents bdate1 As DataGridViewTextBoxColumn
+    Friend WithEvents gender1 As DataGridViewTextBoxColumn
+    Friend WithEvents dHired1 As DataGridViewTextBoxColumn
+    Friend WithEvents contact As DataGridViewTextBoxColumn
 End Class
