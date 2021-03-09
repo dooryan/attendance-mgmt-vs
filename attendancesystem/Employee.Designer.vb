@@ -35,7 +35,7 @@ Partial Class Form1
         Me.DirectorySearcher2 = New System.DirectoryServices.DirectorySearcher()
         Me.textSearch = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.Button6 = New System.Windows.Forms.Button()
+        Me.btnSearch = New System.Windows.Forms.Button()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.id1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.deptID1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -46,6 +46,8 @@ Partial Class Form1
         Me.gender1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.dHired1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.contact = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
+        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -147,9 +149,9 @@ Partial Class Form1
         '
         'textSearch
         '
-        Me.textSearch.Location = New System.Drawing.Point(155, 29)
+        Me.textSearch.Location = New System.Drawing.Point(156, 29)
         Me.textSearch.Name = "textSearch"
-        Me.textSearch.Size = New System.Drawing.Size(293, 22)
+        Me.textSearch.Size = New System.Drawing.Size(292, 22)
         Me.textSearch.TabIndex = 2
         '
         'Label1
@@ -161,14 +163,14 @@ Partial Class Form1
         Me.Label1.TabIndex = 3
         Me.Label1.Text = "Search Employee"
         '
-        'Button6
+        'btnSearch
         '
-        Me.Button6.Location = New System.Drawing.Point(454, 25)
-        Me.Button6.Name = "Button6"
-        Me.Button6.Size = New System.Drawing.Size(78, 26)
-        Me.Button6.TabIndex = 4
-        Me.Button6.Text = "Search"
-        Me.Button6.UseVisualStyleBackColor = True
+        Me.btnSearch.Location = New System.Drawing.Point(454, 25)
+        Me.btnSearch.Name = "btnSearch"
+        Me.btnSearch.Size = New System.Drawing.Size(78, 26)
+        Me.btnSearch.TabIndex = 4
+        Me.btnSearch.Text = "Search"
+        Me.btnSearch.UseVisualStyleBackColor = True
         '
         'DataGridView1
         '
@@ -235,14 +237,35 @@ Partial Class Form1
         Me.contact.Name = "contact"
         Me.contact.Width = 107
         '
+        'CheckBox1
+        '
+        Me.CheckBox1.AutoSize = True
+        Me.CheckBox1.Location = New System.Drawing.Point(156, 57)
+        Me.CheckBox1.Name = "CheckBox1"
+        Me.CheckBox1.Size = New System.Drawing.Size(111, 21)
+        Me.CheckBox1.TabIndex = 7
+        Me.CheckBox1.Text = "Search by ID"
+        Me.CheckBox1.UseVisualStyleBackColor = True
+        '
+        'ComboBox1
+        '
+        Me.ComboBox1.FormattingEnabled = True
+        Me.ComboBox1.Items.AddRange(New Object() {"EMPLOYEE ID", "EMPLOYEE NAME"})
+        Me.ComboBox1.Location = New System.Drawing.Point(555, 25)
+        Me.ComboBox1.Name = "ComboBox1"
+        Me.ComboBox1.Size = New System.Drawing.Size(83, 24)
+        Me.ComboBox1.TabIndex = 8
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.ClientSize = New System.Drawing.Size(959, 523)
+        Me.Controls.Add(Me.ComboBox1)
+        Me.Controls.Add(Me.CheckBox1)
         Me.Controls.Add(Me.DataGridView1)
-        Me.Controls.Add(Me.Button6)
+        Me.Controls.Add(Me.btnSearch)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.textSearch)
         Me.Controls.Add(Me.Panel1)
@@ -267,7 +290,7 @@ Partial Class Form1
     Friend WithEvents DirectorySearcher2 As DirectoryServices.DirectorySearcher
     Friend WithEvents textSearch As TextBox
     Friend WithEvents Label1 As Label
-    Friend WithEvents Button6 As Button
+    Friend WithEvents btnSearch As Button
     Friend WithEvents Button5 As Button
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents DataGridView1 As DataGridView
@@ -280,4 +303,6 @@ Partial Class Form1
     Friend WithEvents gender1 As DataGridViewTextBoxColumn
     Friend WithEvents dHired1 As DataGridViewTextBoxColumn
     Friend WithEvents contact As DataGridViewTextBoxColumn
+    Friend WithEvents CheckBox1 As CheckBox
+    Friend WithEvents ComboBox1 As ComboBox
 End Class
