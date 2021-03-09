@@ -139,6 +139,6 @@ Public Class attendance
     End Sub
 
     Private Sub dgrid_emp_time_history_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgrid_emp_time_history.CellContentClick
-        Me.Refresh()
+
     End Sub
 End Class
