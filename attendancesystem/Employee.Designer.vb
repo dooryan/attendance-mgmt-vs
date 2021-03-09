@@ -54,7 +54,7 @@ Partial Class Form1
         'btnAdd
         '
         Me.btnAdd.BackColor = System.Drawing.Color.Transparent
-        Me.btnAdd.BackgroundImage = CType(resources.GetObject("btnAdd.BackgroundImage"), System.Drawing.Image)
+        Me.btnAdd.BackgroundImage = Global.attendancesystem.My.Resources.Resources._61183
         Me.btnAdd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnAdd.Location = New System.Drawing.Point(23, 157)
@@ -66,7 +66,7 @@ Partial Class Form1
         '
         'btnUpdate
         '
-        Me.btnUpdate.BackgroundImage = CType(resources.GetObject("btnUpdate.BackgroundImage"), System.Drawing.Image)
+        Me.btnUpdate.BackgroundImage = Global.attendancesystem.My.Resources.Resources._202_2022557_edit_comments_edit_icon_png
         Me.btnUpdate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnUpdate.Location = New System.Drawing.Point(23, 208)
@@ -91,7 +91,7 @@ Partial Class Form1
         '
         'PictureBox1
         '
-        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
+        Me.PictureBox1.Image = Global.attendancesystem.My.Resources.Resources.Sumifru_1
         Me.PictureBox1.Location = New System.Drawing.Point(44, 9)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(151, 66)
@@ -113,7 +113,7 @@ Partial Class Form1
         '
         'Button4
         '
-        Me.Button4.BackgroundImage = CType(resources.GetObject("Button4.BackgroundImage"), System.Drawing.Image)
+        Me.Button4.BackgroundImage = Global.attendancesystem.My.Resources.Resources.download1
         Me.Button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.Button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button4.Location = New System.Drawing.Point(23, 310)
@@ -124,7 +124,7 @@ Partial Class Form1
         '
         'btnRemove
         '
-        Me.btnRemove.BackgroundImage = CType(resources.GetObject("btnRemove.BackgroundImage"), System.Drawing.Image)
+        Me.btnRemove.BackgroundImage = Global.attendancesystem.My.Resources.Resources.delete_remove_trash_trash_bin_trash_can_icon_1320073117929397588
         Me.btnRemove.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.btnRemove.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnRemove.Location = New System.Drawing.Point(23, 259)

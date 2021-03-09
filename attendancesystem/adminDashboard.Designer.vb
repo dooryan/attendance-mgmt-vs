@@ -25,6 +25,7 @@ Partial Class adminDashboard
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(adminDashboard))
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Button6 = New System.Windows.Forms.Button()
         Me.Button5 = New System.Windows.Forms.Button()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Button3 = New System.Windows.Forms.Button()
@@ -49,7 +50,6 @@ Partial Class adminDashboard
         Me.Panel6 = New System.Windows.Forms.Panel()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.lblLeave = New System.Windows.Forms.Label()
-        Me.Button6 = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel3.SuspendLayout()
@@ -73,9 +73,19 @@ Partial Class adminDashboard
         Me.Panel1.Size = New System.Drawing.Size(208, 527)
         Me.Panel1.TabIndex = 0
         '
+        'Button6
+        '
+        Me.Button6.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.Button6.Location = New System.Drawing.Point(0, 270)
+        Me.Button6.Name = "Button6"
+        Me.Button6.Size = New System.Drawing.Size(208, 49)
+        Me.Button6.TabIndex = 5
+        Me.Button6.Text = "Reports"
+        Me.Button6.UseVisualStyleBackColor = True
+        '
         'Button5
         '
-        Me.Button5.BackgroundImage = CType(resources.GetObject("Button5.BackgroundImage"), System.Drawing.Image)
+        Me.Button5.BackgroundImage = Global.attendancesystem.My.Resources.Resources.free_exit_logout_icon_2857_thumb
         Me.Button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.Button5.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.Button5.Location = New System.Drawing.Point(0, 475)
@@ -87,7 +97,7 @@ Partial Class adminDashboard
         '
         'PictureBox1
         '
-        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
+        Me.PictureBox1.Image = Global.attendancesystem.My.Resources.Resources.Sumifru_1
         Me.PictureBox1.Location = New System.Drawing.Point(13, 21)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(180, 85)
@@ -290,7 +300,7 @@ Partial Class adminDashboard
         Me.date1.Font = New System.Drawing.Font("Trebuchet MS", 19.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.date1.Location = New System.Drawing.Point(584, 17)
         Me.date1.Name = "date1"
-        Me.date1.Size = New System.Drawing.Size(90, 43)
+        Me.date1.Size = New System.Drawing.Size(87, 42)
         Me.date1.TabIndex = 12
         Me.date1.Text = "date"
         '
@@ -327,16 +337,6 @@ Partial Class adminDashboard
         Me.lblLeave.Size = New System.Drawing.Size(51, 55)
         Me.lblLeave.TabIndex = 4
         Me.lblLeave.Text = "0"
-        '
-        'Button6
-        '
-        Me.Button6.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.Button6.Location = New System.Drawing.Point(0, 270)
-        Me.Button6.Name = "Button6"
-        Me.Button6.Size = New System.Drawing.Size(208, 49)
-        Me.Button6.TabIndex = 5
-        Me.Button6.Text = "Reports"
-        Me.Button6.UseVisualStyleBackColor = True
         '
         'adminDashboard
         '

@@ -42,7 +42,7 @@ Partial Class attendance
         'Button1
         '
         Me.Button1.BackColor = System.Drawing.Color.Wheat
-        Me.Button1.BackgroundImage = CType(resources.GetObject("Button1.BackgroundImage"), System.Drawing.Image)
+        Me.Button1.BackgroundImage = Global.attendancesystem.My.Resources.Resources._800722
         Me.Button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button1.Location = New System.Drawing.Point(325, 90)
@@ -56,7 +56,7 @@ Partial Class attendance
         'Button2
         '
         Me.Button2.BackColor = System.Drawing.Color.Wheat
-        Me.Button2.BackgroundImage = CType(resources.GetObject("Button2.BackgroundImage"), System.Drawing.Image)
+        Me.Button2.BackgroundImage = Global.attendancesystem.My.Resources.Resources._1267047
         Me.Button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button2.Location = New System.Drawing.Point(579, 90)
@@ -96,7 +96,7 @@ Partial Class attendance
         Me.Label2.Font = New System.Drawing.Font("Trebuchet MS", 19.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.Location = New System.Drawing.Point(49, 31)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(92, 43)
+        Me.Label2.Size = New System.Drawing.Size(89, 42)
         Me.Label2.TabIndex = 5
         Me.Label2.Text = "Date"
         '
@@ -115,7 +115,7 @@ Partial Class attendance
         '
         Me.PictureBox1.BackColor = System.Drawing.Color.Transparent
         Me.PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
+        Me.PictureBox1.Image = Global.attendancesystem.My.Resources.Resources.Sumifru_1
         Me.PictureBox1.Location = New System.Drawing.Point(18, 12)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(280, 80)

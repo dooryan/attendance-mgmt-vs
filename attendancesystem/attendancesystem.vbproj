@@ -165,6 +165,72 @@
     </None>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\19-198308_back-icon-png-image-free-download-searchpng-transparent.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\159-1597907_delete-garbage-remove-trash-trash-can-icon-delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\200-2008697_account-customer-login-man-user-icon-login-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\202-2022557_edit-comments-edit-icon-png.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\233-2338164_back-transparent-background-back-icon-png-png-download.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\61183.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\800722.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1267047.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\abstack-background-cartoon-style-bigbamm-sunlight_68708-513.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\approve-and-update.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete+remove+trash+trash+bin+trash+can+icon-1320073117929397588.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\download.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\download.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\elegant-white-background-with-shiny-lines_1017-17580.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\free-exit-logout-icon-2857-thumb.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\img_401900.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\img_469207.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\minimize-window.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\password--v1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\photo-1593005510329-8a4035a7238f.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pure-white-background-85a2a7fd.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sumifru-1.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

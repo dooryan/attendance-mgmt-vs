@@ -25,23 +25,23 @@ Partial Class login
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(login))
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.username = New System.Windows.Forms.TextBox()
-        Me.password = New System.Windows.Forms.TextBox()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.btn_login = New System.Windows.Forms.Button()
-        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.PictureBox3 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.btn_login = New System.Windows.Forms.Button()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.password = New System.Windows.Forms.TextBox()
+        Me.username = New System.Windows.Forms.TextBox()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'PictureBox1
         '
         Me.PictureBox1.BackColor = System.Drawing.Color.Transparent
-        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
+        Me.PictureBox1.Image = Global.attendancesystem.My.Resources.Resources.Sumifru_1
         Me.PictureBox1.Location = New System.Drawing.Point(50, 122)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(250, 106)
@@ -64,41 +64,25 @@ Partial Class login
         Me.Panel1.Size = New System.Drawing.Size(356, 250)
         Me.Panel1.TabIndex = 1
         '
-        'username
+        'PictureBox3
         '
-        Me.username.Location = New System.Drawing.Point(58, 53)
-        Me.username.Multiline = True
-        Me.username.Name = "username"
-        Me.username.Size = New System.Drawing.Size(295, 41)
-        Me.username.TabIndex = 0
+        Me.PictureBox3.Image = CType(resources.GetObject("PictureBox3.Image"), System.Drawing.Image)
+        Me.PictureBox3.Location = New System.Drawing.Point(0, 123)
+        Me.PictureBox3.Name = "PictureBox3"
+        Me.PictureBox3.Size = New System.Drawing.Size(62, 42)
+        Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox3.TabIndex = 3
+        Me.PictureBox3.TabStop = False
         '
-        'password
+        'PictureBox2
         '
-        Me.password.Location = New System.Drawing.Point(58, 123)
-        Me.password.Multiline = True
-        Me.password.Name = "password"
-        Me.password.Size = New System.Drawing.Size(295, 41)
-        Me.password.TabIndex = 1
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Corbel", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(3, 27)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(28, 23)
-        Me.Label1.TabIndex = 2
-        Me.Label1.Text = "ID"
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Corbel", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(3, 97)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(90, 23)
-        Me.Label2.TabIndex = 3
-        Me.Label2.Text = "Password"
+        Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
+        Me.PictureBox2.Location = New System.Drawing.Point(0, 52)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(62, 42)
+        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox2.TabIndex = 2
+        Me.PictureBox2.TabStop = False
         '
         'btn_login
         '
@@ -111,25 +95,41 @@ Partial Class login
         Me.btn_login.Text = "Login"
         Me.btn_login.UseVisualStyleBackColor = False
         '
-        'PictureBox2
+        'Label2
         '
-        Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
-        Me.PictureBox2.Location = New System.Drawing.Point(0, 52)
-        Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(62, 42)
-        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox2.TabIndex = 2
-        Me.PictureBox2.TabStop = False
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Corbel", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(3, 97)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(90, 23)
+        Me.Label2.TabIndex = 3
+        Me.Label2.Text = "Password"
         '
-        'PictureBox3
+        'Label1
         '
-        Me.PictureBox3.Image = CType(resources.GetObject("PictureBox3.Image"), System.Drawing.Image)
-        Me.PictureBox3.Location = New System.Drawing.Point(0, 123)
-        Me.PictureBox3.Name = "PictureBox3"
-        Me.PictureBox3.Size = New System.Drawing.Size(62, 42)
-        Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox3.TabIndex = 3
-        Me.PictureBox3.TabStop = False
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Corbel", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(3, 27)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(28, 23)
+        Me.Label1.TabIndex = 2
+        Me.Label1.Text = "ID"
+        '
+        'password
+        '
+        Me.password.Location = New System.Drawing.Point(58, 123)
+        Me.password.Multiline = True
+        Me.password.Name = "password"
+        Me.password.Size = New System.Drawing.Size(295, 41)
+        Me.password.TabIndex = 1
+        '
+        'username
+        '
+        Me.username.Location = New System.Drawing.Point(58, 53)
+        Me.username.Multiline = True
+        Me.username.Name = "username"
+        Me.username.Size = New System.Drawing.Size(295, 41)
+        Me.username.TabIndex = 0
         '
         'login
         '
@@ -145,8 +145,8 @@ Partial Class login
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
