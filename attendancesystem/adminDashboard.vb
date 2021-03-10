@@ -9,7 +9,7 @@ Public Class adminDashboard
     Private Sub adminDashboard_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Timer1.Enabled = True
 
-        date1.Text = Date.Now.ToString("dd MMM yyy")
+        date1.Text = Date.Now.ToString()
     End Sub
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
@@ -38,5 +38,16 @@ Public Class adminDashboard
 
     Private Sub date1_Click(sender As Object, e As EventArgs) Handles date1.Click
 
+    End Sub
+
+    Private Sub btnTimesheet_Click(sender As Object, e As EventArgs) Handles btnTimesheet.Click
+        Dim oForm As New EmpTimesheet
+        oForm.Show()
+
+    End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        Dim oForm As New addUser
+        oForm.Show()
     End Sub
 End Class

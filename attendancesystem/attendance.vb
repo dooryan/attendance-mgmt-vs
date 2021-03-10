@@ -101,7 +101,8 @@ Public Class attendance
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
         Dim oForm As New login
         oForm.Show()
-        Me.Hide()
+        Me.Dispose()
+
     End Sub
 
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick

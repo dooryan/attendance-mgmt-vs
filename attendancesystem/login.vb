@@ -39,6 +39,8 @@ Public Class login
                             Dim UserDashboard As New attendance
                             attendance.userDashboard = txtusername.Text
                             attendance.Show()
+                        Else
+                            MessageBox.Show("Error Occured", " ", MessageBoxButtons.OKCancel, MessageBoxIcon.Error)
 
 
                         End If
@@ -55,8 +57,7 @@ Public Class login
 
 
 
-
-
+        Me.Hide()
 
 
 

@@ -25,7 +25,7 @@ Partial Class adminDashboard
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(adminDashboard))
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Button6 = New System.Windows.Forms.Button()
+        Me.btnTimesheet = New System.Windows.Forms.Button()
         Me.Button5 = New System.Windows.Forms.Button()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Button3 = New System.Windows.Forms.Button()
@@ -62,7 +62,7 @@ Partial Class adminDashboard
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.Wheat
-        Me.Panel1.Controls.Add(Me.Button6)
+        Me.Panel1.Controls.Add(Me.btnTimesheet)
         Me.Panel1.Controls.Add(Me.Button5)
         Me.Panel1.Controls.Add(Me.PictureBox1)
         Me.Panel1.Controls.Add(Me.Button3)
@@ -73,15 +73,15 @@ Partial Class adminDashboard
         Me.Panel1.Size = New System.Drawing.Size(208, 527)
         Me.Panel1.TabIndex = 0
         '
-        'Button6
+        'btnTimesheet
         '
-        Me.Button6.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.Button6.Location = New System.Drawing.Point(0, 270)
-        Me.Button6.Name = "Button6"
-        Me.Button6.Size = New System.Drawing.Size(208, 49)
-        Me.Button6.TabIndex = 5
-        Me.Button6.Text = "Reports"
-        Me.Button6.UseVisualStyleBackColor = True
+        Me.btnTimesheet.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnTimesheet.Location = New System.Drawing.Point(0, 270)
+        Me.btnTimesheet.Name = "btnTimesheet"
+        Me.btnTimesheet.Size = New System.Drawing.Size(208, 49)
+        Me.btnTimesheet.TabIndex = 5
+        Me.btnTimesheet.Text = "Reports"
+        Me.btnTimesheet.UseVisualStyleBackColor = True
         '
         'Button5
         '
@@ -122,7 +122,7 @@ Partial Class adminDashboard
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(208, 49)
         Me.Button2.TabIndex = 1
-        Me.Button2.Text = "Setting"
+        Me.Button2.Text = "Add User"
         Me.Button2.UseVisualStyleBackColor = True
         '
         'Button1
@@ -398,5 +398,5 @@ Partial Class adminDashboard
     Friend WithEvents Panel6 As Panel
     Friend WithEvents Label3 As Label
     Friend WithEvents lblLeave As Label
-    Friend WithEvents Button6 As Button
+    Friend WithEvents btnTimesheet As Button
 End Class
