@@ -9,66 +9,33 @@ Public Class attendance
 
     Shared Property userDashboard As String
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btnIn.Click
+
         Dim user As String = Label1.Text
-        Dim dateNow As String = Date.Now.ToString("dd/MM/yyyy")
-        Dim timeNow As String = Date.Now.ToString("HH:ss:tt")
+        Dim dateNow As String = Date.Now.ToString("yyyy/MM/dd")
+        Dim timeNow As String = Date.Now.ToString("HH:ss:ss")
         Dim statt As String = "IN"
-
-
-
-        Dim dAttendance = New DataTable()
-        Dim AttendanceAdapter = New MySqlDataAdapter
-        Dim cmd As New MySqlCommand
-        cmd.Connection = conAttendanceSystem
         Try
-            With cmd
-
+            With command
                 .Parameters.Clear()
-                .CommandText = "prcValidateTimeEntry"
+                .CommandText = "prcEntryTImesheet"
                 .CommandType = CommandType.StoredProcedure
                 .Parameters.AddWithValue("uname", user)
                 .Parameters.AddWithValue("stat", statt)
-                .Parameters.AddWithValue("d", dateNow)
+                .Parameters.AddWithValue("currTime", timeNow)
+                .Parameters.AddWithValue("currDate", dateNow)
 
-                AttendanceAdapter.SelectCommand = cmd
-                dAttendance.Clear()
-                AttendanceAdapter.Fill(dAttendance)
+                .ExecuteNonQuery()
+                MessageBox.Show("Time-in, successful", "", MessageBoxButtons.OK,
+                                MessageBoxIcon.Information)
 
-
-
-                If dAttendance.Rows.Count > 0 Then
-                    MessageBox.Show("Cannot Duplicate Time-in", "", MessageBoxButtons.OKCancel)
-                Else
-                    With command
-                        .Parameters.Clear()
-                        .CommandText = "prcEntryTimesheet"
-                        .CommandType = CommandType.StoredProcedure
-                        sqlAttendanceAdapter.SelectCommand = command
-                        .Parameters.AddWithValue("uname", user)
-                        .Parameters.AddWithValue("stat", statt)
-                        .Parameters.AddWithValue("currTime", timeNow)
-                        .Parameters.AddWithValue("currDate", dateNow)
-
-                        .ExecuteNonQuery()
-                        MessageBox.Show("Time-in, successful", "", MessageBoxButtons.OK,
-                                        MessageBoxIcon.Information)
-
-                    End With
-
-
-                End If
             End With
+
         Catch ex As Exception
+            MessageBox.Show("" & ex.Message)
 
         End Try
+        displayTimesheet()
 
-
-
-
-
-
-
-        Me.Refresh()
     End Sub
 
     Private Sub attendance_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -77,10 +44,66 @@ Public Class attendance
 
         Label1.Text = userDashboard
 
+        displayTimesheet()
+
+
+
+    End Sub
+
+    Private Sub Label2_Click(sender As Object, e As EventArgs) Handles Label2.Click
+        Label2.Text = DateTime.Now.ToLongDateString()
+    End Sub
+
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+        Dim oForm As New login
+        oForm.Show()
+        Me.Dispose()
+
+    End Sub
+
+    Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
+        Label2.Text = Date.Now.ToString("dd MMM yyy")
+        Label3.Text = Date.Now.ToString("hh:mm:ss")
+
+    End Sub
+
+    Private Sub btnOut_Click(sender As Object, e As EventArgs) Handles btnOut.Click
+        Dim user As String = Label1.Text
+        Dim dateNow As String = Date.Now.ToString("yyyy/MM/dd")
+        Dim timeNow As String = Date.Now.ToString("HH:ss:ss")
+        Dim statt As String = "OUT"
+        Try
+            With command
+                .Parameters.Clear()
+                .CommandText = "prcEntryTImesheet"
+                .CommandType = CommandType.StoredProcedure
+                .Parameters.AddWithValue("uname", user)
+                .Parameters.AddWithValue("stat", statt)
+                .Parameters.AddWithValue("currTime", timeNow)
+                .Parameters.AddWithValue("currDate", dateNow)
+
+                .ExecuteNonQuery()
+                MessageBox.Show("Time-out, successful", "", MessageBoxButtons.OK,
+                                MessageBoxIcon.Information)
+
+            End With
+
+        Catch ex As Exception
+            MessageBox.Show("" & ex.Message)
+
+        End Try
+        displayTimesheet()
+
+    End Sub
+
+    Private Sub dgrid_emp_time_history_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgrid_emp_time_history.CellContentClick
+
+    End Sub
+
+    Private Sub displayTimesheet()
         Dim user As String = Label1.Text
 
         dataAttendance = New DataTable()
-
         sqlAttendanceAdapter = New MySqlDataAdapter
         command.Connection = conAttendanceSystem
         Try
@@ -123,58 +146,6 @@ Public Class attendance
 
 
 
-
-
-
-
-    End Sub
-
-    Private Sub Label2_Click(sender As Object, e As EventArgs) Handles Label2.Click
-        Label2.Text = DateTime.Now.ToLongDateString()
-    End Sub
-
-    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
-        Dim oForm As New login
-        oForm.Show()
-        Me.Dispose()
-
-    End Sub
-
-    Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
-        Label2.Text = Date.Now.ToString("dd MMM yyy")
-        Label3.Text = Date.Now.ToString("hh:mm:ss")
-
-    End Sub
-
-    Private Sub btnOut_Click(sender As Object, e As EventArgs) Handles btnOut.Click
-        Dim user As String = Label1.Text
-        Dim dateNow As String = Date.Now.ToString("dd/MM/yyyy")
-        Dim timeNow As String = Date.Now.ToString("HH:ss:tt")
-        Dim statt As String = "OUT"
-        Try
-            With command
-                .Parameters.Clear()
-                .CommandText = "prcEntryTImesheet"
-                .CommandType = CommandType.StoredProcedure
-                .Parameters.AddWithValue("uname", user)
-                .Parameters.AddWithValue("stat", statt)
-                .Parameters.AddWithValue("currTime", timeNow)
-                .Parameters.AddWithValue("currDate", dateNow)
-
-                .ExecuteNonQuery()
-                MessageBox.Show("Time-out, successful", "", MessageBoxButtons.OK,
-                                MessageBoxIcon.Information)
-
-            End With
-
-        Catch ex As Exception
-            MessageBox.Show("" & ex.Message)
-
-        End Try
-        Me.Refresh()
-    End Sub
-
-    Private Sub dgrid_emp_time_history_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgrid_emp_time_history.CellContentClick
 
     End Sub
 End Class

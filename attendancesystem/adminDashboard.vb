@@ -38,7 +38,7 @@ Public Class adminDashboard
         End Using
 
 
-        Dim query As String = "SELECT * FROM tbl_timesheet WHERE tdate ='" & DateAndTime.Now.ToString("dd/MM/yyyy") & "'"
+        Dim query As String = "SELECT * FROM tbl_timesheet WHERE tdate ='" & DateAndTime.Now.ToString("yyyy/MM/dd") & "'"
         Using con As MySqlConnection = New MySqlConnection("server=localhost;user id=root;password=esperanza;database=db_attendance")
             Using cmd As MySqlCommand = New MySqlCommand(query, con)
                 Using sda As New MySqlDataAdapter()
@@ -90,8 +90,8 @@ Public Class adminDashboard
     End Sub
 
     Private Sub btnTimesheet_Click(sender As Object, e As EventArgs) Handles btnTimesheet.Click
-        Dim oForm As New EmpTimesheet
-        oForm.Show()
+        AttendanceRecords.Show()
+
 
     End Sub
 
@@ -101,6 +101,12 @@ Public Class adminDashboard
     End Sub
 
     Private Sub Label4_Click(sender As Object, e As EventArgs) Handles Label4.Click
+
+    End Sub
+
+    Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
+        EmpTimesheet.Show()
+
 
     End Sub
 End Class
