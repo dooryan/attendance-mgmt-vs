@@ -42,6 +42,7 @@ Partial Class addEmployee
         Me.txtFname = New System.Windows.Forms.TextBox()
         Me.btn_save = New System.Windows.Forms.Button()
         Me.btn_cancel = New System.Windows.Forms.Button()
+        Me.Label9 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.SuspendLayout()
@@ -145,6 +146,7 @@ Partial Class addEmployee
         'Panel2
         '
         Me.Panel2.BackColor = System.Drawing.Color.Wheat
+        Me.Panel2.Controls.Add(Me.Label9)
         Me.Panel2.Controls.Add(Me.txtContact)
         Me.Panel2.Controls.Add(Me.dhired)
         Me.Panel2.Controls.Add(Me.cmbDept)
@@ -243,6 +245,15 @@ Partial Class addEmployee
         Me.btn_cancel.Text = "Cancel"
         Me.btn_cancel.UseVisualStyleBackColor = True
         '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Location = New System.Drawing.Point(125, 39)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(51, 17)
+        Me.Label9.TabIndex = 15
+        Me.Label9.Text = "Label9"
+        '
         'addEmployee
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -283,4 +294,5 @@ Partial Class addEmployee
     Friend WithEvents btn_cancel As Button
     Friend WithEvents Label8 As Label
     Friend WithEvents txtContact As TextBox
+    Friend WithEvents Label9 As Label
 End Class

@@ -1,4 +1,5 @@
 ﻿Public Class addEmployee
+    Shared Property flag As Boolean
     Private Sub Label1_Click(sender As Object, e As EventArgs) Handles Label1.Click
 
     End Sub
@@ -13,39 +14,80 @@
 
         Dim date2 As String = bdate.Value.ToString("yyyy/MM/dd")
 
-
-        Try
-            With command
-                .Parameters.Clear()
-                .CommandText = "prcAddEmployee"
-                .CommandType = CommandType.StoredProcedure
-
-                .Parameters.AddWithValue("fname", txtFname.Text)
-                .Parameters.AddWithValue("lname", txtLname.Text)
-                .Parameters.AddWithValue("address", txtAddress.Text)
-                .Parameters.AddWithValue("bdate", date2)
-                .Parameters.AddWithValue("datehired", date1)
-                .Parameters.AddWithValue("gender", cmbGender.Text)
-                .Parameters.AddWithValue("dept", cmbDept.Text)
-                .Parameters.AddWithValue("contact", txtContact.Text)
-                .ExecuteNonQuery()
-                MessageBox.Show("Successfully added Employee", "Add Employee", MessageBoxButtons.OK,
+        If flag = True Then
+            Try
+                With command
+                    .Parameters.Clear()
+                    .CommandText = "prcEditEmployee"
+                    .CommandType = CommandType.StoredProcedure
+                    .Parameters.AddWithValue("id1", Label9.Text)
+                    .Parameters.AddWithValue("fname", txtFname.Text)
+                    .Parameters.AddWithValue("lname", txtLname.Text)
+                    .Parameters.AddWithValue("address", txtAddress.Text)
+                    .Parameters.AddWithValue("bdate", date2)
+                    .Parameters.AddWithValue("datehired", date1)
+                    .Parameters.AddWithValue("gender", cmbGender.Text)
+                    .Parameters.AddWithValue("dept", cmbDept.Text)
+                    .Parameters.AddWithValue("contact", txtContact.Text)
+                    .ExecuteNonQuery()
+                    MessageBox.Show("Successfully updated Employee", "", MessageBoxButtons.OK,
                                 MessageBoxIcon.Information)
 
-            End With
-            Me.Dispose()
-        Catch ex As Exception
-            MessageBox.Show("" & ex.Message)
+                End With
+                flag = False
+                Me.Refresh()
 
-        End Try
+                Me.Dispose()
+            Catch ex As Exception
+                MessageBox.Show("" & ex.Message)
+
+            End Try
+
+        Else
+            Try
+                With command
+                    .Parameters.Clear()
+                    .CommandText = "prcAddEmployee"
+                    .CommandType = CommandType.StoredProcedure
+
+                    .Parameters.AddWithValue("fname", txtFname.Text)
+                    .Parameters.AddWithValue("lname", txtLname.Text)
+                    .Parameters.AddWithValue("address", txtAddress.Text)
+                    .Parameters.AddWithValue("bdate", date2)
+                    .Parameters.AddWithValue("datehired", date1)
+                    .Parameters.AddWithValue("gender", cmbGender.Text)
+                    .Parameters.AddWithValue("dept", cmbDept.Text)
+                    .Parameters.AddWithValue("contact", txtContact.Text)
+                    .ExecuteNonQuery()
+                    MessageBox.Show("Successfully added Employee", "Add Employee", MessageBoxButtons.OK,
+                                MessageBoxIcon.Information)
+
+                End With
 
 
+                flag = False
+                Me.Refresh()
+                Me.Dispose()
+            Catch ex As Exception
+                MessageBox.Show("" & ex.Message)
+
+            End Try
+
+
+
+        End If
+
+        flag = False
 
 
         Me.Hide()
+        ClearComboBox(Me)
+        ClearTextBox(Me)
     End Sub
 
     Private Sub btn_cancel_Click(sender As Object, e As EventArgs) Handles btn_cancel.Click
+        ClearComboBox(Me)
+        ClearTextBox(Me)
         Me.Hide()
     End Sub
 
@@ -53,4 +95,31 @@
         checkDatabaseConnection()
 
     End Sub
+
+    Private Sub Panel2_Paint(sender As Object, e As PaintEventArgs) Handles Panel2.Paint
+
+    End Sub
+
+
+    Public Sub ClearTextBox(ByVal root As Control)
+        For Each ctrl As Control In root.Controls
+            ClearTextBox(ctrl)
+            If TypeOf ctrl Is TextBox Then
+                CType(ctrl, TextBox).Text = String.Empty
+            End If
+        Next ctrl
+
+
+    End Sub
+    Public Sub ClearComboBox(ByVal root As Control)
+        For Each ctrl As Control In root.Controls
+            ClearComboBox(ctrl)
+            If TypeOf ctrl Is ComboBox Then
+                CType(ctrl, ComboBox).Text = String.Empty
+            End If
+        Next ctrl
+
+
+    End Sub
+
 End Class

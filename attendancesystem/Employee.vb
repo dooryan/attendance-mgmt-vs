@@ -4,6 +4,8 @@
 
 Public Class Form1
     Private id As Integer
+    Shared Property flag As Boolean
+
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         checkDatabaseConnection()
 
@@ -69,16 +71,17 @@ Public Class Form1
                         With DataGridView1
                             .Rows(row).Cells(0).Value = dataAttendance.Rows(row).Item("id").ToString
                             .Rows(row).Cells(1).Value = dataAttendance.Rows(row).Item("dept_id").ToString
+                            .Rows(row).Cells(2).Value = dataAttendance.Rows(row).Item("name").ToString
 
-                            .Rows(row).Cells(2).Value = dataAttendance.Rows(row).Item("f_name").ToString
-                            .Rows(row).Cells(3).Value = dataAttendance.Rows(row).Item("l_name").ToString
-                            .Rows(row).Cells(4).Value = dataAttendance.Rows(row).Item("address").ToString
+                            .Rows(row).Cells(3).Value = dataAttendance.Rows(row).Item("f_name").ToString
+                            .Rows(row).Cells(4).Value = dataAttendance.Rows(row).Item("l_name").ToString
+                            .Rows(row).Cells(5).Value = dataAttendance.Rows(row).Item("address").ToString
 
-                            .Rows(row).Cells(5).Value = dataAttendance.Rows(row).Item("birthdate").ToString
-                            .Rows(row).Cells(6).Value = dataAttendance.Rows(row).Item("gender").ToString
+                            .Rows(row).Cells(6).Value = dataAttendance.Rows(row).Item("birthdate").ToString
+                            .Rows(row).Cells(7).Value = dataAttendance.Rows(row).Item("gender").ToString
 
-                            .Rows(row).Cells(7).Value = dataAttendance.Rows(row).Item("date_hired").ToString
-                            .Rows(row).Cells(8).Value = dataAttendance.Rows(row).Item("contactno").ToString
+                            .Rows(row).Cells(8).Value = dataAttendance.Rows(row).Item("date_hired").ToString
+                            .Rows(row).Cells(9).Value = dataAttendance.Rows(row).Item("contactno").ToString
 
 
                         End With
@@ -189,30 +192,26 @@ Public Class Form1
             IntOperation = 1
             id = CInt(DataGridView1.CurrentRow.Cells(0).Value.ToString)
 
+            .Label9.Text = DataGridView1.CurrentRow.Cells(0).Value
 
-            .cmbDept.Text = DataGridView1.CurrentRow.Cells(1).Value
-            .txtFname.Text = DataGridView1.CurrentRow.Cells(2).Value
-            .txtLname.Text = DataGridView1.CurrentRow.Cells(3).Value
-            .txtAddress.Text = DataGridView1.CurrentRow.Cells(4).Value
-            .bdate.Value = DataGridView1.CurrentRow.Cells(5).Value
+            .cmbDept.Text = DataGridView1.CurrentRow.Cells(2).Value
+            .txtFname.Text = DataGridView1.CurrentRow.Cells(3).Value
+            .txtLname.Text = DataGridView1.CurrentRow.Cells(4).Value
+            .txtAddress.Text = DataGridView1.CurrentRow.Cells(5).Value
+            .bdate.Value = DataGridView1.CurrentRow.Cells(6).Value
 
-            .cmbGender.Text = DataGridView1.CurrentRow.Cells(6).Value
-            .dhired.Value = DataGridView1.CurrentRow.Cells(7).Value
+            .cmbGender.Text = DataGridView1.CurrentRow.Cells(7).Value
+            .dhired.Value = DataGridView1.CurrentRow.Cells(8).Value
 
 
-            .txtContact.Text = DataGridView1.CurrentRow.Cells(8).Value
+            .txtContact.Text = DataGridView1.CurrentRow.Cells(9).Value
             .ShowDialog()
 
-
-
-
-
-
-
+            Dim flag As New addEmployee
+            addEmployee.flag = True
+            Me.Refresh()
         End With
         prcDisplayEmployee()
-
-
 
     End Sub
 

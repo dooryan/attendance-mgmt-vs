@@ -41,6 +41,7 @@ Partial Class Form1
         Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.id1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.deptID1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.de = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.fname1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.lname1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.add1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -164,7 +165,7 @@ Partial Class Form1
         '
         Me.DataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.id1, Me.deptID1, Me.fname1, Me.lname1, Me.add1, Me.bdate1, Me.gender1, Me.dHired1, Me.contact})
+        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.id1, Me.deptID1, Me.de, Me.fname1, Me.lname1, Me.add1, Me.bdate1, Me.gender1, Me.dHired1, Me.contact})
         Me.DataGridView1.Location = New System.Drawing.Point(16, 84)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.RowTemplate.Height = 24
@@ -204,17 +205,23 @@ Partial Class Form1
         Me.deptID1.Name = "deptID1"
         Me.deptID1.Width = 128
         '
+        'de
+        '
+        Me.de.HeaderText = "Department Name"
+        Me.de.Name = "de"
+        Me.de.Width = 139
+        '
         'fname1
         '
         Me.fname1.HeaderText = "First Name"
         Me.fname1.Name = "fname1"
-        Me.fname1.Width = 105
+        Me.fname1.Width = 97
         '
         'lname1
         '
         Me.lname1.HeaderText = "Last Name"
         Me.lname1.Name = "lname1"
-        Me.lname1.Width = 105
+        Me.lname1.Width = 97
         '
         'add1
         '
@@ -241,13 +248,13 @@ Partial Class Form1
         '
         Me.dHired1.HeaderText = "Date Hired"
         Me.dHired1.Name = "dHired1"
-        Me.dHired1.Width = 105
+        Me.dHired1.Width = 97
         '
         'contact
         '
         Me.contact.HeaderText = "Contact No"
         Me.contact.Name = "contact"
-        Me.contact.Width = 107
+        Me.contact.Width = 99
         '
         'Form1
         '
@@ -291,6 +298,7 @@ Partial Class Form1
     Friend WithEvents ComboBox1 As ComboBox
     Friend WithEvents id1 As DataGridViewTextBoxColumn
     Friend WithEvents deptID1 As DataGridViewTextBoxColumn
+    Friend WithEvents de As DataGridViewTextBoxColumn
     Friend WithEvents fname1 As DataGridViewTextBoxColumn
     Friend WithEvents lname1 As DataGridViewTextBoxColumn
     Friend WithEvents add1 As DataGridViewTextBoxColumn
