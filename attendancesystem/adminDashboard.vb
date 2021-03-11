@@ -1,4 +1,4 @@
-﻿
+﻿Imports MySql.Data.MySqlClient
 Public Class adminDashboard
 
     Shared Property adminDashboard As String
@@ -7,9 +7,58 @@ Public Class adminDashboard
     End Sub
 
     Private Sub adminDashboard_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        checkDatabaseConnection()
+        fncConnectDatabase()
+
         Timer1.Enabled = True
 
         date1.Text = Date.Now.ToString()
+
+        Dim NAMEquery As String = "SELECT * FROM tbl_employee"
+        Using NAMEcon As MySqlConnection = New MySqlConnection("server=localhost;user id=root;password=esperanza;database=db_attendance")
+            Using NAMEcmd As MySqlCommand = New MySqlCommand(NAMEquery, NAMEcon)
+                Using da As New MySqlDataAdapter()
+                    da.SelectCommand = NAMEcmd
+                    Using dt As New DataTable()
+                        NAMEcon.Open()
+                        da.Fill(dt)
+
+                        If dt.Rows.Count > 0 Then
+                            lblTotalEmp.Text = dt.Rows.Count()
+
+                        Else
+                            lblTotalEmp.Text = ""
+
+                        End If
+
+                    End Using
+                    NAMEcon.Close()
+                End Using
+            End Using
+        End Using
+
+
+        Dim query As String = "SELECT * FROM tbl_timesheet WHERE tdate ='" & DateAndTime.Now.ToString("dd/MM/yyyy") & "'"
+        Using con As MySqlConnection = New MySqlConnection("server=localhost;user id=root;password=esperanza;database=db_attendance")
+            Using cmd As MySqlCommand = New MySqlCommand(query, con)
+                Using sda As New MySqlDataAdapter()
+                    sda.SelectCommand = cmd
+                    Using dt As New DataTable()
+                        sda.Fill(dt)
+                        If dt.Rows.Count > 0 Then
+                            lblOntime.Text = dt.Rows.Count.ToString()
+
+                        Else
+                            lblOntime.Text = ""
+
+                        End If
+                    End Using
+                End Using
+            End Using
+        End Using
+
+
+
     End Sub
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
@@ -49,5 +98,9 @@ Public Class adminDashboard
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         Dim oForm As New addUser
         oForm.Show()
+    End Sub
+
+    Private Sub Label4_Click(sender As Object, e As EventArgs) Handles Label4.Click
+
     End Sub
 End Class

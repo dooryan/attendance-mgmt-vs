@@ -35,12 +35,6 @@ Partial Class adminDashboard
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.lblOntime = New System.Windows.Forms.Label()
-        Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.lblLate = New System.Windows.Forms.Label()
-        Me.Panel4 = New System.Windows.Forms.Panel()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.lblAbsent = New System.Windows.Forms.Label()
         Me.Panel5 = New System.Windows.Forms.Panel()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.lblTotalEmp = New System.Windows.Forms.Label()
@@ -53,8 +47,6 @@ Partial Class adminDashboard
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel3.SuspendLayout()
-        Me.Panel2.SuspendLayout()
-        Me.Panel4.SuspendLayout()
         Me.Panel5.SuspendLayout()
         Me.Panel6.SuspendLayout()
         Me.SuspendLayout()
@@ -80,7 +72,7 @@ Partial Class adminDashboard
         Me.btnTimesheet.Name = "btnTimesheet"
         Me.btnTimesheet.Size = New System.Drawing.Size(208, 49)
         Me.btnTimesheet.TabIndex = 5
-        Me.btnTimesheet.Text = "Reports"
+        Me.btnTimesheet.Text = "Timesheets"
         Me.btnTimesheet.UseVisualStyleBackColor = True
         '
         'Button5
@@ -151,7 +143,7 @@ Partial Class adminDashboard
         Me.Panel3.BackColor = System.Drawing.Color.Peru
         Me.Panel3.Controls.Add(Me.Label4)
         Me.Panel3.Controls.Add(Me.lblOntime)
-        Me.Panel3.Location = New System.Drawing.Point(219, 88)
+        Me.Panel3.Location = New System.Drawing.Point(278, 88)
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(165, 121)
         Me.Panel3.TabIndex = 6
@@ -180,80 +172,12 @@ Partial Class adminDashboard
         Me.lblOntime.TabIndex = 4
         Me.lblOntime.Text = "0"
         '
-        'Panel2
-        '
-        Me.Panel2.BackColor = System.Drawing.Color.Tan
-        Me.Panel2.Controls.Add(Me.Label2)
-        Me.Panel2.Controls.Add(Me.lblLate)
-        Me.Panel2.Location = New System.Drawing.Point(390, 88)
-        Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(165, 121)
-        Me.Panel2.TabIndex = 7
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.ForeColor = System.Drawing.Color.Black
-        Me.Label2.Location = New System.Drawing.Point(26, 84)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(55, 20)
-        Me.Label2.TabIndex = 5
-        Me.Label2.Text = "LATE"
-        '
-        'lblLate
-        '
-        Me.lblLate.AutoSize = True
-        Me.lblLate.BackColor = System.Drawing.Color.Transparent
-        Me.lblLate.CausesValidation = False
-        Me.lblLate.Font = New System.Drawing.Font("Microsoft Sans Serif", 28.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblLate.ForeColor = System.Drawing.Color.Black
-        Me.lblLate.Location = New System.Drawing.Point(3, 13)
-        Me.lblLate.Name = "lblLate"
-        Me.lblLate.Size = New System.Drawing.Size(51, 55)
-        Me.lblLate.TabIndex = 4
-        Me.lblLate.Text = "0"
-        '
-        'Panel4
-        '
-        Me.Panel4.BackColor = System.Drawing.Color.OldLace
-        Me.Panel4.Controls.Add(Me.Label6)
-        Me.Panel4.Controls.Add(Me.lblAbsent)
-        Me.Panel4.Location = New System.Drawing.Point(732, 88)
-        Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(165, 121)
-        Me.Panel4.TabIndex = 8
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.ForeColor = System.Drawing.Color.Black
-        Me.Label6.Location = New System.Drawing.Point(26, 84)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(82, 20)
-        Me.Label6.TabIndex = 5
-        Me.Label6.Text = "ABSENT"
-        '
-        'lblAbsent
-        '
-        Me.lblAbsent.AutoSize = True
-        Me.lblAbsent.BackColor = System.Drawing.Color.Transparent
-        Me.lblAbsent.CausesValidation = False
-        Me.lblAbsent.Font = New System.Drawing.Font("Microsoft Sans Serif", 28.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblAbsent.ForeColor = System.Drawing.Color.Black
-        Me.lblAbsent.Location = New System.Drawing.Point(3, 13)
-        Me.lblAbsent.Name = "lblAbsent"
-        Me.lblAbsent.Size = New System.Drawing.Size(51, 55)
-        Me.lblAbsent.TabIndex = 4
-        Me.lblAbsent.Text = "0"
-        '
         'Panel5
         '
         Me.Panel5.BackColor = System.Drawing.Color.NavajoWhite
         Me.Panel5.Controls.Add(Me.Label8)
         Me.Panel5.Controls.Add(Me.lblTotalEmp)
-        Me.Panel5.Location = New System.Drawing.Point(561, 88)
+        Me.Panel5.Location = New System.Drawing.Point(494, 88)
         Me.Panel5.Name = "Panel5"
         Me.Panel5.Size = New System.Drawing.Size(165, 121)
         Me.Panel5.TabIndex = 9
@@ -298,7 +222,7 @@ Partial Class adminDashboard
         Me.date1.AutoSize = True
         Me.date1.BackColor = System.Drawing.Color.Transparent
         Me.date1.Font = New System.Drawing.Font("Trebuchet MS", 19.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.date1.Location = New System.Drawing.Point(584, 17)
+        Me.date1.Location = New System.Drawing.Point(513, 16)
         Me.date1.Name = "date1"
         Me.date1.Size = New System.Drawing.Size(87, 42)
         Me.date1.TabIndex = 12
@@ -309,7 +233,7 @@ Partial Class adminDashboard
         Me.Panel6.BackColor = System.Drawing.Color.OldLace
         Me.Panel6.Controls.Add(Me.Label3)
         Me.Panel6.Controls.Add(Me.lblLeave)
-        Me.Panel6.Location = New System.Drawing.Point(732, 215)
+        Me.Panel6.Location = New System.Drawing.Point(698, 88)
         Me.Panel6.Name = "Panel6"
         Me.Panel6.Size = New System.Drawing.Size(165, 121)
         Me.Panel6.TabIndex = 13
@@ -348,22 +272,17 @@ Partial Class adminDashboard
         Me.Controls.Add(Me.date1)
         Me.Controls.Add(Me.Button4)
         Me.Controls.Add(Me.Panel5)
-        Me.Controls.Add(Me.Panel2)
-        Me.Controls.Add(Me.Panel4)
         Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "adminDashboard"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "adminDashboard"
         Me.Panel1.ResumeLayout(False)
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel3.ResumeLayout(False)
         Me.Panel3.PerformLayout()
-        Me.Panel2.ResumeLayout(False)
-        Me.Panel2.PerformLayout()
-        Me.Panel4.ResumeLayout(False)
-        Me.Panel4.PerformLayout()
         Me.Panel5.ResumeLayout(False)
         Me.Panel5.PerformLayout()
         Me.Panel6.ResumeLayout(False)
@@ -382,12 +301,6 @@ Partial Class adminDashboard
     Friend WithEvents Panel3 As Panel
     Friend WithEvents Label4 As Label
     Friend WithEvents lblOntime As Label
-    Friend WithEvents Panel2 As Panel
-    Friend WithEvents Label2 As Label
-    Friend WithEvents lblLate As Label
-    Friend WithEvents Panel4 As Panel
-    Friend WithEvents Label6 As Label
-    Friend WithEvents lblAbsent As Label
     Friend WithEvents Panel5 As Panel
     Friend WithEvents Label8 As Label
     Friend WithEvents lblTotalEmp As Label

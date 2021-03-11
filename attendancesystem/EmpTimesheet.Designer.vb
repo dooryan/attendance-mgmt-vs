@@ -23,17 +23,17 @@ Partial Class EmpTimesheet
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.RadioButton1 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton2 = New System.Windows.Forms.RadioButton()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.Button1 = New System.Windows.Forms.Button()
         Me.id1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.uname = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.lname1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.date1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.time1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.stat1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.RadioButton1 = New System.Windows.Forms.RadioButton()
+        Me.RadioButton2 = New System.Windows.Forms.RadioButton()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.Button1 = New System.Windows.Forms.Button()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -46,6 +46,36 @@ Partial Class EmpTimesheet
         Me.DataGridView1.RowTemplate.Height = 24
         Me.DataGridView1.Size = New System.Drawing.Size(544, 421)
         Me.DataGridView1.TabIndex = 0
+        '
+        'id1
+        '
+        Me.id1.HeaderText = "ID"
+        Me.id1.Name = "id1"
+        '
+        'uname
+        '
+        Me.uname.HeaderText = "First name"
+        Me.uname.Name = "uname"
+        '
+        'lname1
+        '
+        Me.lname1.HeaderText = "Last name"
+        Me.lname1.Name = "lname1"
+        '
+        'date1
+        '
+        Me.date1.HeaderText = "Date"
+        Me.date1.Name = "date1"
+        '
+        'time1
+        '
+        Me.time1.HeaderText = "Time"
+        Me.time1.Name = "time1"
+        '
+        'stat1
+        '
+        Me.stat1.HeaderText = "Status"
+        Me.stat1.Name = "stat1"
         '
         'Label1
         '
@@ -96,36 +126,6 @@ Partial Class EmpTimesheet
         Me.Button1.TabIndex = 5
         Me.Button1.UseVisualStyleBackColor = True
         '
-        'id1
-        '
-        Me.id1.HeaderText = "ID"
-        Me.id1.Name = "id1"
-        '
-        'uname
-        '
-        Me.uname.HeaderText = "First name"
-        Me.uname.Name = "uname"
-        '
-        'lname1
-        '
-        Me.lname1.HeaderText = "Last name"
-        Me.lname1.Name = "lname1"
-        '
-        'date1
-        '
-        Me.date1.HeaderText = "Date"
-        Me.date1.Name = "date1"
-        '
-        'time1
-        '
-        Me.time1.HeaderText = "Time"
-        Me.time1.Name = "time1"
-        '
-        'stat1
-        '
-        Me.stat1.HeaderText = "Status"
-        Me.stat1.Name = "stat1"
-        '
         'EmpTimesheet
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -139,6 +139,7 @@ Partial Class EmpTimesheet
         Me.Controls.Add(Me.DataGridView1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "EmpTimesheet"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "EmpTimesheet"
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)

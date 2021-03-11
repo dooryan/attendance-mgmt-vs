@@ -13,26 +13,61 @@ Public Class attendance
         Dim dateNow As String = Date.Now.ToString("dd/MM/yyyy")
         Dim timeNow As String = Date.Now.ToString("HH:ss:tt")
         Dim statt As String = "IN"
+
+
+
+        Dim dAttendance = New DataTable()
+        Dim AttendanceAdapter = New MySqlDataAdapter
+        Dim cmd As New MySqlCommand
+        cmd.Connection = conAttendanceSystem
         Try
-            With command
+            With cmd
+
                 .Parameters.Clear()
-                .CommandText = "prcEntryTImesheet"
+                .CommandText = "prcValidateTimeEntry"
                 .CommandType = CommandType.StoredProcedure
                 .Parameters.AddWithValue("uname", user)
                 .Parameters.AddWithValue("stat", statt)
-                .Parameters.AddWithValue("currTime", timeNow)
-                .Parameters.AddWithValue("currDate", dateNow)
+                .Parameters.AddWithValue("d", dateNow)
 
-                .ExecuteNonQuery()
-                MessageBox.Show("Time-in, successful", "", MessageBoxButtons.OK,
-                                MessageBoxIcon.Information)
+                AttendanceAdapter.SelectCommand = cmd
+                dAttendance.Clear()
+                AttendanceAdapter.Fill(dAttendance)
 
+
+
+                If dAttendance.Rows.Count > 0 Then
+                    MessageBox.Show("Cannot Duplicate Time-in", "", MessageBoxButtons.OKCancel)
+                Else
+                    With command
+                        .Parameters.Clear()
+                        .CommandText = "prcEntryTimesheet"
+                        .CommandType = CommandType.StoredProcedure
+                        sqlAttendanceAdapter.SelectCommand = command
+                        .Parameters.AddWithValue("uname", user)
+                        .Parameters.AddWithValue("stat", statt)
+                        .Parameters.AddWithValue("currTime", timeNow)
+                        .Parameters.AddWithValue("currDate", dateNow)
+
+                        .ExecuteNonQuery()
+                        MessageBox.Show("Time-in, successful", "", MessageBoxButtons.OK,
+                                        MessageBoxIcon.Information)
+
+                    End With
+
+
+                End If
             End With
-
         Catch ex As Exception
-            MessageBox.Show("" & ex.Message)
 
         End Try
+
+
+
+
+
+
+
         Me.Refresh()
     End Sub
 

@@ -28,7 +28,6 @@ Partial Class Form1
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Button5 = New System.Windows.Forms.Button()
-        Me.Button4 = New System.Windows.Forms.Button()
         Me.btnRemove = New System.Windows.Forms.Button()
         Me.BackgroundWorker1 = New System.ComponentModel.BackgroundWorker()
         Me.DirectorySearcher1 = New System.DirectoryServices.DirectorySearcher()
@@ -82,7 +81,6 @@ Partial Class Form1
         Me.Panel1.BackColor = System.Drawing.Color.Wheat
         Me.Panel1.Controls.Add(Me.PictureBox1)
         Me.Panel1.Controls.Add(Me.Button5)
-        Me.Panel1.Controls.Add(Me.Button4)
         Me.Panel1.Controls.Add(Me.btnRemove)
         Me.Panel1.Controls.Add(Me.btnUpdate)
         Me.Panel1.Controls.Add(Me.btnAdd)
@@ -113,17 +111,6 @@ Partial Class Form1
         Me.Button5.TabIndex = 5
         Me.Button5.UseVisualStyleBackColor = False
         '
-        'Button4
-        '
-        Me.Button4.BackgroundImage = Global.attendancesystem.My.Resources.Resources.download1
-        Me.Button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.Button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button4.Location = New System.Drawing.Point(23, 310)
-        Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(185, 45)
-        Me.Button4.TabIndex = 3
-        Me.Button4.UseVisualStyleBackColor = True
-        '
         'btnRemove
         '
         Me.btnRemove.BackgroundImage = Global.attendancesystem.My.Resources.Resources.delete_remove_trash_trash_bin_trash_can_icon_1320073117929397588
@@ -149,7 +136,7 @@ Partial Class Form1
         '
         'textSearch
         '
-        Me.textSearch.Location = New System.Drawing.Point(156, 29)
+        Me.textSearch.Location = New System.Drawing.Point(16, 32)
         Me.textSearch.Name = "textSearch"
         Me.textSearch.Size = New System.Drawing.Size(292, 22)
         Me.textSearch.TabIndex = 2
@@ -157,7 +144,7 @@ Partial Class Form1
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(21, 32)
+        Me.Label1.Location = New System.Drawing.Point(13, 12)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(119, 17)
         Me.Label1.TabIndex = 3
@@ -165,7 +152,7 @@ Partial Class Form1
         '
         'btnSearch
         '
-        Me.btnSearch.Location = New System.Drawing.Point(454, 25)
+        Me.btnSearch.Location = New System.Drawing.Point(314, 28)
         Me.btnSearch.Name = "btnSearch"
         Me.btnSearch.Size = New System.Drawing.Size(78, 26)
         Me.btnSearch.TabIndex = 4
@@ -240,20 +227,22 @@ Partial Class Form1
         'CheckBox1
         '
         Me.CheckBox1.AutoSize = True
-        Me.CheckBox1.Location = New System.Drawing.Point(156, 57)
+        Me.CheckBox1.Checked = True
+        Me.CheckBox1.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.CheckBox1.Location = New System.Drawing.Point(314, 57)
         Me.CheckBox1.Name = "CheckBox1"
-        Me.CheckBox1.Size = New System.Drawing.Size(111, 21)
+        Me.CheckBox1.Size = New System.Drawing.Size(59, 21)
         Me.CheckBox1.TabIndex = 7
-        Me.CheckBox1.Text = "Search by ID"
+        Me.CheckBox1.Text = "Auto"
         Me.CheckBox1.UseVisualStyleBackColor = True
         '
         'ComboBox1
         '
         Me.ComboBox1.FormattingEnabled = True
         Me.ComboBox1.Items.AddRange(New Object() {"EMPLOYEE ID", "EMPLOYEE NAME"})
-        Me.ComboBox1.Location = New System.Drawing.Point(555, 25)
+        Me.ComboBox1.Location = New System.Drawing.Point(398, 30)
         Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(83, 24)
+        Me.ComboBox1.Size = New System.Drawing.Size(127, 24)
         Me.ComboBox1.TabIndex = 8
         '
         'Form1
@@ -271,6 +260,7 @@ Partial Class Form1
         Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "Form1"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Attendance "
         Me.Panel1.ResumeLayout(False)
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
@@ -283,7 +273,6 @@ Partial Class Form1
     Friend WithEvents btnAdd As Button
     Friend WithEvents btnUpdate As Button
     Friend WithEvents Panel1 As Panel
-    Friend WithEvents Button4 As Button
     Friend WithEvents btnRemove As Button
     Friend WithEvents BackgroundWorker1 As System.ComponentModel.BackgroundWorker
     Friend WithEvents DirectorySearcher1 As DirectoryServices.DirectorySearcher

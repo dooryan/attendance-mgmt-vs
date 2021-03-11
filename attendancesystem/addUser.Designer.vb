@@ -124,6 +124,7 @@ Partial Class addUser
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.txtID)
         Me.Name = "addUser"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "addUser"
         Me.ResumeLayout(False)
         Me.PerformLayout()

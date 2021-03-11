@@ -3,6 +3,7 @@
 
 
 Public Class Form1
+    Private id As Integer
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         checkDatabaseConnection()
 
@@ -11,10 +12,7 @@ Public Class Form1
     End Sub
 
     Private Sub Button6_Click(sender As Object, e As EventArgs) Handles btnSearch.Click
-
-
-
-
+        prcDisplayBySearchType(textSearch.Text)
 
 
     End Sub
@@ -37,9 +35,13 @@ Public Class Form1
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
-        Dim oForm As New addEmployee
+        With addEmployee
+            .ShowDialog()
+            IntOperation = 0
 
-        oForm.Show()
+        End With
+        prcDisplayEmployee()
+
 
     End Sub
 
@@ -97,8 +99,6 @@ Public Class Form1
 
     End Sub
 
-
-
     Private Sub prcDisplayByAutoSearch(ByVal searchType As String, ByVal strValue As String)
         sqlAttendanceAdapter = New MySqlDataAdapter
         dataAttendance = New DataTable
@@ -118,6 +118,7 @@ Public Class Form1
                     row = 0
                     While Not dataAttendance.Rows.Count - 1 < row
                         With DataGridView1
+
                             .Rows(row).Cells(0).Value = dataAttendance.Rows(row).Item("id").ToString
                             .Rows(row).Cells(1).Value = dataAttendance.Rows(row).Item("dept_id").ToString
 
@@ -136,7 +137,7 @@ Public Class Form1
                         row = row + 1
                     End While
                 Else
-                    MessageBox.Show("No Record Found...")
+
                     DataGridView1.Rows.Clear()
 
 
@@ -178,23 +179,40 @@ Public Class Form1
         Catch ex As Exception
             MessageBox.Show("" & ex.Message)
         End Try
+        prcDisplayEmployee()
 
     End Sub
 
     Private Sub btnUpdate_Click(sender As Object, e As EventArgs) Handles btnUpdate.Click
 
+        With addEmployee
+            IntOperation = 1
+            id = CInt(DataGridView1.CurrentRow.Cells(0).Value.ToString)
 
 
-        Try
-            With command
-                .Parameters.Clear()
-                .CommandText = "prcEditEmployee"
-                .CommandType = CommandType.StoredProcedure
+            .cmbDept.Text = DataGridView1.CurrentRow.Cells(1).Value
+            .txtFname.Text = DataGridView1.CurrentRow.Cells(2).Value
+            .txtLname.Text = DataGridView1.CurrentRow.Cells(3).Value
+            .txtAddress.Text = DataGridView1.CurrentRow.Cells(4).Value
+            .bdate.Value = DataGridView1.CurrentRow.Cells(5).Value
 
-            End With
-        Catch ex As Exception
+            .cmbGender.Text = DataGridView1.CurrentRow.Cells(6).Value
+            .dhired.Value = DataGridView1.CurrentRow.Cells(7).Value
 
-        End Try
+
+            .txtContact.Text = DataGridView1.CurrentRow.Cells(8).Value
+            .ShowDialog()
+
+
+
+
+
+
+
+        End With
+        prcDisplayEmployee()
+
+
 
     End Sub
 
@@ -205,15 +223,18 @@ Public Class Form1
         Try
             With command
                 .Parameters.Clear()
+
                 If ComboBox1.Text = "EMPLOYEE ID" Then
                     .CommandText = "prcSelcEmpbyID"
-                    .Parameters.AddWithValue("@p_value", strSearch)
+                    .Parameters.AddWithValue("@empID", strSearch)
 
                 ElseIf ComboBox1.Text = "EMPLOYEE NAME" Then
-                    .CommandText = "prcSelcEmpbyID"
-                    .Parameters.AddWithValue("@p_fullname", strSearch)
+                    .CommandText = "prcSelcEmpbyName"
+                    .Parameters.AddWithValue("empName", strSearch)
+
+
                 Else
-                    .CommandText = "prcSelcEmpbyID"
+                    .CommandText = "prcDisplayEmployees"
 
                 End If
                 .CommandType = CommandType.StoredProcedure
@@ -239,14 +260,12 @@ Public Class Form1
                             .Rows(row).Cells(7).Value = dataAttendance.Rows(row).Item("date_hired").ToString
                             .Rows(row).Cells(8).Value = dataAttendance.Rows(row).Item("contactno").ToString
 
-
-
                         End With
 
                         row = row + 1
                     End While
                 Else
-                    MessageBox.Show("No Record Found...")
+
                     DataGridView1.Rows.Clear()
 
 
@@ -260,16 +279,14 @@ Public Class Form1
         End Try
 
 
-
     End Sub
+
 
     Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs) Handles textSearch.TextChanged
         If CheckBox1.Checked = True Then
-
-            prcDisplayByAutoSearch(CheckBox1.Text, textSearch.Text)
-
-
+            prcDisplayByAutoSearch(ComboBox1.Text, textSearch.Text)
         End If
+
     End Sub
 
     Private Sub CheckBox1_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox1.CheckedChanged
@@ -280,6 +297,21 @@ Public Class Form1
         Else
             btnSearch.Enabled = True
 
+
+
+        End If
+    End Sub
+
+    Private Sub ComboBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox1.SelectedIndexChanged
+        If ComboBox1.Text = "EMPLOYEE ID" Then
+            textSearch.Enabled = True
+            textSearch.Clear()
+        ElseIf ComboBox1.Text = "EMPLOYEE NAME" Then
+            textSearch.Enabled = True
+            textSearch.Clear()
+        Else
+            textSearch.Enabled = False
+            textSearch.Clear()
 
 
         End If

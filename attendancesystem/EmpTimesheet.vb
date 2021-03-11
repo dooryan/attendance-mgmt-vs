@@ -4,7 +4,7 @@
 Public Class EmpTimesheet
 
     Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
-
+        prcDisplayTimesheet()
 
     End Sub
 
@@ -44,7 +44,7 @@ Public Class EmpTimesheet
                         row = row + 1
                     End While
                 Else
-                    MessageBox.Show("No record found...")
+
 
 
 
@@ -55,7 +55,7 @@ Public Class EmpTimesheet
         Catch ex As Exception
 
         End Try
-
+        Me.Refresh()
     End Sub
 
     Private Sub EmpTimesheet_Load(sender As Object, e As EventArgs) Handles MyBase.Load

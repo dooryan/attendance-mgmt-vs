@@ -27,6 +27,9 @@ Partial Class attendance
         Me.btnIn = New System.Windows.Forms.Button()
         Me.btnOut = New System.Windows.Forms.Button()
         Me.dgrid_emp_time_history = New System.Windows.Forms.DataGridView()
+        Me.date1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.time1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.stat = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Button3 = New System.Windows.Forms.Button()
@@ -34,9 +37,6 @@ Partial Class attendance
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.date1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.time1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.stat = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.dgrid_emp_time_history, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
@@ -82,6 +82,21 @@ Partial Class attendance
         Me.dgrid_emp_time_history.RowTemplate.Height = 24
         Me.dgrid_emp_time_history.Size = New System.Drawing.Size(496, 200)
         Me.dgrid_emp_time_history.TabIndex = 2
+        '
+        'date1
+        '
+        Me.date1.HeaderText = "Date"
+        Me.date1.Name = "date1"
+        '
+        'time1
+        '
+        Me.time1.HeaderText = "Time"
+        Me.time1.Name = "time1"
+        '
+        'stat
+        '
+        Me.stat.HeaderText = "IN/OUT"
+        Me.stat.Name = "stat"
         '
         'Label1
         '
@@ -154,21 +169,6 @@ Partial Class attendance
         Me.Panel1.Size = New System.Drawing.Size(280, 180)
         Me.Panel1.TabIndex = 9
         '
-        'date1
-        '
-        Me.date1.HeaderText = "Date"
-        Me.date1.Name = "date1"
-        '
-        'time1
-        '
-        Me.time1.HeaderText = "Time"
-        Me.time1.Name = "time1"
-        '
-        'stat
-        '
-        Me.stat.HeaderText = "IN/OUT"
-        Me.stat.Name = "stat"
-        '
         'attendance
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -184,6 +184,7 @@ Partial Class attendance
         Me.Controls.Add(Me.btnIn)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "attendance"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "attendance"
         CType(Me.dgrid_emp_time_history, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()

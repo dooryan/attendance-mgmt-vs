@@ -12,5 +12,6 @@ Module modGlobalVariable
     Public dataAttendance As New DataTable
     Public sqlAttendanceAdapter As New MySqlDataAdapter
     Public row As Integer
+    Public IntOperation As Integer
 End Module
 

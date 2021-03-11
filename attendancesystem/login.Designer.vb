@@ -118,18 +118,20 @@ Partial Class login
         '
         'txtpassword
         '
+        Me.txtpassword.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtpassword.Location = New System.Drawing.Point(58, 123)
-        Me.txtpassword.Multiline = True
         Me.txtpassword.Name = "txtpassword"
-        Me.txtpassword.Size = New System.Drawing.Size(295, 41)
+        Me.txtpassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
+        Me.txtpassword.Size = New System.Drawing.Size(295, 38)
         Me.txtpassword.TabIndex = 1
+        Me.txtpassword.UseSystemPasswordChar = True
         '
         'txtusername
         '
+        Me.txtusername.Font = New System.Drawing.Font("Trebuchet MS", 16.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtusername.Location = New System.Drawing.Point(58, 53)
-        Me.txtusername.Multiline = True
         Me.txtusername.Name = "txtusername"
-        Me.txtusername.Size = New System.Drawing.Size(295, 41)
+        Me.txtusername.Size = New System.Drawing.Size(295, 39)
         Me.txtusername.TabIndex = 0
         '
         'Button1
@@ -155,6 +157,7 @@ Partial Class login
         Me.Controls.Add(Me.PictureBox1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "login"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "login"
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)

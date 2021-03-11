@@ -17,6 +17,7 @@
                 .Parameters.Clear()
                 .CommandText = "prcAddEmployee"
                 .CommandType = CommandType.StoredProcedure
+
                 .Parameters.AddWithValue("fname", txtFname.Text)
                 .Parameters.AddWithValue("lname", txtLname.Text)
                 .Parameters.AddWithValue("address", txtAddress.Text)
