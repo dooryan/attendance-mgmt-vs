@@ -114,6 +114,7 @@ Public Class EmpTimesheet
         sqlAttendanceAdapter = New MySqlDataAdapter
         command.Connection = conAttendanceSystem
 
+
         Try
             With command
                 .Parameters.Clear()

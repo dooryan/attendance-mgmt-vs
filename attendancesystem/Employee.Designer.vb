@@ -23,6 +23,7 @@ Partial Class Form1
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.btnAdd = New System.Windows.Forms.Button()
         Me.btnUpdate = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
@@ -36,6 +37,8 @@ Partial Class Form1
         Me.Label1 = New System.Windows.Forms.Label()
         Me.btnSearch = New System.Windows.Forms.Button()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
+        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.id1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.deptID1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.fname1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -45,8 +48,6 @@ Partial Class Form1
         Me.gender1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.dHired1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.contact = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -170,6 +171,27 @@ Partial Class Form1
         Me.DataGridView1.Size = New System.Drawing.Size(688, 363)
         Me.DataGridView1.TabIndex = 5
         '
+        'CheckBox1
+        '
+        Me.CheckBox1.AutoSize = True
+        Me.CheckBox1.Checked = True
+        Me.CheckBox1.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.CheckBox1.Location = New System.Drawing.Point(314, 57)
+        Me.CheckBox1.Name = "CheckBox1"
+        Me.CheckBox1.Size = New System.Drawing.Size(59, 21)
+        Me.CheckBox1.TabIndex = 7
+        Me.CheckBox1.Text = "Auto"
+        Me.CheckBox1.UseVisualStyleBackColor = True
+        '
+        'ComboBox1
+        '
+        Me.ComboBox1.FormattingEnabled = True
+        Me.ComboBox1.Items.AddRange(New Object() {"EMPLOYEE ID", "EMPLOYEE NAME"})
+        Me.ComboBox1.Location = New System.Drawing.Point(398, 30)
+        Me.ComboBox1.Name = "ComboBox1"
+        Me.ComboBox1.Size = New System.Drawing.Size(127, 24)
+        Me.ComboBox1.TabIndex = 8
+        '
         'id1
         '
         Me.id1.HeaderText = "ID"
@@ -202,6 +224,9 @@ Partial Class Form1
         '
         'bdate1
         '
+        DataGridViewCellStyle1.Format = "d"
+        DataGridViewCellStyle1.NullValue = Nothing
+        Me.bdate1.DefaultCellStyle = DataGridViewCellStyle1
         Me.bdate1.HeaderText = "Birthdate"
         Me.bdate1.Name = "bdate1"
         Me.bdate1.Width = 94
@@ -223,27 +248,6 @@ Partial Class Form1
         Me.contact.HeaderText = "Contact No"
         Me.contact.Name = "contact"
         Me.contact.Width = 107
-        '
-        'CheckBox1
-        '
-        Me.CheckBox1.AutoSize = True
-        Me.CheckBox1.Checked = True
-        Me.CheckBox1.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.CheckBox1.Location = New System.Drawing.Point(314, 57)
-        Me.CheckBox1.Name = "CheckBox1"
-        Me.CheckBox1.Size = New System.Drawing.Size(59, 21)
-        Me.CheckBox1.TabIndex = 7
-        Me.CheckBox1.Text = "Auto"
-        Me.CheckBox1.UseVisualStyleBackColor = True
-        '
-        'ComboBox1
-        '
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Items.AddRange(New Object() {"EMPLOYEE ID", "EMPLOYEE NAME"})
-        Me.ComboBox1.Location = New System.Drawing.Point(398, 30)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(127, 24)
-        Me.ComboBox1.TabIndex = 8
         '
         'Form1
         '
@@ -283,6 +287,8 @@ Partial Class Form1
     Friend WithEvents Button5 As Button
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents CheckBox1 As CheckBox
+    Friend WithEvents ComboBox1 As ComboBox
     Friend WithEvents id1 As DataGridViewTextBoxColumn
     Friend WithEvents deptID1 As DataGridViewTextBoxColumn
     Friend WithEvents fname1 As DataGridViewTextBoxColumn
@@ -292,6 +298,4 @@ Partial Class Form1
     Friend WithEvents gender1 As DataGridViewTextBoxColumn
     Friend WithEvents dHired1 As DataGridViewTextBoxColumn
     Friend WithEvents contact As DataGridViewTextBoxColumn
-    Friend WithEvents CheckBox1 As CheckBox
-    Friend WithEvents ComboBox1 As ComboBox
 End Class

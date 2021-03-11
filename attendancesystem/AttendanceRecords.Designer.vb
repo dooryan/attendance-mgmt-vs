@@ -26,12 +26,19 @@ Partial Class AttendanceRecords
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.btnSearch = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
+        Me.id1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.fname = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.lname = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.tdate = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ttime = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.stat = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'DataGridView1
         '
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.id1, Me.fname, Me.lname, Me.tdate, Me.ttime, Me.stat})
         Me.DataGridView1.Location = New System.Drawing.Point(23, 70)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.RowTemplate.Height = 24
@@ -63,6 +70,36 @@ Partial Class AttendanceRecords
         Me.Button1.Text = "Button1"
         Me.Button1.UseVisualStyleBackColor = True
         '
+        'id1
+        '
+        Me.id1.HeaderText = "ID"
+        Me.id1.Name = "id1"
+        '
+        'fname
+        '
+        Me.fname.HeaderText = "First Name"
+        Me.fname.Name = "fname"
+        '
+        'lname
+        '
+        Me.lname.HeaderText = "Last Name"
+        Me.lname.Name = "lname"
+        '
+        'tdate
+        '
+        Me.tdate.HeaderText = "Date"
+        Me.tdate.Name = "tdate"
+        '
+        'ttime
+        '
+        Me.ttime.HeaderText = "Time"
+        Me.ttime.Name = "ttime"
+        '
+        'stat
+        '
+        Me.stat.HeaderText = "Status"
+        Me.stat.Name = "stat"
+        '
         'AttendanceRecords
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -74,7 +111,7 @@ Partial Class AttendanceRecords
         Me.Controls.Add(Me.DataGridView1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "AttendanceRecords"
-        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "AttendanceRecords"
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
@@ -86,4 +123,10 @@ Partial Class AttendanceRecords
     Friend WithEvents TextBox1 As TextBox
     Friend WithEvents btnSearch As Button
     Friend WithEvents Button1 As Button
+    Friend WithEvents id1 As DataGridViewTextBoxColumn
+    Friend WithEvents fname As DataGridViewTextBoxColumn
+    Friend WithEvents lname As DataGridViewTextBoxColumn
+    Friend WithEvents tdate As DataGridViewTextBoxColumn
+    Friend WithEvents ttime As DataGridViewTextBoxColumn
+    Friend WithEvents stat As DataGridViewTextBoxColumn
 End Class

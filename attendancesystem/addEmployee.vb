@@ -9,7 +9,9 @@
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btn_save.Click
 
+        Dim date1 As String = dhired.Value.ToString("yyyy/MM/dd")
 
+        Dim date2 As String = bdate.Value.ToString("yyyy/MM/dd")
 
 
         Try
@@ -21,8 +23,8 @@
                 .Parameters.AddWithValue("fname", txtFname.Text)
                 .Parameters.AddWithValue("lname", txtLname.Text)
                 .Parameters.AddWithValue("address", txtAddress.Text)
-                .Parameters.AddWithValue("bdate", bdate.Value)
-                .Parameters.AddWithValue("datehired", dhired.Value)
+                .Parameters.AddWithValue("bdate", date2)
+                .Parameters.AddWithValue("datehired", date1)
                 .Parameters.AddWithValue("gender", cmbGender.Text)
                 .Parameters.AddWithValue("dept", cmbDept.Text)
                 .Parameters.AddWithValue("contact", txtContact.Text)

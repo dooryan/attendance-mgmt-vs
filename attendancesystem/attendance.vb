@@ -14,20 +14,44 @@ Public Class attendance
         Dim dateNow As String = Date.Now.ToString("yyyy/MM/dd")
         Dim timeNow As String = Date.Now.ToString("HH:ss:ss")
         Dim statt As String = "IN"
+
+        dataAttendance = New DataTable()
+        sqlAttendanceAdapter = New MySqlDataAdapter
+        command.Connection = conAttendanceSystem
+        Dim com = New MySqlCommand()
+        com.Connection = conAttendanceSystem
+
         Try
             With command
                 .Parameters.Clear()
-                .CommandText = "prcEntryTImesheet"
+                .CommandText = "prcValidateTimeEntry"
                 .CommandType = CommandType.StoredProcedure
                 .Parameters.AddWithValue("uname", user)
                 .Parameters.AddWithValue("stat", statt)
-                .Parameters.AddWithValue("currTime", timeNow)
-                .Parameters.AddWithValue("currDate", dateNow)
-
+                .Parameters.AddWithValue("d", dateNow)
                 .ExecuteNonQuery()
-                MessageBox.Show("Time-in, successful", "", MessageBoxButtons.OK,
-                                MessageBoxIcon.Information)
+                sqlAttendanceAdapter.SelectCommand = command
+                dataAttendance.Clear()
+                sqlAttendanceAdapter.Fill(dataAttendance)
 
+                If dataAttendance.Rows.Count >= 1 Then
+                    MessageBox.Show("YOU HAVE ALREADY TIME-IN FOR TODAY", "", MessageBoxButtons.OK, MessageBoxIcon.Hand)
+
+                ElseIf dataAttendance.Rows.Count <= 0 Then
+                    With com
+                        .Parameters.Clear()
+                        .CommandText = "prcEntryTimesheet"
+                        .CommandType = CommandType.StoredProcedure
+                        .Parameters.AddWithValue("uname", user)
+                        .Parameters.AddWithValue("stat", statt)
+                        .Parameters.AddWithValue("currTime", timeNow)
+                        .Parameters.AddWithValue("currDate", dateNow)
+                        .ExecuteNonQuery()
+
+                        MessageBox.Show("Time-in successful", "", MessageBoxButtons.OK,
+                                                        MessageBoxIcon.Information)
+                    End With
+                End If
             End With
 
         Catch ex As Exception
@@ -68,24 +92,49 @@ Public Class attendance
     End Sub
 
     Private Sub btnOut_Click(sender As Object, e As EventArgs) Handles btnOut.Click
+
         Dim user As String = Label1.Text
         Dim dateNow As String = Date.Now.ToString("yyyy/MM/dd")
         Dim timeNow As String = Date.Now.ToString("HH:ss:ss")
         Dim statt As String = "OUT"
+
+        dataAttendance = New DataTable()
+        sqlAttendanceAdapter = New MySqlDataAdapter
+        command.Connection = conAttendanceSystem
+        Dim com = New MySqlCommand()
+        com.Connection = conAttendanceSystem
+
         Try
             With command
                 .Parameters.Clear()
-                .CommandText = "prcEntryTImesheet"
+                .CommandText = "prcValidateTimeEntry"
                 .CommandType = CommandType.StoredProcedure
                 .Parameters.AddWithValue("uname", user)
                 .Parameters.AddWithValue("stat", statt)
-                .Parameters.AddWithValue("currTime", timeNow)
-                .Parameters.AddWithValue("currDate", dateNow)
-
+                .Parameters.AddWithValue("d", dateNow)
                 .ExecuteNonQuery()
-                MessageBox.Show("Time-out, successful", "", MessageBoxButtons.OK,
-                                MessageBoxIcon.Information)
+                sqlAttendanceAdapter.SelectCommand = command
+                dataAttendance.Clear()
+                sqlAttendanceAdapter.Fill(dataAttendance)
 
+                If dataAttendance.Rows.Count >= 1 Then
+                    MessageBox.Show("YOU HAVE ALREADY TIME-OUT FOR TODAY", "", MessageBoxButtons.OK, MessageBoxIcon.Hand)
+
+                ElseIf dataAttendance.Rows.Count <= 0 Then
+                    With com
+                        .Parameters.Clear()
+                        .CommandText = "prcEntryTimesheet"
+                        .CommandType = CommandType.StoredProcedure
+                        .Parameters.AddWithValue("uname", user)
+                        .Parameters.AddWithValue("stat", statt)
+                        .Parameters.AddWithValue("currTime", timeNow)
+                        .Parameters.AddWithValue("currDate", dateNow)
+                        .ExecuteNonQuery()
+
+                        MessageBox.Show("Time-out successful", "", MessageBoxButtons.OK,
+                                                        MessageBoxIcon.Information)
+                    End With
+                End If
             End With
 
         Catch ex As Exception
@@ -93,7 +142,6 @@ Public Class attendance
 
         End Try
         displayTimesheet()
-
     End Sub
 
     Private Sub dgrid_emp_time_history_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgrid_emp_time_history.CellContentClick

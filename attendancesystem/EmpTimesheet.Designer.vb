@@ -22,13 +22,9 @@ Partial Class EmpTimesheet
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.id1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.uname = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.lname1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.date1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.time1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.stat1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
         Me.DateTimePicker2 = New System.Windows.Forms.DateTimePicker()
@@ -36,6 +32,12 @@ Partial Class EmpTimesheet
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Button3 = New System.Windows.Forms.Button()
+        Me.id1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.uname = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.lname1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.date1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.time1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.stat1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -43,41 +45,22 @@ Partial Class EmpTimesheet
         '
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.id1, Me.uname, Me.lname1, Me.date1, Me.time1, Me.stat1})
+        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle8.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle8.Format = "d"
+        DataGridViewCellStyle8.NullValue = Nothing
+        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DataGridView1.DefaultCellStyle = DataGridViewCellStyle8
+        Me.DataGridView1.GridColor = System.Drawing.SystemColors.ButtonFace
         Me.DataGridView1.Location = New System.Drawing.Point(25, 48)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.RowTemplate.Height = 24
         Me.DataGridView1.Size = New System.Drawing.Size(544, 459)
         Me.DataGridView1.TabIndex = 0
-        '
-        'id1
-        '
-        Me.id1.HeaderText = "ID"
-        Me.id1.Name = "id1"
-        '
-        'uname
-        '
-        Me.uname.HeaderText = "First name"
-        Me.uname.Name = "uname"
-        '
-        'lname1
-        '
-        Me.lname1.HeaderText = "Last name"
-        Me.lname1.Name = "lname1"
-        '
-        'date1
-        '
-        Me.date1.HeaderText = "Date"
-        Me.date1.Name = "date1"
-        '
-        'time1
-        '
-        Me.time1.HeaderText = "Time"
-        Me.time1.Name = "time1"
-        '
-        'stat1
-        '
-        Me.stat1.HeaderText = "Status"
-        Me.stat1.Name = "stat1"
         '
         'Label1
         '
@@ -108,12 +91,14 @@ Partial Class EmpTimesheet
         '
         'ComboBox1
         '
+        Me.ComboBox1.Cursor = System.Windows.Forms.Cursors.Default
+        Me.ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.ComboBox1.FormatString = "N0"
         Me.ComboBox1.FormattingEnabled = True
         Me.ComboBox1.Location = New System.Drawing.Point(584, 74)
         Me.ComboBox1.Name = "ComboBox1"
         Me.ComboBox1.Size = New System.Drawing.Size(164, 24)
         Me.ComboBox1.TabIndex = 8
-        Me.ComboBox1.Text = "Select Employee ID"
         '
         'Button2
         '
@@ -144,6 +129,39 @@ Partial Class EmpTimesheet
         Me.Button3.Text = "Export to Excel"
         Me.Button3.UseVisualStyleBackColor = True
         '
+        'id1
+        '
+        Me.id1.HeaderText = "ID"
+        Me.id1.Name = "id1"
+        '
+        'uname
+        '
+        Me.uname.HeaderText = "First name"
+        Me.uname.Name = "uname"
+        '
+        'lname1
+        '
+        Me.lname1.HeaderText = "Last name"
+        Me.lname1.Name = "lname1"
+        '
+        'date1
+        '
+        DataGridViewCellStyle7.Format = "D"
+        DataGridViewCellStyle7.NullValue = Nothing
+        Me.date1.DefaultCellStyle = DataGridViewCellStyle7
+        Me.date1.HeaderText = "Date"
+        Me.date1.Name = "date1"
+        '
+        'time1
+        '
+        Me.time1.HeaderText = "Time"
+        Me.time1.Name = "time1"
+        '
+        'stat1
+        '
+        Me.stat1.HeaderText = "Status"
+        Me.stat1.Name = "stat1"
+        '
         'EmpTimesheet
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -171,15 +189,15 @@ Partial Class EmpTimesheet
     Friend WithEvents DataGridView1 As DataGridView
     Friend WithEvents Label1 As Label
     Friend WithEvents Button1 As Button
+    Friend WithEvents DateTimePicker1 As DateTimePicker
+    Friend WithEvents DateTimePicker2 As DateTimePicker
+    Friend WithEvents ComboBox1 As ComboBox
+    Friend WithEvents Button2 As Button
+    Friend WithEvents Button3 As Button
     Friend WithEvents id1 As DataGridViewTextBoxColumn
     Friend WithEvents uname As DataGridViewTextBoxColumn
     Friend WithEvents lname1 As DataGridViewTextBoxColumn
     Friend WithEvents date1 As DataGridViewTextBoxColumn
     Friend WithEvents time1 As DataGridViewTextBoxColumn
     Friend WithEvents stat1 As DataGridViewTextBoxColumn
-    Friend WithEvents DateTimePicker1 As DateTimePicker
-    Friend WithEvents DateTimePicker2 As DateTimePicker
-    Friend WithEvents ComboBox1 As ComboBox
-    Friend WithEvents Button2 As Button
-    Friend WithEvents Button3 As Button
 End Class
