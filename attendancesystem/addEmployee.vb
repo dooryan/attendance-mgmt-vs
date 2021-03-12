@@ -1,5 +1,7 @@
 ﻿Public Class addEmployee
     Shared Property flag As Boolean
+    Shared Property F As Boolean
+
     Private Sub Label1_Click(sender As Object, e As EventArgs) Handles Label1.Click
 
     End Sub
@@ -13,6 +15,7 @@
         Dim date1 As String = dhired.Value.ToString("yyyy/MM/dd")
 
         Dim date2 As String = bdate.Value.ToString("yyyy/MM/dd")
+
 
         If flag = True Then
             Try
@@ -34,16 +37,16 @@
                                 MessageBoxIcon.Information)
 
                 End With
-                flag = False
-                Me.Refresh()
 
+                F = False
+                Me.Refresh()
                 Me.Dispose()
             Catch ex As Exception
                 MessageBox.Show("" & ex.Message)
 
             End Try
-
         Else
+
             Try
                 With command
                     .Parameters.Clear()
@@ -65,7 +68,7 @@
                 End With
 
 
-                flag = False
+                F = False
                 Me.Refresh()
                 Me.Dispose()
             Catch ex As Exception
@@ -77,7 +80,8 @@
 
         End If
 
-        flag = False
+
+        F = False
 
 
         Me.Hide()
@@ -88,11 +92,17 @@
     Private Sub btn_cancel_Click(sender As Object, e As EventArgs) Handles btn_cancel.Click
         ClearComboBox(Me)
         ClearTextBox(Me)
+
         Me.Hide()
     End Sub
 
     Private Sub addEmployee_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         checkDatabaseConnection()
+        F = False
+
+
+
+        Me.Refresh()
 
     End Sub
 
@@ -121,5 +131,7 @@
 
 
     End Sub
+
+
 
 End Class

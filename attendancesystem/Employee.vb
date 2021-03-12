@@ -5,11 +5,15 @@
 Public Class Form1
     Private id As Integer
     Shared Property flag As Boolean
+    Shared Property F As Boolean
+
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         checkDatabaseConnection()
-
         prcDisplayEmployee()
+
+
+
 
     End Sub
 
@@ -207,10 +211,18 @@ Public Class Form1
             .txtContact.Text = DataGridView1.CurrentRow.Cells(9).Value
             .ShowDialog()
 
-            Dim flag As New addEmployee
-            addEmployee.flag = True
-            Me.Refresh()
         End With
+
+        Dim flag As New addEmployee
+        addEmployee.flag = True
+
+        Dim F As New addEmployee
+        addEmployee.F = False
+
+
+
+
+        Me.Refresh()
         prcDisplayEmployee()
 
     End Sub

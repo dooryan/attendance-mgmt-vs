@@ -12,7 +12,7 @@ Public Class adminDashboard
 
         Timer1.Enabled = True
 
-        date1.Text = Date.Now.ToString()
+        date1.Text = Date.Now.ToString("MMM dd, yyyy")
 
         Dim NAMEquery As String = "SELECT * FROM tbl_employee"
         Using NAMEcon As MySqlConnection = New MySqlConnection("server=localhost;user id=root;password=esperanza;database=db_attendance")
@@ -38,7 +38,7 @@ Public Class adminDashboard
         End Using
 
 
-        Dim query As String = "SELECT * FROM tbl_timesheet WHERE tdate ='" & DateAndTime.Now.ToString("yyyy/MM/dd") & "'"
+        Dim query As String = "SELECT * FROM tbl_timesheet WHERE tdate ='" & DateAndTime.Now.ToString("yyyy/MM/dd") & "'  AND  status='" & "IN" & "' "
         Using con As MySqlConnection = New MySqlConnection("server=localhost;user id=root;password=esperanza;database=db_attendance")
             Using cmd As MySqlCommand = New MySqlCommand(query, con)
                 Using sda As New MySqlDataAdapter()
@@ -107,6 +107,10 @@ Public Class adminDashboard
     Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
         EmpTimesheet.Show()
 
+
+    End Sub
+
+    Private Sub lblOntime_Click(sender As Object, e As EventArgs) Handles lblOntime.Click
 
     End Sub
 End Class

@@ -63,4 +63,52 @@ Public Class AttendanceRecords
         Me.Refresh()
     End Sub
 
+
+    Private Sub prcDisplayByAutoSearch(ByVal searchType As String, ByVal strValue As String)
+        sqlAttendanceAdapter = New MySqlDataAdapter
+        dataAttendance = New DataTable
+        Try
+            With command
+                .Parameters.Clear()
+                .CommandText = "prcSelAllEmployeeByAutoComplete"
+                .Parameters.AddWithValue("@p_searchtype", searchType)
+                .Parameters.AddWithValue("@p_value", strValue)
+                .CommandType = CommandType.StoredProcedure
+                sqlAttendanceAdapter.SelectCommand = command
+                dataAttendance.Clear()
+                sqlAttendanceAdapter.Fill(dataAttendance)
+
+                If dataAttendance.Rows.Count > 0 Then
+                    DataGridView1.RowCount = dataAttendance.Rows.Count
+                    row = 0
+                    While Not dataAttendance.Rows.Count - 1 < row
+                        With DataGridView1
+
+                            .Rows(row).Cells(0).Value = dataAttendance.Rows(row).Item("id").ToString
+                            .Rows(row).Cells(1).Value = dataAttendance.Rows(row).Item("f_name").ToString
+                            .Rows(row).Cells(2).Value = dataAttendance.Rows(row).Item("l_name").ToString
+
+                            .Rows(row).Cells(3).Value = dataAttendance.Rows(row).Item("tdate").ToString
+                            .Rows(row).Cells(4).Value = dataAttendance.Rows(row).Item("ttime").ToString
+                            .Rows(row).Cells(5).Value = dataAttendance.Rows(row).Item("status").ToString
+
+                        End With
+
+                        row = row + 1
+                    End While
+                Else
+
+                    DataGridView1.Rows.Clear()
+
+
+                End If
+                sqlAttendanceAdapter.Dispose()
+                dataAttendance.Dispose()
+
+            End With
+        Catch ex As Exception
+            MessageBox.Show("" & ex.Message)
+        End Try
+
+    End Sub
 End Class

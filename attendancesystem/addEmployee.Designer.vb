@@ -32,6 +32,7 @@ Partial Class addEmployee
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.Label9 = New System.Windows.Forms.Label()
         Me.txtContact = New System.Windows.Forms.TextBox()
         Me.dhired = New System.Windows.Forms.DateTimePicker()
         Me.cmbDept = New System.Windows.Forms.ComboBox()
@@ -42,7 +43,6 @@ Partial Class addEmployee
         Me.txtFname = New System.Windows.Forms.TextBox()
         Me.btn_save = New System.Windows.Forms.Button()
         Me.btn_cancel = New System.Windows.Forms.Button()
-        Me.Label9 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.SuspendLayout()
@@ -161,6 +161,16 @@ Partial Class addEmployee
         Me.Panel2.Size = New System.Drawing.Size(446, 412)
         Me.Panel2.TabIndex = 7
         '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Location = New System.Drawing.Point(125, 39)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(51, 17)
+        Me.Label9.TabIndex = 15
+        Me.Label9.Text = "Label9"
+        Me.Label9.Visible = False
+        '
         'txtContact
         '
         Me.txtContact.Location = New System.Drawing.Point(125, 360)
@@ -228,7 +238,7 @@ Partial Class addEmployee
         'btn_save
         '
         Me.btn_save.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btn_save.Location = New System.Drawing.Point(300, 443)
+        Me.btn_save.Location = New System.Drawing.Point(304, 456)
         Me.btn_save.Name = "btn_save"
         Me.btn_save.Size = New System.Drawing.Size(72, 25)
         Me.btn_save.TabIndex = 14
@@ -238,31 +248,21 @@ Partial Class addEmployee
         'btn_cancel
         '
         Me.btn_cancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btn_cancel.Location = New System.Drawing.Point(107, 443)
+        Me.btn_cancel.Location = New System.Drawing.Point(117, 456)
         Me.btn_cancel.Name = "btn_cancel"
         Me.btn_cancel.Size = New System.Drawing.Size(72, 25)
         Me.btn_cancel.TabIndex = 15
         Me.btn_cancel.Text = "Cancel"
         Me.btn_cancel.UseVisualStyleBackColor = True
         '
-        'Label9
-        '
-        Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(125, 39)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(51, 17)
-        Me.Label9.TabIndex = 15
-        Me.Label9.Text = "Label9"
-        '
         'addEmployee
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(479, 482)
+        Me.ClientSize = New System.Drawing.Size(485, 511)
         Me.Controls.Add(Me.btn_cancel)
         Me.Controls.Add(Me.btn_save)
         Me.Controls.Add(Me.Panel2)
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "addEmployee"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "addEmployee"

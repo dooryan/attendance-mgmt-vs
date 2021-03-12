@@ -6,7 +6,7 @@ Imports EXCEL = Microsoft.Office.Interop.Excel
 Public Class EmpTimesheet
 
     Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
-        prcDisplayTimesheet()
+
 
     End Sub
 
@@ -19,11 +19,12 @@ Public Class EmpTimesheet
         Try
             With command
                 .Parameters.Clear()
-                .CommandText = "prcDisplayAllTimesheet"
+                .CommandText = "prcDisplayTotalHours"
                 .CommandType = CommandType.StoredProcedure
                 sqlAttendanceAdapter.SelectCommand = command
                 dataAttendance.Clear()
                 sqlAttendanceAdapter.Fill(dataAttendance)
+
 
 
                 If dataAttendance.Rows.Count > 0 Then
@@ -36,9 +37,10 @@ Public Class EmpTimesheet
                             .Rows(row).Cells(1).Value = dataAttendance.Rows(row).Item("f_name").ToString
                             .Rows(row).Cells(2).Value = dataAttendance.Rows(row).Item("l_name").ToString
 
-                            .Rows(row).Cells(3).Value = dataAttendance.Rows(row).Item("tdate").ToString
-                            .Rows(row).Cells(4).Value = dataAttendance.Rows(row).Item("ttime").ToString
-                            .Rows(row).Cells(5).Value = dataAttendance.Rows(row).Item("status").ToString
+                            .Rows(row).Cells(3).Value = dataAttendance.Rows(row).Item("date").ToString
+                            .Rows(row).Cells(4).Value = dataAttendance.Rows(row).Item("time_in").ToString
+                            .Rows(row).Cells(5).Value = dataAttendance.Rows(row).Item("time_out").ToString
+                            .Rows(row).Cells(6).Value = dataAttendance.Rows(row).Item("total_hours").ToString
 
 
 
@@ -93,7 +95,7 @@ Public Class EmpTimesheet
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
-
+        prcDisplayTimesheet()
 
     End Sub
 
@@ -113,7 +115,6 @@ Public Class EmpTimesheet
         dataAttendance = New DataTable()
         sqlAttendanceAdapter = New MySqlDataAdapter
         command.Connection = conAttendanceSystem
-
 
         Try
             With command
@@ -140,15 +141,10 @@ Public Class EmpTimesheet
                             .Rows(row).Cells(4).Value = dataAttendance.Rows(row).Item("ttime").ToString
                             .Rows(row).Cells(5).Value = dataAttendance.Rows(row).Item("status").ToString
 
-
-
                         End With
                         row = row + 1
                     End While
                 Else
-
-
-
 
                 End If
                 sqlAttendanceAdapter.Dispose()
@@ -158,9 +154,22 @@ Public Class EmpTimesheet
 
         End Try
 
+        Dim total As Integer = 0
+        'For index As Integer = 0 To DataGridView1.RowCount - 1
+        'total -= Convert.ToInt32(DataGridView1.Rows(index).Cells(5).Value)
+        ' Next
+        ' Label3.Text = total
 
     End Sub
+    Private Sub calculateHours()
+        Dim total As Integer
+        Dim dayTotal As Integer
 
+        For index As Integer = 0 To DataGridView1.RowCount - 1
+            ' dayTotal = DataGridView1.Rows(index).Cells[4].Value 
+        Next
+
+    End Sub
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
 
         Dim date1 As String = DateTimePicker1.Value.ToString("yyyy/MM/dd")

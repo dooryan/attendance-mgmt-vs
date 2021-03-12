@@ -193,6 +193,16 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized resource of type System.Drawing.Bitmap.
         '''</summary>
+        Friend ReadOnly Property edit_new_icon_22() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("edit-new-icon-22", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
         Friend ReadOnly Property elegant_white_background_with_shiny_lines_1017_17580() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("elegant-white-background-with-shiny-lines_1017-17580", resourceCulture)

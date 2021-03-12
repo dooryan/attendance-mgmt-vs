@@ -155,7 +155,7 @@ Partial Class adminDashboard
         Me.Panel3.BackColor = System.Drawing.Color.Peru
         Me.Panel3.Controls.Add(Me.Label4)
         Me.Panel3.Controls.Add(Me.lblOntime)
-        Me.Panel3.Location = New System.Drawing.Point(278, 88)
+        Me.Panel3.Location = New System.Drawing.Point(240, 114)
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(165, 121)
         Me.Panel3.TabIndex = 6
@@ -189,7 +189,7 @@ Partial Class adminDashboard
         Me.Panel5.BackColor = System.Drawing.Color.NavajoWhite
         Me.Panel5.Controls.Add(Me.Label8)
         Me.Panel5.Controls.Add(Me.lblTotalEmp)
-        Me.Panel5.Location = New System.Drawing.Point(494, 88)
+        Me.Panel5.Location = New System.Drawing.Point(240, 263)
         Me.Panel5.Name = "Panel5"
         Me.Panel5.Size = New System.Drawing.Size(165, 121)
         Me.Panel5.TabIndex = 9
@@ -234,7 +234,7 @@ Partial Class adminDashboard
         Me.date1.AutoSize = True
         Me.date1.BackColor = System.Drawing.Color.Transparent
         Me.date1.Font = New System.Drawing.Font("Trebuchet MS", 19.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.date1.Location = New System.Drawing.Point(513, 16)
+        Me.date1.Location = New System.Drawing.Point(612, 21)
         Me.date1.Name = "date1"
         Me.date1.Size = New System.Drawing.Size(87, 42)
         Me.date1.TabIndex = 12
@@ -245,7 +245,7 @@ Partial Class adminDashboard
         Me.Panel6.BackColor = System.Drawing.Color.OldLace
         Me.Panel6.Controls.Add(Me.Label3)
         Me.Panel6.Controls.Add(Me.lblLeave)
-        Me.Panel6.Location = New System.Drawing.Point(698, 88)
+        Me.Panel6.Location = New System.Drawing.Point(436, 114)
         Me.Panel6.Name = "Panel6"
         Me.Panel6.Size = New System.Drawing.Size(165, 121)
         Me.Panel6.TabIndex = 13

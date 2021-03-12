@@ -12,8 +12,9 @@ Public Class attendance
 
         Dim user As String = Label1.Text
         Dim dateNow As String = Date.Now.ToString("yyyy/MM/dd")
-        Dim timeNow As String = Date.Now.ToString("HH:ss:ss")
+        Dim timeNow As String = Date.Now.ToString("HH:mm:ss")
         Dim statt As String = "IN"
+        Dim Flag = 0
 
         dataAttendance = New DataTable()
         sqlAttendanceAdapter = New MySqlDataAdapter
@@ -29,6 +30,7 @@ Public Class attendance
                 .Parameters.AddWithValue("uname", user)
                 .Parameters.AddWithValue("stat", statt)
                 .Parameters.AddWithValue("d", dateNow)
+
                 .ExecuteNonQuery()
                 sqlAttendanceAdapter.SelectCommand = command
                 dataAttendance.Clear()
@@ -46,6 +48,7 @@ Public Class attendance
                         .Parameters.AddWithValue("stat", statt)
                         .Parameters.AddWithValue("currTime", timeNow)
                         .Parameters.AddWithValue("currDate", dateNow)
+                        .Parameters.AddWithValue("flag", Flag)
                         .ExecuteNonQuery()
 
                         MessageBox.Show("Time-in successful", "", MessageBoxButtons.OK,
@@ -95,7 +98,7 @@ Public Class attendance
 
         Dim user As String = Label1.Text
         Dim dateNow As String = Date.Now.ToString("yyyy/MM/dd")
-        Dim timeNow As String = Date.Now.ToString("HH:ss:ss")
+        Dim timeNow As String = Date.Now.ToString("HH:mm:ss")
         Dim statt As String = "OUT"
 
         dataAttendance = New DataTable()
@@ -103,7 +106,7 @@ Public Class attendance
         command.Connection = conAttendanceSystem
         Dim com = New MySqlCommand()
         com.Connection = conAttendanceSystem
-
+        Dim Flag = 1
         Try
             With command
                 .Parameters.Clear()
@@ -112,6 +115,7 @@ Public Class attendance
                 .Parameters.AddWithValue("uname", user)
                 .Parameters.AddWithValue("stat", statt)
                 .Parameters.AddWithValue("d", dateNow)
+
                 .ExecuteNonQuery()
                 sqlAttendanceAdapter.SelectCommand = command
                 dataAttendance.Clear()
@@ -129,6 +133,7 @@ Public Class attendance
                         .Parameters.AddWithValue("stat", statt)
                         .Parameters.AddWithValue("currTime", timeNow)
                         .Parameters.AddWithValue("currDate", dateNow)
+                        .Parameters.AddWithValue("flag", Flag)
                         .ExecuteNonQuery()
 
                         MessageBox.Show("Time-out successful", "", MessageBoxButtons.OK,
