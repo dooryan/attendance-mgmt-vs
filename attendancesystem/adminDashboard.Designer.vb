@@ -45,6 +45,7 @@ Partial Class adminDashboard
         Me.Panel6 = New System.Windows.Forms.Panel()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.lblLeave = New System.Windows.Forms.Label()
+        Me.Button7 = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel3.SuspendLayout()
@@ -55,6 +56,7 @@ Partial Class adminDashboard
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.Wheat
+        Me.Panel1.Controls.Add(Me.Button7)
         Me.Panel1.Controls.Add(Me.Button6)
         Me.Panel1.Controls.Add(Me.btnTimesheet)
         Me.Panel1.Controls.Add(Me.Button5)
@@ -92,9 +94,9 @@ Partial Class adminDashboard
         Me.Button5.BackgroundImage = Global.attendancesystem.My.Resources.Resources.free_exit_logout_icon_2857_thumb
         Me.Button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.Button5.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.Button5.Location = New System.Drawing.Point(0, 475)
+        Me.Button5.Location = New System.Drawing.Point(0, 488)
         Me.Button5.Name = "Button5"
-        Me.Button5.Size = New System.Drawing.Size(208, 49)
+        Me.Button5.Size = New System.Drawing.Size(208, 36)
         Me.Button5.TabIndex = 4
         Me.Button5.TextAlign = System.Drawing.ContentAlignment.BottomRight
         Me.Button5.UseVisualStyleBackColor = True
@@ -274,6 +276,16 @@ Partial Class adminDashboard
         Me.lblLeave.TabIndex = 4
         Me.lblLeave.Text = "0"
         '
+        'Button7
+        '
+        Me.Button7.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.Button7.Location = New System.Drawing.Point(0, 432)
+        Me.Button7.Name = "Button7"
+        Me.Button7.Size = New System.Drawing.Size(208, 49)
+        Me.Button7.TabIndex = 7
+        Me.Button7.Text = "Payroll"
+        Me.Button7.UseVisualStyleBackColor = True
+        '
         'adminDashboard
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -325,4 +337,5 @@ Partial Class adminDashboard
     Friend WithEvents lblLeave As Label
     Friend WithEvents btnTimesheet As Button
     Friend WithEvents Button6 As Button
+    Friend WithEvents Button7 As Button
 End Class

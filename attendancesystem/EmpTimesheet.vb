@@ -43,14 +43,12 @@ Public Class EmpTimesheet
                             .Rows(row).Cells(6).Value = dataAttendance.Rows(row).Item("total_hours").ToString
 
 
-
                         End With
                         row = row + 1
                     End While
+
+
                 Else
-
-
-
 
                 End If
                 sqlAttendanceAdapter.Dispose()

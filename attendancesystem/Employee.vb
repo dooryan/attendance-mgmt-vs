@@ -128,16 +128,17 @@ Public Class Form1
 
                             .Rows(row).Cells(0).Value = dataAttendance.Rows(row).Item("id").ToString
                             .Rows(row).Cells(1).Value = dataAttendance.Rows(row).Item("dept_id").ToString
+                            .Rows(row).Cells(2).Value = dataAttendance.Rows(row).Item("name").ToString
 
-                            .Rows(row).Cells(2).Value = dataAttendance.Rows(row).Item("f_name").ToString
-                            .Rows(row).Cells(3).Value = dataAttendance.Rows(row).Item("l_name").ToString
-                            .Rows(row).Cells(4).Value = dataAttendance.Rows(row).Item("address").ToString
+                            .Rows(row).Cells(3).Value = dataAttendance.Rows(row).Item("f_name").ToString
+                            .Rows(row).Cells(4).Value = dataAttendance.Rows(row).Item("l_name").ToString
+                            .Rows(row).Cells(5).Value = dataAttendance.Rows(row).Item("address").ToString
 
-                            .Rows(row).Cells(5).Value = dataAttendance.Rows(row).Item("birthdate").ToString
-                            .Rows(row).Cells(6).Value = dataAttendance.Rows(row).Item("gender").ToString
+                            .Rows(row).Cells(6).Value = dataAttendance.Rows(row).Item("birthdate").ToString
+                            .Rows(row).Cells(7).Value = dataAttendance.Rows(row).Item("gender").ToString
 
-                            .Rows(row).Cells(7).Value = dataAttendance.Rows(row).Item("date_hired").ToString
-                            .Rows(row).Cells(8).Value = dataAttendance.Rows(row).Item("contactno").ToString
+                            .Rows(row).Cells(8).Value = dataAttendance.Rows(row).Item("date_hired").ToString
+                            .Rows(row).Cells(9).Value = dataAttendance.Rows(row).Item("contactno").ToString
 
                         End With
 
@@ -260,16 +261,17 @@ Public Class Form1
                         With DataGridView1
                             .Rows(row).Cells(0).Value = dataAttendance.Rows(row).Item("id").ToString
                             .Rows(row).Cells(1).Value = dataAttendance.Rows(row).Item("dept_id").ToString
+                            .Rows(row).Cells(2).Value = dataAttendance.Rows(row).Item("name").ToString
 
-                            .Rows(row).Cells(2).Value = dataAttendance.Rows(row).Item("f_name").ToString
-                            .Rows(row).Cells(3).Value = dataAttendance.Rows(row).Item("l_name").ToString
-                            .Rows(row).Cells(4).Value = dataAttendance.Rows(row).Item("address").ToString
+                            .Rows(row).Cells(3).Value = dataAttendance.Rows(row).Item("f_name").ToString
+                            .Rows(row).Cells(4).Value = dataAttendance.Rows(row).Item("l_name").ToString
+                            .Rows(row).Cells(5).Value = dataAttendance.Rows(row).Item("address").ToString
 
-                            .Rows(row).Cells(5).Value = dataAttendance.Rows(row).Item("birthdate").ToString
-                            .Rows(row).Cells(6).Value = dataAttendance.Rows(row).Item("gender").ToString
+                            .Rows(row).Cells(6).Value = dataAttendance.Rows(row).Item("birthdate").ToString
+                            .Rows(row).Cells(7).Value = dataAttendance.Rows(row).Item("gender").ToString
 
-                            .Rows(row).Cells(7).Value = dataAttendance.Rows(row).Item("date_hired").ToString
-                            .Rows(row).Cells(8).Value = dataAttendance.Rows(row).Item("contactno").ToString
+                            .Rows(row).Cells(8).Value = dataAttendance.Rows(row).Item("date_hired").ToString
+                            .Rows(row).Cells(9).Value = dataAttendance.Rows(row).Item("contactno").ToString
 
                         End With
 
