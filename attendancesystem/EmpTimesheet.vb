@@ -168,7 +168,7 @@ Public Class EmpTimesheet
         Next
 
     End Sub
-    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+    Private Sub Button3_Click(sender As Object, e As EventArgs)
 
         Dim date1 As String = DateTimePicker1.Value.ToString("yyyy/MM/dd")
         Dim date2 As String = DateTimePicker2.Value.ToString("yyyy/MM/dd")
@@ -180,12 +180,12 @@ Public Class EmpTimesheet
 
         Dim i, j As Integer
 
-        Dim xlApp As Excel.Application
-        Dim xlWorkBook As Excel.Workbook
-        Dim xlWorkSheet As Excel.Worksheet
+        Dim xlApp As EXCEL.Application
+        Dim xlWorkBook As EXCEL.Workbook
+        Dim xlWorkSheet As EXCEL.Worksheet
         Dim misValue As Object = System.Reflection.Missing.Value
 
-        xlApp = New Excel.Application
+        xlApp = New EXCEL.Application
         xlWorkBook = xlApp.Workbooks.Add(misValue)
         xlWorkSheet = xlWorkBook.Sheets("sheet1")
 

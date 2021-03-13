@@ -7,6 +7,39 @@ Public Class payroll
     Private Sub payroll_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         checkDatabaseConnection()
 
+        ComboBox1.Items.Clear()
+
+        Try
+            dataAttendance = New DataTable()
+
+            sqlAttendanceAdapter = New MySqlDataAdapter
+            command.Connection = conAttendanceSystem
+            With command
+                .Parameters.Clear()
+                .CommandText = "prcDisplayEmployeeID"
+                .CommandType = CommandType.StoredProcedure
+                sqlAttendanceAdapter.SelectCommand = command
+                dataAttendance.Clear()
+                sqlAttendanceAdapter.Fill(dataAttendance)
+
+                sqlAttendanceAdapter.Fill(dataAttendance)
+                ComboBox1.DataSource = dataAttendance
+                ComboBox1.DisplayMember = "id"
+                ComboBox1.ValueMember = "id"
+            End With
+
+
+
+
+            'sqlAttendanceAdapter.Dispose()
+            'dataAttendance.Dispose()
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+
+        End Try
+
+
     End Sub
     Private Sub AddPay()
 
@@ -17,7 +50,7 @@ Public Class payroll
         Dim deduct As Decimal = Val(txtCAd.Text) + Val(txtpagibig.Text) + Val(txtPhil.Text) + Val(txtSSS.Text)
         Dim totalpay As Decimal = gross - deduct
         Dim daysperiod As Integer = txtdays.Text
-        Dim id = 1
+        Dim id = ComboBox1.Text
         btnTotalPay.Text = totalpay
 
 
@@ -35,13 +68,11 @@ Public Class payroll
                 .Parameters.AddWithValue("days", daysperiod)
                 .ExecuteNonQuery()
 
-
-
                 MessageBox.Show("Success", "", MessageBoxButtons.OK,
                                 MessageBoxIcon.Information)
 
             End With
-            Me.Dispose()
+
         Catch ex As Exception
             MessageBox.Show("" & ex.Message)
 
@@ -51,134 +82,84 @@ Public Class payroll
 
     End Sub
     Private Sub DisplayPayDetails()
-        'Dim reader As MySqlDataReader
-        dataAttendance = New DataTable()
-        Dim id = 1
-        'sqlAttendanceAdapter = New MySqlDataAdapter
-        'command.Connection = conAttendanceSystem
-        Try
-            With command
-                .Parameters.Clear()
-                .CommandText = "prcDisplayPayDetails"
-                .CommandType = CommandType.StoredProcedure
-                .Parameters.AddWithValue("id", id)
-                .ExecuteReader()
+        Dim DA = New DataTable()
+        Dim sqlAdapter = New MySqlDataAdapter
+        Dim v = ComboBox1.SelectedItem
+        'Dim LogQuery As String = "SELECT USERNAME, PASSWORD, USER_TYPE FROM tbl_user WHERE USERNAME=@USERNAME AND PASSWORD=@PASSWORD "
+        Using con As MySqlConnection = New MySqlConnection("server=localhost;user id=root;password=esperanza;database=db_attendance")
+            Using cmd As MySqlCommand = New MySqlCommand("", con)
 
-                sqlAttendanceAdapter.SelectCommand = command
-                dataAttendance.Clear()
-                sqlAttendanceAdapter.Fill(dataAttendance)
-
-                '   reader = command.ExecuteReader
-
-                'If reader.HasRows Then
-                'reader.Read()
-                'txtperHour.Text = reader("rate_hour")
+                cmd.CommandText = "prcDisplayPayDetails"
+                cmd.CommandType = CommandType.StoredProcedure
+                cmd.Parameters.Clear()
+                cmd.Parameters.AddWithValue("i", ComboBox1.Text)
+                sqlAdapter.SelectCommand = cmd
+                DA.Clear()
+                sqlAdapter.Fill(DA)
 
 
-                'txtPerDay.Text = reader("rate_day")
-                'txtMonth.Text = reader("rate_month")
+                txtperHour.Text = DA(0)(1)
+                txtPerDay.Text = DA(0)(2)
+                txtMonth.Text = DA(0)(3)
 
-                'txtPhil.Text = reader("philhealth")
-                ' txtSSS.Text = reader("sss")
-                '
-                ' txtpagibig.Text = reader("pag-ibig")
+                txtPhil.Text = DA(0)(4)
+                txtSSS.Text = DA(0)(5)
+                txtpagibig.Text = DA(0)(6)
 
-                'Else
-
-                MessageBox.Show("No record found...")
-
-
-
-                '   End If
-
-
-
-                sqlAttendanceAdapter.Dispose()
-                dataAttendance.Dispose()
-            End With
-        Catch ex As Exception
-
-        End Try
+            End Using
+        End Using
 
     End Sub
 
     Private Sub btnFilter_Click(sender As Object, e As EventArgs) Handles btnFilter.Click
-
+        getDaysCount()
+        DisplayPayDetails()
     End Sub
+    Private Sub getDaysCount()
+
+        Dim date1 As String = DateTimePicker1.Value.ToString("yyyy/MM/dd")
+        Dim date2 As String = DateTimePicker2.Value.ToString("yyyy/MM/dd")
+
+        'Dim count As Integer
+        'txtdays.Text = count
+
+        Dim DA = New DataTable()
+        Dim sqlAdapter = New MySqlDataAdapter
+        'Dim cmd = New MySqlCommand
+
+        Dim LogQuery As String = "SELECT USERNAME, PASSWORD, USER_TYPE FROM tbl_user WHERE USERNAME=@USERNAME AND PASSWORD=@PASSWORD "
+        Using con As MySqlConnection = New MySqlConnection("server=localhost;user id=root;password=esperanza;database=db_attendance")
+            Using cmd As MySqlCommand = New MySqlCommand(LogQuery, con)
+
+                cmd.CommandText = "prcFilterSummaryHours"
+                cmd.CommandType = CommandType.StoredProcedure
+                cmd.Parameters.Clear()
+                cmd.Parameters.AddWithValue("date1", date1)
+                cmd.Parameters.AddWithValue("date2", date2)
+                cmd.Parameters.AddWithValue("i", ComboBox1.Text)
+
+                sqlAdapter.SelectCommand = cmd
+                DA.Clear()
+                sqlAdapter.Fill(DA)
 
 
-    Private Sub T()
-        Call fncConnectDatabase()
-        ' sqlAttendanceAdapter = New MySqlDataAdapter
-        dataAttendance = New DataTable
-        'Dim data As New DataSet
-        Try
-            With command
-                .Parameters.Clear()
-                .CommandText = "prcDisplayPayDetails"
-                .CommandType = CommandType.StoredProcedure
-                .Parameters.AddWithValue("i", 1)
 
-                sqlAttendanceAdapter.SelectCommand = command
-                dataAttendance.Clear()
-                sqlAttendanceAdapter.Fill(dataAttendance)
-
-                '  If dataAttendance.Rows.Count > 0 Then
-
-
-                'Dim A = CStr(dataAttendance.Rows().Item("id").ToString)
-                'Label14.Text = dataAttendance.Rows().Item("id").ToString
-
-                ' txtperHour.Text = dataAttendance.Rows().Item("rate_hour").ToString
-                'txtPerDay.Text = dataAttendance.Rows().Item("rate_day").ToString
-                'txtMonth.Text = dataAttendance.Rows().Item("rate_month").ToString
-                'txtPhil.Text = dataAttendance.Rows().Item("philhealth").ToString
-                'txtSSS.Text = dataAttendance.Rows().Item("sss").ToString
-                'txtpagibig.Text = dataAttendance.Rows().Item("pagibig").ToString                Else
-                'MessageBox.Show("Error")
-                ' End If
-                If dataAttendance.Rows.Count > 0 Then
-                    DataGridView1.RowCount = dataAttendance.Rows.Count
-                    row = 0
-                    While Not dataAttendance.Rows.Count - 1 < row
-                        With DataGridView1
-
-                            .Rows(row).Cells(0).Value = dataAttendance.Rows(row).Item("emp_id").ToString
-                            .Rows(row).Cells(1).Value = dataAttendance.Rows(row).Item("rate_hour").ToString
-                            .Rows(row).Cells(2).Value = dataAttendance.Rows(row).Item("rate_day").ToString
-                            .Rows(row).Cells(3).Value = dataAttendance.Rows(row).Item("rate_month").ToString
-                            .Rows(row).Cells(4).Value = dataAttendance.Rows(row).Item("philhealth").ToString
-                            .Rows(row).Cells(5).Value = dataAttendance.Rows(row).Item("sss").ToString
-                            .Rows(row).Cells(6).Value = dataAttendance.Rows(row).Item("pagibig").ToString
-
-                            'Label13.Text = DataGridView1.Rows(0).Cells(0).Value
-                            txtperHour.Text = DataGridView1.Rows(0).Cells(1).Value
-                            txtPerDay.Text = DataGridView1.Rows(0).Cells(2).Value
-                            txtMonth.Text = DataGridView1.Rows(0).Cells(3).Value
-                            txtPhil.Text = DataGridView1.Rows(0).Cells(4).Value
-                            txtSSS.Text = DataGridView1.Rows(0).Cells(5).Value
-                            txtpagibig.Text = DataGridView1.Rows(0).Cells(6).Value
-
-                        End With
-                    End While
+                row = 0
+                If DA IsNot Nothing AndAlso DA.Rows.Count > 0 Then
+                    'some code
+                    txtdays.Text = DA.Rows.Count.ToString
                 Else
-                    MessageBox.Show("Error")
-
-
-
-
+                    'some code
+                    txtdays.Text = "0"
                 End If
 
 
+                'count = dataAttendance.Rows.Count
 
-                sqlAttendanceAdapter.Dispose()
-                dataAttendance.Dispose()
-                ' data.Dispose()
 
-            End With
-        Catch ex As Exception
-            MessageBox.Show("" & ex.Message)
-        End Try
+            End Using
+        End Using
+
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btnCompute.Click
@@ -188,8 +169,8 @@ Public Class payroll
         Dim daysperiod = txtdays
 
         Dim hourly = Val(txtPerDay.Text) / 8
-        txtperHour.Text = hourly
-        txtMonth.Text = Val(txtPerDay.Text) * 20
+        'txtperHour.Text = hourly
+        'txtMonth.Text = Val(txtPerDay.Text) * 20
 
         btnTotalPay.Text = totalpay
 
@@ -200,5 +181,35 @@ Public Class payroll
 
 
 
+    End Sub
+
+    Private Sub ComboBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox1.SelectedIndexChanged
+
+    End Sub
+
+    Private Sub txtName_TextChanged(sender As Object, e As EventArgs) Handles txtName.TextChanged
+
+    End Sub
+
+    Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles Button1.Click
+        Dim DA = New DataTable()
+        Dim sqlAdapter = New MySqlDataAdapter
+        Dim v = ComboBox1.SelectedItem
+        'Dim LogQuery As String = "SELECT USERNAME, PASSWORD, USER_TYPE FROM tbl_user WHERE USERNAME=@USERNAME AND PASSWORD=@PASSWORD "
+        Using con As MySqlConnection = New MySqlConnection("server=localhost;user id=root;password=esperanza;database=db_attendance")
+            Using cmd As MySqlCommand = New MySqlCommand("", con)
+
+                cmd.CommandText = "prcSelectEmpName"
+                cmd.CommandType = CommandType.StoredProcedure
+                cmd.Parameters.Clear()
+                cmd.Parameters.AddWithValue("aydi", ComboBox1.Text)
+                sqlAdapter.SelectCommand = cmd
+                DA.Clear()
+                sqlAdapter.Fill(DA)
+
+                txtName.Text = DA(0)(0)
+
+            End Using
+        End Using
     End Sub
 End Class

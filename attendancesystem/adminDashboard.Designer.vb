@@ -25,6 +25,7 @@ Partial Class adminDashboard
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(adminDashboard))
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Button7 = New System.Windows.Forms.Button()
         Me.Button6 = New System.Windows.Forms.Button()
         Me.btnTimesheet = New System.Windows.Forms.Button()
         Me.Button5 = New System.Windows.Forms.Button()
@@ -45,7 +46,6 @@ Partial Class adminDashboard
         Me.Panel6 = New System.Windows.Forms.Panel()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.lblLeave = New System.Windows.Forms.Label()
-        Me.Button7 = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel3.SuspendLayout()
@@ -69,6 +69,16 @@ Partial Class adminDashboard
         Me.Panel1.Size = New System.Drawing.Size(208, 527)
         Me.Panel1.TabIndex = 0
         '
+        'Button7
+        '
+        Me.Button7.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.Button7.Location = New System.Drawing.Point(0, 432)
+        Me.Button7.Name = "Button7"
+        Me.Button7.Size = New System.Drawing.Size(208, 49)
+        Me.Button7.TabIndex = 7
+        Me.Button7.Text = "Payroll"
+        Me.Button7.UseVisualStyleBackColor = True
+        '
         'Button6
         '
         Me.Button6.FlatStyle = System.Windows.Forms.FlatStyle.Popup
@@ -76,7 +86,7 @@ Partial Class adminDashboard
         Me.Button6.Name = "Button6"
         Me.Button6.Size = New System.Drawing.Size(208, 49)
         Me.Button6.TabIndex = 6
-        Me.Button6.Text = "Generate Report"
+        Me.Button6.Text = "Attendance Records"
         Me.Button6.UseVisualStyleBackColor = True
         '
         'btnTimesheet
@@ -86,7 +96,7 @@ Partial Class adminDashboard
         Me.btnTimesheet.Name = "btnTimesheet"
         Me.btnTimesheet.Size = New System.Drawing.Size(208, 49)
         Me.btnTimesheet.TabIndex = 5
-        Me.btnTimesheet.Text = "Records"
+        Me.btnTimesheet.Text = "Pay Records"
         Me.btnTimesheet.UseVisualStyleBackColor = True
         '
         'Button5
@@ -275,16 +285,6 @@ Partial Class adminDashboard
         Me.lblLeave.Size = New System.Drawing.Size(51, 55)
         Me.lblLeave.TabIndex = 4
         Me.lblLeave.Text = "0"
-        '
-        'Button7
-        '
-        Me.Button7.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.Button7.Location = New System.Drawing.Point(0, 432)
-        Me.Button7.Name = "Button7"
-        Me.Button7.Size = New System.Drawing.Size(208, 49)
-        Me.Button7.TabIndex = 7
-        Me.Button7.Text = "Payroll"
-        Me.Button7.UseVisualStyleBackColor = True
         '
         'adminDashboard
         '
