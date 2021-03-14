@@ -100,7 +100,7 @@ Public Class payroll
 
                 txtperHour.Text = DA(0)(1)
                 txtPerDay.Text = DA(0)(2)
-                txtMonth.Text = DA(0)(3)
+                txtMonth.Text = Val(txtPerDay.Text) * Val(txtdays.Text)
 
                 txtPhil.Text = DA(0)(4)
                 txtSSS.Text = DA(0)(5)
@@ -114,6 +114,27 @@ Public Class payroll
     Private Sub btnFilter_Click(sender As Object, e As EventArgs) Handles btnFilter.Click
         getDaysCount()
         DisplayPayDetails()
+
+        Dim DA = New DataTable()
+        Dim sqlAdapter = New MySqlDataAdapter
+        Dim v = ComboBox1.SelectedItem
+        'Dim LogQuery As String = "SELECT USERNAME, PASSWORD, USER_TYPE FROM tbl_user WHERE USERNAME=@USERNAME AND PASSWORD=@PASSWORD "
+        Using con As MySqlConnection = New MySqlConnection("server=localhost;user id=root;password=esperanza;database=db_attendance")
+            Using cmd As MySqlCommand = New MySqlCommand("", con)
+
+                cmd.CommandText = "prcSelectEmpName"
+                cmd.CommandType = CommandType.StoredProcedure
+                cmd.Parameters.Clear()
+                cmd.Parameters.AddWithValue("aydi", ComboBox1.Text)
+                sqlAdapter.SelectCommand = cmd
+                DA.Clear()
+                sqlAdapter.Fill(DA)
+
+                txtName.Text = DA(0)(0)
+
+            End Using
+        End Using
+
     End Sub
     Private Sub getDaysCount()
 
@@ -191,25 +212,7 @@ Public Class payroll
 
     End Sub
 
-    Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles Button1.Click
-        Dim DA = New DataTable()
-        Dim sqlAdapter = New MySqlDataAdapter
-        Dim v = ComboBox1.SelectedItem
-        'Dim LogQuery As String = "SELECT USERNAME, PASSWORD, USER_TYPE FROM tbl_user WHERE USERNAME=@USERNAME AND PASSWORD=@PASSWORD "
-        Using con As MySqlConnection = New MySqlConnection("server=localhost;user id=root;password=esperanza;database=db_attendance")
-            Using cmd As MySqlCommand = New MySqlCommand("", con)
+    Private Sub Button1_Click_1(sender As Object, e As EventArgs)
 
-                cmd.CommandText = "prcSelectEmpName"
-                cmd.CommandType = CommandType.StoredProcedure
-                cmd.Parameters.Clear()
-                cmd.Parameters.AddWithValue("aydi", ComboBox1.Text)
-                sqlAdapter.SelectCommand = cmd
-                DA.Clear()
-                sqlAdapter.Fill(DA)
-
-                txtName.Text = DA(0)(0)
-
-            End Using
-        End Using
     End Sub
 End Class

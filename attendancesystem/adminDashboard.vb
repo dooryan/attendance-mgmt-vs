@@ -2,7 +2,7 @@
 Public Class adminDashboard
 
     Shared Property adminDashboard As String
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub Button1_Click(sender As Object, e As EventArgs)
 
     End Sub
 
@@ -12,7 +12,7 @@ Public Class adminDashboard
 
         Timer1.Enabled = True
 
-        date1.Text = Date.Now.ToString("MMM dd, yyyy")
+        ffff.Text = Date.Now.ToString("MMM dd, yyyy")
 
         Dim NAMEquery As String = "SELECT * FROM tbl_employee"
         Using NAMEcon As MySqlConnection = New MySqlConnection("server=localhost;user id=root;password=esperanza;database=db_attendance")
@@ -24,10 +24,10 @@ Public Class adminDashboard
                         da.Fill(dt)
 
                         If dt.Rows.Count > 0 Then
-                            lblTotalEmp.Text = dt.Rows.Count()
+                            lblTotalEmp1.Text = dt.Rows.Count()
 
                         Else
-                            lblTotalEmp.Text = ""
+                            lblTotalEmp1.Text = ""
 
                         End If
 
@@ -46,10 +46,10 @@ Public Class adminDashboard
                     Using dt As New DataTable()
                         sda.Fill(dt)
                         If dt.Rows.Count > 0 Then
-                            lblOntime.Text = dt.Rows.Count.ToString()
+                            lblOntime1.Text = dt.Rows.Count.ToString()
 
                         Else
-                            lblOntime.Text = ""
+                            lblOntime1.Text = ""
 
                         End If
                     End Using
@@ -61,61 +61,113 @@ Public Class adminDashboard
 
     End Sub
 
-    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
-        Dim oForm As New Form1
+    Private Sub Button3_Click(sender As Object, e As EventArgs)
 
-        oForm.Show()
-        Me.Hide()
     End Sub
 
     Private Sub Label2_Click(sender As Object, e As EventArgs)
 
     End Sub
 
-    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
+    Private Sub Button4_Click(sender As Object, e As EventArgs)
 
 
         Me.Close()
     End Sub
 
-    Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
+    Private Sub Button5_Click(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub date1_Click(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub btnTimesheet_Click(sender As Object, e As EventArgs)
+
+
+
+    End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub Label4_Click(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub Button6_Click(sender As Object, e As EventArgs)
+
+
+
+    End Sub
+
+    Private Sub lblOntime_Click(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub Button7_Click(sender As Object, e As EventArgs)
+
+
+    End Sub
+
+    Private Sub Button8_Click(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub AddNewUserToolStripMenuItem1_Click(sender As Object, e As EventArgs)
+        Dim oForm As New addUser
+        oForm.Show()
+    End Sub
+
+    Private Sub lblTotalEmp1_Click(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub LogOutToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles LogOutToolStripMenuItem.Click
         Dim oForm As New login
 
         oForm.Show()
         Me.Hide()
     End Sub
 
-    Private Sub date1_Click(sender As Object, e As EventArgs) Handles date1.Click
+    Private Sub ToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem1.Click
 
     End Sub
 
-    Private Sub btnTimesheet_Click(sender As Object, e As EventArgs) Handles btnTimesheet.Click
+    Private Sub btnTimesheet_Click_1(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub PayRecordsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PayRecordsToolStripMenuItem.Click
         AttendanceRecords.Show()
-
-
     End Sub
 
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
-        Dim oForm As New addUser
-        oForm.Show()
-    End Sub
-
-    Private Sub Label4_Click(sender As Object, e As EventArgs) Handles Label4.Click
-
-    End Sub
-
-    Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
+    Private Sub Button6_Click_1(sender As Object, e As EventArgs) Handles Button6.Click
         EmpTimesheet.Show()
-
-
     End Sub
 
-    Private Sub lblOntime_Click(sender As Object, e As EventArgs) Handles lblOntime.Click
-
-    End Sub
-
-    Private Sub Button7_Click(sender As Object, e As EventArgs) Handles Button7.Click
+    Private Sub AddPayToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AddPayToolStripMenuItem.Click
         payroll.Show()
+    End Sub
 
+    Private Sub Button11_Click(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub Button3_Click_1(sender As Object, e As EventArgs) Handles Button3.Click
+        Dim oForm As New Form1
+
+        oForm.Show()
+
+    End Sub
+
+    Private Sub ViewReportsToolStripMenuItem_Click(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub AddNewUserToolStripMenuItem1_Click_1(sender As Object, e As EventArgs) Handles AddNewUserToolStripMenuItem1.Click
+        addUser.Show()
     End Sub
 End Class

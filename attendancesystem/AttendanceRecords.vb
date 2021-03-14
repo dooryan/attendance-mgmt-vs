@@ -2,8 +2,7 @@
 
 Public Class AttendanceRecords
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        Me.Dispose()
+    Private Sub Button1_Click(sender As Object, e As EventArgs)
 
     End Sub
 
@@ -163,5 +162,14 @@ Public Class AttendanceRecords
 
     Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs) Handles TextBox1.TextChanged
         prcDisplayByAutoSearch(TextBox1.Text)
+    End Sub
+
+    Private Sub btnSearch_Click(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs)
+        Me.Dispose()
+
     End Sub
 End Class

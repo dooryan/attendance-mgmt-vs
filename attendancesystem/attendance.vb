@@ -81,7 +81,7 @@ Public Class attendance
         Label2.Text = DateTime.Now.ToLongDateString()
     End Sub
 
-    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+    Private Sub Button3_Click(sender As Object, e As EventArgs)
         Dim oForm As New login
         oForm.Show()
         Me.Dispose()
@@ -199,6 +199,10 @@ Public Class attendance
 
 
 
+
+    End Sub
+
+    Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs)
 
     End Sub
 End Class

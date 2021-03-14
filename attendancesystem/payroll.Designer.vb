@@ -45,21 +45,24 @@ Partial Class payroll
         Me.Label12 = New System.Windows.Forms.Label()
         Me.btnPay = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
+        Me.DateTimePicker2 = New System.Windows.Forms.DateTimePicker()
+        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
         Me.btnFilter = New System.Windows.Forms.Button()
         Me.btnTotalPay = New System.Windows.Forms.TextBox()
         Me.btnCompute = New System.Windows.Forms.Button()
-        Me.DateTimePicker2 = New System.Windows.Forms.DateTimePicker()
-        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.Label13 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
+        Me.Panel2.SuspendLayout()
+        Me.Panel3.SuspendLayout()
         Me.SuspendLayout()
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(24, 14)
+        Me.Label1.Location = New System.Drawing.Point(24, 21)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(87, 17)
         Me.Label1.TabIndex = 0
@@ -68,7 +71,7 @@ Partial Class payroll
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(24, 45)
+        Me.Label2.Location = New System.Drawing.Point(24, 54)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(45, 17)
         Me.Label2.TabIndex = 1
@@ -76,15 +79,15 @@ Partial Class payroll
         '
         'txtName
         '
-        Me.txtName.Location = New System.Drawing.Point(121, 47)
+        Me.txtName.Location = New System.Drawing.Point(121, 54)
         Me.txtName.Name = "txtName"
-        Me.txtName.Size = New System.Drawing.Size(223, 22)
+        Me.txtName.Size = New System.Drawing.Size(144, 22)
         Me.txtName.TabIndex = 4
         '
         'txtperHour
         '
         Me.txtperHour.BackColor = System.Drawing.Color.Snow
-        Me.txtperHour.Location = New System.Drawing.Point(134, 209)
+        Me.txtperHour.Location = New System.Drawing.Point(135, 70)
         Me.txtperHour.Name = "txtperHour"
         Me.txtperHour.Size = New System.Drawing.Size(190, 22)
         Me.txtperHour.TabIndex = 5
@@ -92,7 +95,7 @@ Partial Class payroll
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(36, 209)
+        Me.Label3.Location = New System.Drawing.Point(37, 70)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(53, 17)
         Me.Label3.TabIndex = 6
@@ -101,7 +104,7 @@ Partial Class payroll
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(36, 214)
+        Me.Label4.Location = New System.Drawing.Point(37, 75)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(98, 17)
         Me.Label4.TabIndex = 7
@@ -110,15 +113,15 @@ Partial Class payroll
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(37, 247)
+        Me.Label5.Location = New System.Drawing.Point(13, 93)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(79, 17)
+        Me.Label5.Size = New System.Drawing.Size(0, 17)
         Me.Label5.TabIndex = 9
-        Me.Label5.Text = "Rate Wage"
         '
         'txtMonth
         '
-        Me.txtMonth.Location = New System.Drawing.Point(135, 242)
+        Me.txtMonth.BackColor = System.Drawing.Color.Gainsboro
+        Me.txtMonth.Location = New System.Drawing.Point(135, 141)
         Me.txtMonth.Name = "txtMonth"
         Me.txtMonth.Size = New System.Drawing.Size(190, 22)
         Me.txtMonth.TabIndex = 8
@@ -126,7 +129,7 @@ Partial Class payroll
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(36, 186)
+        Me.Label6.Location = New System.Drawing.Point(37, 47)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(92, 17)
         Me.Label6.TabIndex = 11
@@ -134,8 +137,8 @@ Partial Class payroll
         '
         'txtPerDay
         '
-        Me.txtPerDay.BackColor = System.Drawing.Color.LightCoral
-        Me.txtPerDay.Location = New System.Drawing.Point(134, 181)
+        Me.txtPerDay.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.txtPerDay.Location = New System.Drawing.Point(135, 42)
         Me.txtPerDay.Name = "txtPerDay"
         Me.txtPerDay.Size = New System.Drawing.Size(190, 22)
         Me.txtPerDay.TabIndex = 10
@@ -143,16 +146,16 @@ Partial Class payroll
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(36, 285)
+        Me.Label7.Location = New System.Drawing.Point(53, 105)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(80, 17)
+        Me.Label7.Size = New System.Drawing.Size(76, 17)
         Me.Label7.TabIndex = 12
-        Me.Label7.Text = "No. of days"
+        Me.Label7.Text = "Total Days"
         '
         'txtdays
         '
-        Me.txtdays.BackColor = System.Drawing.Color.LightCoral
-        Me.txtdays.Location = New System.Drawing.Point(134, 280)
+        Me.txtdays.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.txtdays.Location = New System.Drawing.Point(135, 105)
         Me.txtdays.Name = "txtdays"
         Me.txtdays.Size = New System.Drawing.Size(190, 22)
         Me.txtdays.TabIndex = 13
@@ -160,7 +163,7 @@ Partial Class payroll
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(388, 166)
+        Me.Label8.Location = New System.Drawing.Point(15, 3)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(79, 17)
         Me.Label8.TabIndex = 14
@@ -169,7 +172,7 @@ Partial Class payroll
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(434, 195)
+        Me.Label9.Location = New System.Drawing.Point(30, 47)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(99, 17)
         Me.Label9.TabIndex = 15
@@ -178,7 +181,7 @@ Partial Class payroll
         'txtCAd
         '
         Me.txtCAd.BackColor = System.Drawing.Color.LightCoral
-        Me.txtCAd.Location = New System.Drawing.Point(539, 190)
+        Me.txtCAd.Location = New System.Drawing.Point(135, 42)
         Me.txtCAd.Name = "txtCAd"
         Me.txtCAd.Size = New System.Drawing.Size(190, 22)
         Me.txtCAd.TabIndex = 16
@@ -186,7 +189,7 @@ Partial Class payroll
         'txtPhil
         '
         Me.txtPhil.BackColor = System.Drawing.Color.LightCoral
-        Me.txtPhil.Location = New System.Drawing.Point(539, 218)
+        Me.txtPhil.Location = New System.Drawing.Point(135, 70)
         Me.txtPhil.Name = "txtPhil"
         Me.txtPhil.Size = New System.Drawing.Size(190, 22)
         Me.txtPhil.TabIndex = 18
@@ -194,7 +197,7 @@ Partial Class payroll
         'Label10
         '
         Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(444, 223)
+        Me.Label10.Location = New System.Drawing.Point(40, 75)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(70, 17)
         Me.Label10.TabIndex = 17
@@ -203,7 +206,7 @@ Partial Class payroll
         'txtSSS
         '
         Me.txtSSS.BackColor = System.Drawing.Color.LightCoral
-        Me.txtSSS.Location = New System.Drawing.Point(539, 251)
+        Me.txtSSS.Location = New System.Drawing.Point(135, 103)
         Me.txtSSS.Name = "txtSSS"
         Me.txtSSS.Size = New System.Drawing.Size(190, 22)
         Me.txtSSS.TabIndex = 20
@@ -211,7 +214,7 @@ Partial Class payroll
         'Label11
         '
         Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(479, 256)
+        Me.Label11.Location = New System.Drawing.Point(75, 108)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(35, 17)
         Me.Label11.TabIndex = 19
@@ -220,7 +223,7 @@ Partial Class payroll
         'txtpagibig
         '
         Me.txtpagibig.BackColor = System.Drawing.Color.LightCoral
-        Me.txtpagibig.Location = New System.Drawing.Point(539, 279)
+        Me.txtpagibig.Location = New System.Drawing.Point(135, 131)
         Me.txtpagibig.Name = "txtpagibig"
         Me.txtpagibig.Size = New System.Drawing.Size(190, 22)
         Me.txtpagibig.TabIndex = 22
@@ -228,7 +231,7 @@ Partial Class payroll
         'Label12
         '
         Me.Label12.AutoSize = True
-        Me.Label12.Location = New System.Drawing.Point(474, 284)
+        Me.Label12.Location = New System.Drawing.Point(70, 136)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(60, 17)
         Me.Label12.TabIndex = 21
@@ -236,15 +239,17 @@ Partial Class payroll
         '
         'btnPay
         '
-        Me.btnPay.Location = New System.Drawing.Point(599, 354)
+        Me.btnPay.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnPay.Location = New System.Drawing.Point(539, 386)
         Me.btnPay.Name = "btnPay"
-        Me.btnPay.Size = New System.Drawing.Size(130, 51)
+        Me.btnPay.Size = New System.Drawing.Size(198, 51)
         Me.btnPay.TabIndex = 23
         Me.btnPay.Text = "Pay"
         Me.btnPay.UseVisualStyleBackColor = True
         '
         'Panel1
         '
+        Me.Panel1.BackColor = System.Drawing.Color.Linen
         Me.Panel1.Controls.Add(Me.ComboBox1)
         Me.Panel1.Controls.Add(Me.DateTimePicker2)
         Me.Panel1.Controls.Add(Me.DateTimePicker1)
@@ -252,14 +257,41 @@ Partial Class payroll
         Me.Panel1.Controls.Add(Me.txtName)
         Me.Panel1.Controls.Add(Me.Label2)
         Me.Panel1.Controls.Add(Me.Label1)
-        Me.Panel1.Location = New System.Drawing.Point(12, 16)
+        Me.Panel1.Location = New System.Drawing.Point(24, 16)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(757, 89)
+        Me.Panel1.Size = New System.Drawing.Size(713, 96)
         Me.Panel1.TabIndex = 26
+        '
+        'ComboBox1
+        '
+        Me.ComboBox1.FormattingEnabled = True
+        Me.ComboBox1.Location = New System.Drawing.Point(121, 20)
+        Me.ComboBox1.Name = "ComboBox1"
+        Me.ComboBox1.Size = New System.Drawing.Size(109, 24)
+        Me.ComboBox1.TabIndex = 29
+        '
+        'DateTimePicker2
+        '
+        Me.DateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom
+        Me.DateTimePicker2.Location = New System.Drawing.Point(379, 52)
+        Me.DateTimePicker2.Name = "DateTimePicker2"
+        Me.DateTimePicker2.Size = New System.Drawing.Size(196, 22)
+        Me.DateTimePicker2.TabIndex = 28
+        Me.DateTimePicker2.Value = New Date(2021, 3, 11, 0, 0, 0, 0)
+        '
+        'DateTimePicker1
+        '
+        Me.DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom
+        Me.DateTimePicker1.Location = New System.Drawing.Point(379, 19)
+        Me.DateTimePicker1.Name = "DateTimePicker1"
+        Me.DateTimePicker1.Size = New System.Drawing.Size(196, 22)
+        Me.DateTimePicker1.TabIndex = 27
+        Me.DateTimePicker1.Value = New Date(2021, 3, 11, 0, 0, 0, 0)
         '
         'btnFilter
         '
-        Me.btnFilter.Location = New System.Drawing.Point(657, 6)
+        Me.btnFilter.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnFilter.Location = New System.Drawing.Point(610, 15)
         Me.btnFilter.Name = "btnFilter"
         Me.btnFilter.Size = New System.Drawing.Size(87, 61)
         Me.btnFilter.TabIndex = 26
@@ -269,95 +301,88 @@ Partial Class payroll
         'btnTotalPay
         '
         Me.btnTotalPay.Font = New System.Drawing.Font("Microsoft Sans Serif", 19.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnTotalPay.Location = New System.Drawing.Point(39, 335)
+        Me.btnTotalPay.Location = New System.Drawing.Point(385, 309)
         Me.btnTotalPay.Name = "btnTotalPay"
-        Me.btnTotalPay.Size = New System.Drawing.Size(285, 45)
+        Me.btnTotalPay.Size = New System.Drawing.Size(355, 45)
         Me.btnTotalPay.TabIndex = 27
+        Me.btnTotalPay.Text = "Total"
         '
         'btnCompute
         '
-        Me.btnCompute.Location = New System.Drawing.Point(79, 386)
+        Me.btnCompute.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnCompute.Location = New System.Drawing.Point(222, 386)
         Me.btnCompute.Name = "btnCompute"
-        Me.btnCompute.Size = New System.Drawing.Size(190, 40)
+        Me.btnCompute.Size = New System.Drawing.Size(157, 51)
         Me.btnCompute.TabIndex = 32
         Me.btnCompute.Text = "Compute"
         Me.btnCompute.UseVisualStyleBackColor = True
         '
-        'DateTimePicker2
+        'Panel2
         '
-        Me.DateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.DateTimePicker2.Location = New System.Drawing.Point(435, 45)
-        Me.DateTimePicker2.Name = "DateTimePicker2"
-        Me.DateTimePicker2.Size = New System.Drawing.Size(196, 22)
-        Me.DateTimePicker2.TabIndex = 28
-        Me.DateTimePicker2.Value = New Date(2021, 3, 11, 0, 0, 0, 0)
+        Me.Panel2.BackColor = System.Drawing.Color.Linen
+        Me.Panel2.Controls.Add(Me.Label13)
+        Me.Panel2.Controls.Add(Me.txtdays)
+        Me.Panel2.Controls.Add(Me.Label7)
+        Me.Panel2.Controls.Add(Me.Label6)
+        Me.Panel2.Controls.Add(Me.txtPerDay)
+        Me.Panel2.Controls.Add(Me.Label5)
+        Me.Panel2.Controls.Add(Me.txtMonth)
+        Me.Panel2.Controls.Add(Me.Label4)
+        Me.Panel2.Controls.Add(Me.Label3)
+        Me.Panel2.Controls.Add(Me.txtperHour)
+        Me.Panel2.Location = New System.Drawing.Point(24, 125)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(355, 251)
+        Me.Panel2.TabIndex = 33
         '
-        'DateTimePicker1
+        'Panel3
         '
-        Me.DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.DateTimePicker1.Location = New System.Drawing.Point(435, 12)
-        Me.DateTimePicker1.Name = "DateTimePicker1"
-        Me.DateTimePicker1.Size = New System.Drawing.Size(196, 22)
-        Me.DateTimePicker1.TabIndex = 27
-        Me.DateTimePicker1.Value = New Date(2021, 3, 11, 0, 0, 0, 0)
+        Me.Panel3.BackColor = System.Drawing.Color.Linen
+        Me.Panel3.Controls.Add(Me.txtpagibig)
+        Me.Panel3.Controls.Add(Me.Label12)
+        Me.Panel3.Controls.Add(Me.txtSSS)
+        Me.Panel3.Controls.Add(Me.Label11)
+        Me.Panel3.Controls.Add(Me.txtPhil)
+        Me.Panel3.Controls.Add(Me.Label8)
+        Me.Panel3.Controls.Add(Me.Label10)
+        Me.Panel3.Controls.Add(Me.txtCAd)
+        Me.Panel3.Controls.Add(Me.Label9)
+        Me.Panel3.Location = New System.Drawing.Point(385, 125)
+        Me.Panel3.Name = "Panel3"
+        Me.Panel3.Size = New System.Drawing.Size(352, 178)
+        Me.Panel3.TabIndex = 34
         '
-        'ComboBox1
+        'Label13
         '
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(121, 13)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(144, 24)
-        Me.ComboBox1.TabIndex = 29
-        '
-        'Button1
-        '
-        Me.Button1.Location = New System.Drawing.Point(39, 111)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(63, 24)
-        Me.Button1.TabIndex = 33
-        Me.Button1.Text = "Button1"
-        Me.Button1.UseVisualStyleBackColor = True
-        '
-        'TextBox1
-        '
-        Me.TextBox1.Location = New System.Drawing.Point(182, 124)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(86, 22)
-        Me.TextBox1.TabIndex = 34
+        Me.Label13.AutoSize = True
+        Me.Label13.Location = New System.Drawing.Point(49, 144)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(74, 17)
+        Me.Label13.TabIndex = 33
+        Me.Label13.Text = "Gross Pay"
         '
         'payroll
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(773, 449)
-        Me.Controls.Add(Me.TextBox1)
-        Me.Controls.Add(Me.Button1)
+        Me.BackColor = System.Drawing.Color.White
+        Me.ClientSize = New System.Drawing.Size(763, 449)
+        Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.btnCompute)
+        Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.btnTotalPay)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.btnPay)
-        Me.Controls.Add(Me.txtpagibig)
-        Me.Controls.Add(Me.Label12)
-        Me.Controls.Add(Me.txtSSS)
-        Me.Controls.Add(Me.Label11)
-        Me.Controls.Add(Me.txtPhil)
-        Me.Controls.Add(Me.Label10)
-        Me.Controls.Add(Me.txtCAd)
-        Me.Controls.Add(Me.Label9)
-        Me.Controls.Add(Me.Label8)
-        Me.Controls.Add(Me.txtdays)
-        Me.Controls.Add(Me.Label7)
-        Me.Controls.Add(Me.Label6)
-        Me.Controls.Add(Me.txtPerDay)
-        Me.Controls.Add(Me.Label5)
-        Me.Controls.Add(Me.txtMonth)
-        Me.Controls.Add(Me.Label4)
-        Me.Controls.Add(Me.Label3)
-        Me.Controls.Add(Me.txtperHour)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.Name = "payroll"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "  "
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
+        Me.Panel2.ResumeLayout(False)
+        Me.Panel2.PerformLayout()
+        Me.Panel3.ResumeLayout(False)
+        Me.Panel3.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -392,6 +417,7 @@ Partial Class payroll
     Friend WithEvents DateTimePicker2 As DateTimePicker
     Friend WithEvents DateTimePicker1 As DateTimePicker
     Friend WithEvents ComboBox1 As ComboBox
-    Friend WithEvents Button1 As Button
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents Panel2 As Panel
+    Friend WithEvents Label13 As Label
+    Friend WithEvents Panel3 As Panel
 End Class

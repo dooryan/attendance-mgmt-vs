@@ -10,7 +10,51 @@
 
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btn_save.Click
+    Private Sub Button1_Click(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub btn_cancel_Click(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub addEmployee_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        checkDatabaseConnection()
+        F = False
+
+
+
+        Me.Refresh()
+
+    End Sub
+
+    Private Sub Panel2_Paint(sender As Object, e As PaintEventArgs) Handles Panel2.Paint
+
+    End Sub
+
+
+    Public Sub ClearTextBox(ByVal root As Control)
+        For Each ctrl As Control In root.Controls
+            ClearTextBox(ctrl)
+            If TypeOf ctrl Is TextBox Then
+                CType(ctrl, TextBox).Text = String.Empty
+            End If
+        Next ctrl
+
+
+    End Sub
+    Public Sub ClearComboBox(ByVal root As Control)
+        For Each ctrl As Control In root.Controls
+            ClearComboBox(ctrl)
+            If TypeOf ctrl Is ComboBox Then
+                CType(ctrl, ComboBox).Text = String.Empty
+            End If
+        Next ctrl
+
+
+    End Sub
+
+    Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles Button1.Click
 
         Dim date1 As String = dhired.Value.ToString("yyyy/MM/dd")
 
@@ -89,49 +133,10 @@
         ClearTextBox(Me)
     End Sub
 
-    Private Sub btn_cancel_Click(sender As Object, e As EventArgs) Handles btn_cancel.Click
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         ClearComboBox(Me)
         ClearTextBox(Me)
 
         Me.Hide()
     End Sub
-
-    Private Sub addEmployee_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        checkDatabaseConnection()
-        F = False
-
-
-
-        Me.Refresh()
-
-    End Sub
-
-    Private Sub Panel2_Paint(sender As Object, e As PaintEventArgs) Handles Panel2.Paint
-
-    End Sub
-
-
-    Public Sub ClearTextBox(ByVal root As Control)
-        For Each ctrl As Control In root.Controls
-            ClearTextBox(ctrl)
-            If TypeOf ctrl Is TextBox Then
-                CType(ctrl, TextBox).Text = String.Empty
-            End If
-        Next ctrl
-
-
-    End Sub
-    Public Sub ClearComboBox(ByVal root As Control)
-        For Each ctrl As Control In root.Controls
-            ClearComboBox(ctrl)
-            If TypeOf ctrl Is ComboBox Then
-                CType(ctrl, ComboBox).Text = String.Empty
-            End If
-        Next ctrl
-
-
-    End Sub
-
-
-
 End Class

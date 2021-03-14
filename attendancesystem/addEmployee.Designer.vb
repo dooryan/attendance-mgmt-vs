@@ -41,8 +41,8 @@ Partial Class addEmployee
         Me.txtAddress = New System.Windows.Forms.TextBox()
         Me.txtLname = New System.Windows.Forms.TextBox()
         Me.txtFname = New System.Windows.Forms.TextBox()
-        Me.btn_save = New System.Windows.Forms.Button()
-        Me.btn_cancel = New System.Windows.Forms.Button()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.Button2 = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.SuspendLayout()
@@ -145,7 +145,7 @@ Partial Class addEmployee
         '
         'Panel2
         '
-        Me.Panel2.BackColor = System.Drawing.Color.Wheat
+        Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(244, Byte), Integer), CType(CType(185, Byte), Integer), CType(CType(250, Byte), Integer))
         Me.Panel2.Controls.Add(Me.Label9)
         Me.Panel2.Controls.Add(Me.txtContact)
         Me.Panel2.Controls.Add(Me.dhired)
@@ -156,7 +156,7 @@ Partial Class addEmployee
         Me.Panel2.Controls.Add(Me.txtLname)
         Me.Panel2.Controls.Add(Me.txtFname)
         Me.Panel2.Controls.Add(Me.Panel1)
-        Me.Panel2.Location = New System.Drawing.Point(21, 25)
+        Me.Panel2.Location = New System.Drawing.Point(48, 34)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(446, 412)
         Me.Panel2.TabIndex = 7
@@ -235,37 +235,46 @@ Partial Class addEmployee
         Me.txtFname.Size = New System.Drawing.Size(306, 22)
         Me.txtFname.TabIndex = 7
         '
-        'btn_save
+        'Button1
         '
-        Me.btn_save.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btn_save.Location = New System.Drawing.Point(304, 456)
-        Me.btn_save.Name = "btn_save"
-        Me.btn_save.Size = New System.Drawing.Size(72, 25)
-        Me.btn_save.TabIndex = 14
-        Me.btn_save.Text = "Save"
-        Me.btn_save.UseVisualStyleBackColor = True
+        Me.Button1.BackColor = System.Drawing.Color.FromArgb(CType(CType(120, Byte), Integer), CType(CType(76, Byte), Integer), CType(CType(144, Byte), Integer))
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.ForeColor = System.Drawing.Color.White
+        Me.Button1.Location = New System.Drawing.Point(335, 463)
+        Me.Button1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(116, 46)
+        Me.Button1.TabIndex = 16
+        Me.Button1.Text = "Save"
+        Me.Button1.UseVisualStyleBackColor = False
         '
-        'btn_cancel
+        'Button2
         '
-        Me.btn_cancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btn_cancel.Location = New System.Drawing.Point(117, 456)
-        Me.btn_cancel.Name = "btn_cancel"
-        Me.btn_cancel.Size = New System.Drawing.Size(72, 25)
-        Me.btn_cancel.TabIndex = 15
-        Me.btn_cancel.Text = "Cancel"
-        Me.btn_cancel.UseVisualStyleBackColor = True
+        Me.Button2.BackColor = System.Drawing.Color.FromArgb(CType(CType(120, Byte), Integer), CType(CType(76, Byte), Integer), CType(CType(144, Byte), Integer))
+        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button2.ForeColor = System.Drawing.Color.White
+        Me.Button2.Location = New System.Drawing.Point(103, 463)
+        Me.Button2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(116, 46)
+        Me.Button2.TabIndex = 17
+        Me.Button2.Text = "Cancel"
+        Me.Button2.UseVisualStyleBackColor = False
         '
         'addEmployee
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(485, 511)
-        Me.Controls.Add(Me.btn_cancel)
-        Me.Controls.Add(Me.btn_save)
+        Me.ClientSize = New System.Drawing.Size(553, 544)
+        Me.Controls.Add(Me.Button2)
+        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Panel2)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.Name = "addEmployee"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
-        Me.Text = "addEmployee"
+        Me.Text = "Add Employee"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         Me.Panel2.ResumeLayout(False)
@@ -290,9 +299,9 @@ Partial Class addEmployee
     Friend WithEvents txtAddress As TextBox
     Friend WithEvents txtLname As TextBox
     Friend WithEvents txtFname As TextBox
-    Friend WithEvents btn_save As Button
-    Friend WithEvents btn_cancel As Button
     Friend WithEvents Label8 As Label
     Friend WithEvents txtContact As TextBox
     Friend WithEvents Label9 As Label
+    Friend WithEvents Button1 As Button
+    Friend WithEvents Button2 As Button
 End Class

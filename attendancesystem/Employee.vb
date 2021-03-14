@@ -17,8 +17,8 @@ Public Class Form1
 
     End Sub
 
-    Private Sub Button6_Click(sender As Object, e As EventArgs) Handles btnSearch.Click
-        prcDisplayBySearchType(textSearch.Text)
+    Private Sub Button6_Click(sender As Object, e As EventArgs)
+
 
 
     End Sub
@@ -28,11 +28,11 @@ Public Class Form1
 
     End Sub
 
-    Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Panel1.Paint
+    Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs)
 
     End Sub
 
-    Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
+    Private Sub Button5_Click(sender As Object, e As EventArgs)
         Dim oForm As New adminDashboard
 
         oForm.Show()
@@ -40,13 +40,7 @@ Public Class Form1
 
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
-        With addEmployee
-            .ShowDialog()
-            IntOperation = 0
-
-        End With
-        prcDisplayEmployee()
+    Private Sub Button1_Click(sender As Object, e As EventArgs)
 
 
     End Sub
@@ -160,71 +154,19 @@ Public Class Form1
 
     End Sub
 
-    Private Sub DataGridView1_CellContentClick_1(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
+    Private Sub DataGridView1_CellContentClick_1(sender As Object, e As DataGridViewCellEventArgs)
 
 
     End Sub
 
-    Private Sub btnRemove_Click(sender As Object, e As EventArgs) Handles btnRemove.Click
-        Dim num As Integer
+    Private Sub btnRemove_Click(sender As Object, e As EventArgs)
 
-        Try
-            num = MessageBox.Show("Delete data?", "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Warning)
-
-            If num = DialogResult.Yes Then
-                With command
-                    .Parameters.Clear()
-                    .CommandText = "prcDeleteEmployee"
-                    .CommandType = CommandType.StoredProcedure
-                    .Parameters.AddWithValue("emp_id", CInt(DataGridView1.CurrentRow.Cells(0).Value))
-                    .ExecuteNonQuery()
-
-                End With
-            End If
-
-
-
-        Catch ex As Exception
-            MessageBox.Show("" & ex.Message)
-        End Try
-        prcDisplayEmployee()
 
     End Sub
 
-    Private Sub btnUpdate_Click(sender As Object, e As EventArgs) Handles btnUpdate.Click
-
-        With addEmployee
-            IntOperation = 1
-            id = CInt(DataGridView1.CurrentRow.Cells(0).Value.ToString)
-
-            .Label9.Text = DataGridView1.CurrentRow.Cells(0).Value
-
-            .cmbDept.Text = DataGridView1.CurrentRow.Cells(2).Value
-            .txtFname.Text = DataGridView1.CurrentRow.Cells(3).Value
-            .txtLname.Text = DataGridView1.CurrentRow.Cells(4).Value
-            .txtAddress.Text = DataGridView1.CurrentRow.Cells(5).Value
-            .bdate.Value = DataGridView1.CurrentRow.Cells(6).Value
-
-            .cmbGender.Text = DataGridView1.CurrentRow.Cells(7).Value
-            .dhired.Value = DataGridView1.CurrentRow.Cells(8).Value
+    Private Sub btnUpdate_Click(sender As Object, e As EventArgs)
 
 
-            .txtContact.Text = DataGridView1.CurrentRow.Cells(9).Value
-            .ShowDialog()
-
-        End With
-
-        Dim flag As New addEmployee
-        addEmployee.flag = True
-
-        Dim F As New addEmployee
-        addEmployee.F = False
-
-
-
-
-        Me.Refresh()
-        prcDisplayEmployee()
 
     End Sub
 
@@ -295,15 +237,15 @@ Public Class Form1
     End Sub
 
 
-    Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs) Handles textSearch.TextChanged
-        If CheckBox1.Checked = True Then
+    Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs)
+        If chkAuto.Checked = True Then
             prcDisplayByAutoSearch(ComboBox1.Text, textSearch.Text)
         End If
 
     End Sub
 
-    Private Sub CheckBox1_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox1.CheckedChanged
-        If CheckBox1.Checked = True Then
+    Private Sub CheckBox1_CheckedChanged(sender As Object, e As EventArgs)
+        If chkAuto.Checked = True Then
             btnSearch.Enabled = False
             textSearch.Clear()
             textSearch.Enabled = True
@@ -315,7 +257,7 @@ Public Class Form1
         End If
     End Sub
 
-    Private Sub ComboBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox1.SelectedIndexChanged
+    Private Sub ComboBox1_SelectedIndexChanged(sender As Object, e As EventArgs)
         If ComboBox1.Text = "EMPLOYEE ID" Then
             textSearch.Enabled = True
             textSearch.Clear()
@@ -326,6 +268,97 @@ Public Class Form1
             textSearch.Enabled = False
             textSearch.Clear()
 
+
+        End If
+    End Sub
+
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+        With addEmployee
+            .ShowDialog()
+            IntOperation = 0
+
+        End With
+        prcDisplayEmployee()
+
+    End Sub
+
+    Private Sub Button7_Click(sender As Object, e As EventArgs) Handles Button7.Click
+        With addEmployee
+            IntOperation = 1
+            id = CInt(DataGridView1.CurrentRow.Cells(0).Value.ToString)
+
+            .Label9.Text = DataGridView1.CurrentRow.Cells(0).Value
+
+            .cmbDept.Text = DataGridView1.CurrentRow.Cells(2).Value
+            .txtFname.Text = DataGridView1.CurrentRow.Cells(3).Value
+            .txtLname.Text = DataGridView1.CurrentRow.Cells(4).Value
+            .txtAddress.Text = DataGridView1.CurrentRow.Cells(5).Value
+            .bdate.Value = DataGridView1.CurrentRow.Cells(6).Value
+
+            .cmbGender.Text = DataGridView1.CurrentRow.Cells(7).Value
+            .dhired.Value = DataGridView1.CurrentRow.Cells(8).Value
+
+
+            .txtContact.Text = DataGridView1.CurrentRow.Cells(9).Value
+            .ShowDialog()
+
+        End With
+
+        Dim flag As New addEmployee
+        addEmployee.flag = True
+
+        Dim F As New addEmployee
+        addEmployee.F = False
+
+
+
+
+        Me.Refresh()
+        prcDisplayEmployee()
+    End Sub
+
+    Private Sub Button6_Click_1(sender As Object, e As EventArgs) Handles Button6.Click
+        Dim num As Integer
+
+        Try
+            num = MessageBox.Show("Delete data?", "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Warning)
+
+            If num = DialogResult.Yes Then
+                With command
+                    .Parameters.Clear()
+                    .CommandText = "prcDeleteEmployee"
+                    .CommandType = CommandType.StoredProcedure
+                    .Parameters.AddWithValue("emp_id", CInt(DataGridView1.CurrentRow.Cells(0).Value))
+                    .ExecuteNonQuery()
+
+                End With
+            End If
+
+
+
+        Catch ex As Exception
+            MessageBox.Show("" & ex.Message)
+        End Try
+        prcDisplayEmployee()
+    End Sub
+
+    Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles btnSearch.Click
+        prcDisplayBySearchType(textSearch.Text)
+    End Sub
+
+    Private Sub textSearch_TextChanged(sender As Object, e As EventArgs) Handles textSearch.TextChanged
+        If chkAuto.Checked = True Then
+            prcDisplayByAutoSearch(ComboBox1.Text, textSearch.Text)
+        End If
+    End Sub
+
+    Private Sub chkAuto_CheckedChanged(sender As Object, e As EventArgs) Handles chkAuto.CheckedChanged
+        If chkAuto.Checked = True Then
+            btnSearch.Enabled = False
+            textSearch.Clear()
+            textSearch.Enabled = True
+        Else
+            btnSearch.Enabled = True
 
         End If
     End Sub

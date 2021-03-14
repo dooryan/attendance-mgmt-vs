@@ -5,7 +5,7 @@ Imports EXCEL = Microsoft.Office.Interop.Excel
 
 Public Class EmpTimesheet
 
-    Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
+    Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs)
 
 
     End Sub
@@ -97,66 +97,15 @@ Public Class EmpTimesheet
 
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub Button1_Click(sender As Object, e As EventArgs)
         Me.Dispose()
 
     End Sub
 
 
 
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+    Private Sub Button2_Click(sender As Object, e As EventArgs)
 
-        Dim date1 As String = DateTimePicker1.Value.ToString("yyyy/MM/dd")
-
-        Dim date2 As String = DateTimePicker2.Value.ToString("yyyy/MM/dd")
-
-        dataAttendance = New DataTable()
-        sqlAttendanceAdapter = New MySqlDataAdapter
-        command.Connection = conAttendanceSystem
-
-        Try
-            With command
-                .Parameters.Clear()
-                .CommandText = "prcFilterTimesheet"
-                .CommandType = CommandType.StoredProcedure
-                .Parameters.AddWithValue("date1", date1)
-                .Parameters.AddWithValue("date2", date2)
-                .Parameters.AddWithValue("id", ComboBox1.Text)
-                sqlAttendanceAdapter.SelectCommand = command
-                dataAttendance.Clear()
-                sqlAttendanceAdapter.Fill(dataAttendance)
-                If dataAttendance.Rows.Count > 0 Then
-                    DataGridView1.RowCount = dataAttendance.Rows.Count
-
-                    row = 0
-                    While Not dataAttendance.Rows.Count - 1 < row
-                        With DataGridView1
-                            .Rows(row).Cells(0).Value = dataAttendance.Rows(row).Item("id").ToString
-                            .Rows(row).Cells(1).Value = dataAttendance.Rows(row).Item("f_name").ToString
-                            .Rows(row).Cells(2).Value = dataAttendance.Rows(row).Item("l_name").ToString
-
-                            .Rows(row).Cells(3).Value = dataAttendance.Rows(row).Item("tdate").ToString
-                            .Rows(row).Cells(4).Value = dataAttendance.Rows(row).Item("ttime").ToString
-                            .Rows(row).Cells(5).Value = dataAttendance.Rows(row).Item("status").ToString
-
-                        End With
-                        row = row + 1
-                    End While
-                Else
-
-                End If
-                sqlAttendanceAdapter.Dispose()
-                dataAttendance.Dispose()
-            End With
-        Catch ex As Exception
-
-        End Try
-
-        Dim total As Integer = 0
-        'For index As Integer = 0 To DataGridView1.RowCount - 1
-        'total -= Convert.ToInt32(DataGridView1.Rows(index).Cells(5).Value)
-        ' Next
-        ' Label3.Text = total
 
     End Sub
     Private Sub calculateHours()
@@ -240,5 +189,59 @@ Public Class EmpTimesheet
             GC.Collect()
         End Try
     End Sub
+
+    Private Sub Button2_Click_1(sender As Object, e As EventArgs) Handles Button2.Click
+        Dim date1 As String = DateTimePicker1.Value.ToString("yyyy/MM/dd")
+
+        Dim date2 As String = DateTimePicker2.Value.ToString("yyyy/MM/dd")
+
+
+
+
+        Dim DA = New DataTable()
+        Dim sqlAdapter = New MySqlDataAdapter
+        Dim v = ComboBox1.SelectedItem
+        'Dim LogQuery As String = "SELECT USERNAME, PASSWORD, USER_TYPE FROM tbl_user WHERE USERNAME=@USERNAME AND PASSWORD=@PASSWORD "
+        Using con As MySqlConnection = New MySqlConnection("server=localhost;user id=root;password=esperanza;database=db_attendance")
+            Using cmd As MySqlCommand = New MySqlCommand("", con)
+
+                cmd.CommandText = "prcFilterSummaryHours"
+                cmd.CommandType = CommandType.StoredProcedure
+                cmd.Parameters.Clear()
+                cmd.Parameters.AddWithValue("date1", date1)
+                cmd.Parameters.AddWithValue("date2", date2)
+                cmd.Parameters.AddWithValue("i", ComboBox1.Text)
+                sqlAdapter.SelectCommand = cmd
+                DA.Clear()
+                sqlAdapter.Fill(DA)
+
+                If DA.Rows.Count > 0 Then
+                    DataGridView1.RowCount = DA.Rows.Count
+
+                    row = 0
+                    While Not DA.Rows.Count - 1 < row
+                        With DataGridView1
+                            .Rows(row).Cells(0).Value = dataAttendance.Rows(row).Item("id").ToString
+                            .Rows(row).Cells(1).Value = dataAttendance.Rows(row).Item("f_name").ToString
+                            .Rows(row).Cells(2).Value = dataAttendance.Rows(row).Item("l_name").ToString
+
+                            .Rows(row).Cells(3).Value = dataAttendance.Rows(row).Item("date").ToString
+                            .Rows(row).Cells(4).Value = dataAttendance.Rows(row).Item("time_in").ToString
+                            .Rows(row).Cells(5).Value = dataAttendance.Rows(row).Item("time_out").ToString
+                            .Rows(row).Cells(6).Value = dataAttendance.Rows(row).Item("total_hours").ToString
+
+                        End With
+                        row = row + 1
+                    End While
+                Else
+
+                End If
+                DA.Dispose()
+                sqlAdapter.Dispose()
+
+            End Using
+        End Using
+    End Sub
+
 
 End Class
