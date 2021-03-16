@@ -362,4 +362,8 @@ Public Class Form1
 
         End If
     End Sub
+
+    Private Sub DataGridView1_CellContentClick_2(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
+
+    End Sub
 End Class

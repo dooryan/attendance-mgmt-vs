@@ -144,8 +144,8 @@ Public Class adminDashboard
         AttendanceRecords.Show()
     End Sub
 
-    Private Sub Button6_Click_1(sender As Object, e As EventArgs) Handles Button6.Click
-        EmpTimesheet.Show()
+    Private Sub Button6_Click_1(sender As Object, e As EventArgs)
+
     End Sub
 
     Private Sub AddPayToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AddPayToolStripMenuItem.Click
@@ -156,10 +156,8 @@ Public Class adminDashboard
 
     End Sub
 
-    Private Sub Button3_Click_1(sender As Object, e As EventArgs) Handles Button3.Click
-        Dim oForm As New Form1
+    Private Sub Button3_Click_1(sender As Object, e As EventArgs)
 
-        oForm.Show()
 
     End Sub
 
@@ -169,5 +167,19 @@ Public Class adminDashboard
 
     Private Sub AddNewUserToolStripMenuItem1_Click_1(sender As Object, e As EventArgs) Handles AddNewUserToolStripMenuItem1.Click
         addUser.Show()
+    End Sub
+
+    Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles Button1.Click
+        Dim oForm As New Form1
+
+        oForm.Show()
+    End Sub
+
+    Private Sub Button2_Click_1(sender As Object, e As EventArgs) Handles Button2.Click
+        EmpTimesheet.Show()
+    End Sub
+
+    Private Sub ViewUsersToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles ViewUsersToolStripMenuItem1.Click
+        viewUsers.Show()
     End Sub
 End Class

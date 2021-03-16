@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class attendance
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,10 +20,9 @@ Partial Class attendance
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(attendance))
         Me.btnIn = New System.Windows.Forms.Button()
         Me.btnOut = New System.Windows.Forms.Button()
         Me.dgrid_emp_time_history = New System.Windows.Forms.DataGridView()
@@ -35,19 +34,24 @@ Partial Class attendance
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.Button3 = New System.Windows.Forms.Button()
         Me.Label4 = New System.Windows.Forms.Label()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.Panel3 = New System.Windows.Forms.Panel()
         CType(Me.dgrid_emp_time_history, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
+        Me.Panel1.SuspendLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel3.SuspendLayout()
         Me.SuspendLayout()
         '
         'btnIn
         '
-        Me.btnIn.BackColor = System.Drawing.Color.FromArgb(CType(CType(244, Byte), Integer), CType(CType(185, Byte), Integer), CType(CType(250, Byte), Integer))
+        Me.btnIn.BackColor = System.Drawing.Color.SlateGray
         Me.btnIn.BackgroundImage = Global.attendancesystem.My.Resources.Resources._800722
         Me.btnIn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.btnIn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnIn.Location = New System.Drawing.Point(10, 9)
+        Me.btnIn.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnIn.Location = New System.Drawing.Point(18, 18)
         Me.btnIn.Name = "btnIn"
         Me.btnIn.Size = New System.Drawing.Size(242, 102)
         Me.btnIn.TabIndex = 0
@@ -57,11 +61,11 @@ Partial Class attendance
         '
         'btnOut
         '
-        Me.btnOut.BackColor = System.Drawing.Color.FromArgb(CType(CType(244, Byte), Integer), CType(CType(185, Byte), Integer), CType(CType(250, Byte), Integer))
+        Me.btnOut.BackColor = System.Drawing.Color.SlateGray
         Me.btnOut.BackgroundImage = Global.attendancesystem.My.Resources.Resources._1267047
         Me.btnOut.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.btnOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnOut.Location = New System.Drawing.Point(264, 9)
+        Me.btnOut.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnOut.Location = New System.Drawing.Point(272, 18)
         Me.btnOut.Name = "btnOut"
         Me.btnOut.Size = New System.Drawing.Size(242, 102)
         Me.btnOut.TabIndex = 1
@@ -73,10 +77,10 @@ Partial Class attendance
         '
         Me.dgrid_emp_time_history.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.dgrid_emp_time_history.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
-        Me.dgrid_emp_time_history.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(244, Byte), Integer), CType(CType(185, Byte), Integer), CType(CType(250, Byte), Integer))
+        Me.dgrid_emp_time_history.BackgroundColor = System.Drawing.Color.WhiteSmoke
         Me.dgrid_emp_time_history.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgrid_emp_time_history.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.date1, Me.time1, Me.stat})
-        Me.dgrid_emp_time_history.Location = New System.Drawing.Point(10, 123)
+        Me.dgrid_emp_time_history.Location = New System.Drawing.Point(18, 132)
         Me.dgrid_emp_time_history.Name = "dgrid_emp_time_history"
         Me.dgrid_emp_time_history.RowTemplate.Height = 24
         Me.dgrid_emp_time_history.Size = New System.Drawing.Size(496, 200)
@@ -103,20 +107,21 @@ Partial Class attendance
         Me.Label1.BackColor = System.Drawing.Color.Transparent
         Me.Label1.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.Label1.Font = New System.Drawing.Font("Gadugi", 16.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(541, 19)
+        Me.Label1.ForeColor = System.Drawing.Color.DimGray
+        Me.Label1.Location = New System.Drawing.Point(110, 41)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(293, 34)
+        Me.Label1.Size = New System.Drawing.Size(70, 34)
         Me.Label1.TabIndex = 4
-        Me.Label1.Text = "Hello, Employee 234!"
+        Me.Label1.Text = "user"
         '
         'Label2
         '
         Me.Label2.AutoSize = True
         Me.Label2.BackColor = System.Drawing.Color.Transparent
-        Me.Label2.Font = New System.Drawing.Font("Corbel", 25.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(29, 76)
+        Me.Label2.Font = New System.Drawing.Font("Corbel", 22.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(3, 124)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(116, 54)
+        Me.Label2.Size = New System.Drawing.Size(102, 47)
         Me.Label2.TabIndex = 5
         Me.Label2.Text = "Date"
         '
@@ -129,37 +134,24 @@ Partial Class attendance
         Me.Label3.AutoSize = True
         Me.Label3.BackColor = System.Drawing.Color.Transparent
         Me.Label3.Font = New System.Drawing.Font("Corbel", 25.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(61, 184)
+        Me.Label3.Location = New System.Drawing.Point(20, 187)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(119, 54)
+        Me.Label3.Size = New System.Drawing.Size(32, 53)
         Me.Label3.TabIndex = 8
-        Me.Label3.Text = "Time"
+        Me.Label3.Text = " "
         '
         'Panel2
         '
-        Me.Panel2.BackgroundImage = CType(resources.GetObject("Panel2.BackgroundImage"), System.Drawing.Image)
+        Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(246, Byte), Integer), CType(CType(184, Byte), Integer), CType(CType(214, Byte), Integer))
         Me.Panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Panel2.Controls.Add(Me.btnIn)
         Me.Panel2.Controls.Add(Me.btnOut)
         Me.Panel2.Controls.Add(Me.dgrid_emp_time_history)
-        Me.Panel2.Location = New System.Drawing.Point(315, 76)
+        Me.Panel2.Location = New System.Drawing.Point(233, 23)
         Me.Panel2.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(518, 335)
+        Me.Panel2.Size = New System.Drawing.Size(531, 353)
         Me.Panel2.TabIndex = 17
-        '
-        'Button3
-        '
-        Me.Button3.BackColor = System.Drawing.Color.FromArgb(CType(CType(120, Byte), Integer), CType(CType(76, Byte), Integer), CType(CType(144, Byte), Integer))
-        Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.Button3.ForeColor = System.Drawing.Color.White
-        Me.Button3.Location = New System.Drawing.Point(49, 390)
-        Me.Button3.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(171, 32)
-        Me.Button3.TabIndex = 18
-        Me.Button3.Text = "logout"
-        Me.Button3.UseVisualStyleBackColor = False
         '
         'Label4
         '
@@ -167,32 +159,64 @@ Partial Class attendance
         Me.Label4.BackColor = System.Drawing.Color.Transparent
         Me.Label4.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.Label4.Font = New System.Drawing.Font("Gadugi", 16.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(448, 19)
+        Me.Label4.Location = New System.Drawing.Point(23, 41)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(100, 34)
         Me.Label4.TabIndex = 19
         Me.Label4.Text = "Hello, "
         '
+        'Panel1
+        '
+        Me.Panel1.BackColor = System.Drawing.Color.Gray
+        Me.Panel1.Controls.Add(Me.Panel3)
+        Me.Panel1.Location = New System.Drawing.Point(12, 14)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(822, 436)
+        Me.Panel1.TabIndex = 20
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = Global.attendancesystem.My.Resources.Resources.free_exit_logout_icon_2857_thumb
+        Me.PictureBox1.Location = New System.Drawing.Point(35, 332)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(88, 55)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox1.TabIndex = 20
+        Me.PictureBox1.TabStop = False
+        '
+        'Panel3
+        '
+        Me.Panel3.BackColor = System.Drawing.Color.Snow
+        Me.Panel3.Controls.Add(Me.Label1)
+        Me.Panel3.Controls.Add(Me.Label4)
+        Me.Panel3.Controls.Add(Me.PictureBox1)
+        Me.Panel3.Controls.Add(Me.Label2)
+        Me.Panel3.Controls.Add(Me.Label3)
+        Me.Panel3.Controls.Add(Me.Panel2)
+        Me.Panel3.Location = New System.Drawing.Point(22, 18)
+        Me.Panel3.Name = "Panel3"
+        Me.Panel3.Size = New System.Drawing.Size(782, 399)
+        Me.Panel3.TabIndex = 21
+        '
         'attendance
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
-        Me.ClientSize = New System.Drawing.Size(846, 445)
-        Me.Controls.Add(Me.Label3)
-        Me.Controls.Add(Me.Label4)
-        Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.Button3)
-        Me.Controls.Add(Me.Panel2)
-        Me.Controls.Add(Me.Label1)
+        Me.BackColor = System.Drawing.Color.SlateGray
+        Me.ClientSize = New System.Drawing.Size(846, 464)
+        Me.Controls.Add(Me.Panel1)
+        Me.ForeColor = System.Drawing.Color.Black
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.Name = "attendance"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "attendance"
         CType(Me.dgrid_emp_time_history, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel2.ResumeLayout(False)
+        Me.Panel1.ResumeLayout(False)
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel3.ResumeLayout(False)
+        Me.Panel3.PerformLayout()
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
 
@@ -207,6 +231,8 @@ Partial Class attendance
     Friend WithEvents time1 As DataGridViewTextBoxColumn
     Friend WithEvents stat As DataGridViewTextBoxColumn
     Friend WithEvents Panel2 As Panel
-    Friend WithEvents Button3 As Button
     Friend WithEvents Label4 As Label
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents Panel3 As Panel
 End Class

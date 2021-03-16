@@ -205,4 +205,13 @@ Public Class attendance
     Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs)
 
     End Sub
+
+    Private Sub Button3_Click_1(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
+        Me.Dispose()
+        login.Show()
+    End Sub
 End Class

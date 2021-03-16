@@ -26,12 +26,12 @@ Partial Class login
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.PictureBox3 = New System.Windows.Forms.PictureBox()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.btn_login = New System.Windows.Forms.Button()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.txtpassword = New System.Windows.Forms.TextBox()
         Me.txtusername = New System.Windows.Forms.TextBox()
         Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.btn_login = New System.Windows.Forms.Button()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -74,6 +74,20 @@ Partial Class login
         Me.PictureBox2.TabIndex = 2
         Me.PictureBox2.TabStop = False
         '
+        'btn_login
+        '
+        Me.btn_login.BackColor = System.Drawing.Color.FromArgb(CType(CType(107, Byte), Integer), CType(CType(67, Byte), Integer), CType(CType(150, Byte), Integer))
+        Me.btn_login.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btn_login.Font = New System.Drawing.Font("Cambria", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_login.ForeColor = System.Drawing.Color.White
+        Me.btn_login.Location = New System.Drawing.Point(89, 184)
+        Me.btn_login.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btn_login.Name = "btn_login"
+        Me.btn_login.Size = New System.Drawing.Size(207, 46)
+        Me.btn_login.TabIndex = 4
+        Me.btn_login.Text = "Login"
+        Me.btn_login.UseVisualStyleBackColor = False
+        '
         'Label2
         '
         Me.Label2.AutoSize = True
@@ -114,8 +128,7 @@ Partial Class login
         '
         'Panel2
         '
-        Me.Panel2.BackColor = System.Drawing.Color.White
-        Me.Panel2.BackgroundImage = CType(resources.GetObject("Panel2.BackgroundImage"), System.Drawing.Image)
+        Me.Panel2.BackColor = System.Drawing.Color.Gray
         Me.Panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Panel2.Controls.Add(Me.Panel1)
         Me.Panel2.Location = New System.Drawing.Point(374, 43)
@@ -123,20 +136,6 @@ Partial Class login
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(382, 277)
         Me.Panel2.TabIndex = 6
-        '
-        'btn_login
-        '
-        Me.btn_login.BackColor = System.Drawing.Color.FromArgb(CType(CType(107, Byte), Integer), CType(CType(67, Byte), Integer), CType(CType(150, Byte), Integer))
-        Me.btn_login.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btn_login.Font = New System.Drawing.Font("Cambria", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_login.ForeColor = System.Drawing.Color.White
-        Me.btn_login.Location = New System.Drawing.Point(89, 184)
-        Me.btn_login.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.btn_login.Name = "btn_login"
-        Me.btn_login.Size = New System.Drawing.Size(207, 46)
-        Me.btn_login.TabIndex = 4
-        Me.btn_login.Text = "Login"
-        Me.btn_login.UseVisualStyleBackColor = False
         '
         'Label3
         '
@@ -159,7 +158,7 @@ Partial Class login
         Me.ClientSize = New System.Drawing.Size(788, 360)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Panel2)
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.Name = "login"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "login"

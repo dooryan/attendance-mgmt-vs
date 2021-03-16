@@ -42,41 +42,51 @@ Public Class payroll
 
     End Sub
     Private Sub AddPay()
+        Dim mes = MessageBox.Show("Confirm PAY?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+        If mes = vbYes Then
+            Dim petsa = Date.Now.ToString("yyyy/MM/dd")
+            Dim gross As Decimal = Val(txtPerDay.Text) * Val(txtdays.Text)
+            Dim deduct As Decimal = Val(txtCAd.Text) + Val(txtpagibig.Text) + Val(txtPhil.Text) + Val(txtSSS.Text)
+            Dim totalpay As Decimal = gross - deduct
+            Dim daysperiod As Integer = txtdays.Text
+            Dim id = ComboBox1.Text
+            btnTotalPay.Text = totalpay
 
 
+            Try
 
-        Dim petsa = Date.Now.ToString("yyyy/MM/dd")
-        Dim gross As Decimal = Val(txtPerDay.Text) * Val(txtdays.Text)
-        Dim deduct As Decimal = Val(txtCAd.Text) + Val(txtpagibig.Text) + Val(txtPhil.Text) + Val(txtSSS.Text)
-        Dim totalpay As Decimal = gross - deduct
-        Dim daysperiod As Integer = txtdays.Text
-        Dim id = ComboBox1.Text
-        btnTotalPay.Text = totalpay
+                With command
+                    .Parameters.Clear()
+                    .CommandText = "prcInsertPay"
+                    .CommandType = CommandType.StoredProcedure
+                    .Parameters.AddWithValue("i", id)
+                    .Parameters.AddWithValue("date", petsa)
+                    .Parameters.AddWithValue("gpay", gross)
+                    .Parameters.AddWithValue("ttldeduction", deduct)
+                    .Parameters.AddWithValue("ttlpay", totalpay)
+                    .Parameters.AddWithValue("days", daysperiod)
+                    .ExecuteNonQuery()
 
 
-        Try
-
-            With command
-                .Parameters.Clear()
-                .CommandText = "prcInsertPay"
-                .CommandType = CommandType.StoredProcedure
-                .Parameters.AddWithValue("i", id)
-                .Parameters.AddWithValue("date", petsa)
-                .Parameters.AddWithValue("gpay", gross)
-                .Parameters.AddWithValue("ttldeduction", deduct)
-                .Parameters.AddWithValue("ttlpay", totalpay)
-                .Parameters.AddWithValue("days", daysperiod)
-                .ExecuteNonQuery()
-
-                MessageBox.Show("Success", "", MessageBoxButtons.OK,
+                    MessageBox.Show("Success", "Information", MessageBoxButtons.OK,
                                 MessageBoxIcon.Information)
 
-            End With
 
-        Catch ex As Exception
-            MessageBox.Show("" & ex.Message)
+                End With
 
-        End Try
+            Catch ex As Exception
+                MessageBox.Show("" & ex.Message)
+
+            End Try
+        Else
+
+
+
+        End If
+
+
+
+
 
 
 

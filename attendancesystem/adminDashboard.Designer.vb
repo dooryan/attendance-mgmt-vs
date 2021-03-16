@@ -23,18 +23,11 @@ Partial Class adminDashboard
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(adminDashboard))
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.Label15 = New System.Windows.Forms.Label()
         Me.Panel10 = New System.Windows.Forms.Panel()
         Me.Panel9 = New System.Windows.Forms.Panel()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
-        Me.SumifruToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.DToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.AddNewEmployeeToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.Button3 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.TimeSheetToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.Button6 = New System.Windows.Forms.ToolStripMenuItem()
         Me.UserToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AddNewUserToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ViewUsersToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
@@ -61,6 +54,8 @@ Partial Class adminDashboard
         Me.Label14 = New System.Windows.Forms.Label()
         Me.lblLate = New System.Windows.Forms.Label()
         Me.Panel13 = New System.Windows.Forms.Panel()
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.Button9 = New System.Windows.Forms.Button()
         Me.Panel10.SuspendLayout()
         Me.Panel9.SuspendLayout()
@@ -88,11 +83,10 @@ Partial Class adminDashboard
         '
         'Panel10
         '
-        Me.Panel10.BackColor = System.Drawing.Color.Transparent
-        Me.Panel10.BackgroundImage = CType(resources.GetObject("Panel10.BackgroundImage"), System.Drawing.Image)
+        Me.Panel10.BackColor = System.Drawing.Color.Gray
         Me.Panel10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Panel10.Controls.Add(Me.Panel9)
-        Me.Panel10.Location = New System.Drawing.Point(54, 91)
+        Me.Panel10.Location = New System.Drawing.Point(13, 13)
         Me.Panel10.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel10.Name = "Panel10"
         Me.Panel10.Size = New System.Drawing.Size(1012, 528)
@@ -116,112 +110,68 @@ Partial Class adminDashboard
         Me.MenuStrip1.BackColor = System.Drawing.Color.White
         Me.MenuStrip1.Dock = System.Windows.Forms.DockStyle.None
         Me.MenuStrip1.ImageScalingSize = New System.Drawing.Size(20, 20)
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SumifruToolStripMenuItem, Me.DToolStripMenuItem, Me.TimeSheetToolStripMenuItem, Me.UserToolStripMenuItem, Me.ToolStripMenuItem1, Me.LogOutToolStripMenuItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.UserToolStripMenuItem, Me.ToolStripMenuItem1, Me.LogOutToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 1)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Padding = New System.Windows.Forms.Padding(8, 2, 0, 2)
         Me.MenuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional
-        Me.MenuStrip1.Size = New System.Drawing.Size(631, 30)
+        Me.MenuStrip1.Size = New System.Drawing.Size(347, 32)
         Me.MenuStrip1.TabIndex = 32
         Me.MenuStrip1.Text = "MenuStrip1"
-        '
-        'SumifruToolStripMenuItem
-        '
-        Me.SumifruToolStripMenuItem.Font = New System.Drawing.Font("Cambria", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.SumifruToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(CType(CType(74, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(139, Byte), Integer))
-        Me.SumifruToolStripMenuItem.Name = "SumifruToolStripMenuItem"
-        Me.SumifruToolStripMenuItem.Size = New System.Drawing.Size(69, 26)
-        Me.SumifruToolStripMenuItem.Text = "Menu"
-        '
-        'DToolStripMenuItem
-        '
-        Me.DToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AddNewEmployeeToolStripMenuItem1, Me.Button3})
-        Me.DToolStripMenuItem.Font = New System.Drawing.Font("Cambria", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.DToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(CType(CType(74, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(139, Byte), Integer))
-        Me.DToolStripMenuItem.Name = "DToolStripMenuItem"
-        Me.DToolStripMenuItem.Size = New System.Drawing.Size(115, 26)
-        Me.DToolStripMenuItem.Text = "Employees "
-        '
-        'AddNewEmployeeToolStripMenuItem1
-        '
-        Me.AddNewEmployeeToolStripMenuItem1.Name = "AddNewEmployeeToolStripMenuItem1"
-        Me.AddNewEmployeeToolStripMenuItem1.Size = New System.Drawing.Size(250, 26)
-        Me.AddNewEmployeeToolStripMenuItem1.Text = "Add New Employee"
-        '
-        'Button3
-        '
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(250, 26)
-        Me.Button3.Text = "View Employee"
-        '
-        'TimeSheetToolStripMenuItem
-        '
-        Me.TimeSheetToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.Button6})
-        Me.TimeSheetToolStripMenuItem.Font = New System.Drawing.Font("Cambria", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TimeSheetToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(CType(CType(74, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(139, Byte), Integer))
-        Me.TimeSheetToolStripMenuItem.Name = "TimeSheetToolStripMenuItem"
-        Me.TimeSheetToolStripMenuItem.Size = New System.Drawing.Size(110, 26)
-        Me.TimeSheetToolStripMenuItem.Text = "Time Sheet"
-        '
-        'Button6
-        '
-        Me.Button6.Name = "Button6"
-        Me.Button6.Size = New System.Drawing.Size(259, 26)
-        Me.Button6.Text = "Employee TimeSheet"
         '
         'UserToolStripMenuItem
         '
         Me.UserToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AddNewUserToolStripMenuItem1, Me.ViewUsersToolStripMenuItem1})
-        Me.UserToolStripMenuItem.Font = New System.Drawing.Font("Cambria", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.UserToolStripMenuItem.Font = New System.Drawing.Font("Trebuchet MS", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.UserToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(CType(CType(74, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(139, Byte), Integer))
         Me.UserToolStripMenuItem.Name = "UserToolStripMenuItem"
-        Me.UserToolStripMenuItem.Size = New System.Drawing.Size(163, 26)
+        Me.UserToolStripMenuItem.Size = New System.Drawing.Size(167, 28)
         Me.UserToolStripMenuItem.Text = "Manage Accounts"
         '
         'AddNewUserToolStripMenuItem1
         '
         Me.AddNewUserToolStripMenuItem1.Name = "AddNewUserToolStripMenuItem1"
-        Me.AddNewUserToolStripMenuItem1.Size = New System.Drawing.Size(204, 26)
+        Me.AddNewUserToolStripMenuItem1.Size = New System.Drawing.Size(203, 28)
         Me.AddNewUserToolStripMenuItem1.Text = "Add new User"
         '
         'ViewUsersToolStripMenuItem1
         '
         Me.ViewUsersToolStripMenuItem1.Name = "ViewUsersToolStripMenuItem1"
-        Me.ViewUsersToolStripMenuItem1.Size = New System.Drawing.Size(204, 26)
+        Me.ViewUsersToolStripMenuItem1.Size = New System.Drawing.Size(203, 28)
         Me.ViewUsersToolStripMenuItem1.Text = "View Users"
         '
         'ToolStripMenuItem1
         '
         Me.ToolStripMenuItem1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AddPayToolStripMenuItem, Me.PayRecordsToolStripMenuItem})
-        Me.ToolStripMenuItem1.Font = New System.Drawing.Font("Cambria", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ToolStripMenuItem1.Font = New System.Drawing.Font("Trebuchet MS", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ToolStripMenuItem1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(74, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(139, Byte), Integer))
         Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
-        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(80, 26)
+        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(81, 28)
         Me.ToolStripMenuItem1.Text = "Payroll"
         '
         'AddPayToolStripMenuItem
         '
         Me.AddPayToolStripMenuItem.Name = "AddPayToolStripMenuItem"
-        Me.AddPayToolStripMenuItem.Size = New System.Drawing.Size(190, 26)
+        Me.AddPayToolStripMenuItem.Size = New System.Drawing.Size(188, 28)
         Me.AddPayToolStripMenuItem.Text = "Add Pay"
         '
         'PayRecordsToolStripMenuItem
         '
         Me.PayRecordsToolStripMenuItem.Name = "PayRecordsToolStripMenuItem"
-        Me.PayRecordsToolStripMenuItem.Size = New System.Drawing.Size(190, 26)
+        Me.PayRecordsToolStripMenuItem.Size = New System.Drawing.Size(188, 28)
         Me.PayRecordsToolStripMenuItem.Text = "Pay Records"
         '
         'LogOutToolStripMenuItem
         '
-        Me.LogOutToolStripMenuItem.Font = New System.Drawing.Font("Cambria", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LogOutToolStripMenuItem.Font = New System.Drawing.Font("Trebuchet MS", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LogOutToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(CType(CType(74, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(139, Byte), Integer))
         Me.LogOutToolStripMenuItem.Name = "LogOutToolStripMenuItem"
-        Me.LogOutToolStripMenuItem.Size = New System.Drawing.Size(84, 26)
+        Me.LogOutToolStripMenuItem.Size = New System.Drawing.Size(89, 28)
         Me.LogOutToolStripMenuItem.Text = "Log Out"
         '
         'Panel8
         '
-        Me.Panel8.BackColor = System.Drawing.Color.White
+        Me.Panel8.BackColor = System.Drawing.Color.Tan
         Me.Panel8.Controls.Add(Me.Label2)
         Me.Panel8.Controls.Add(Me.Panel2)
         Me.Panel8.Controls.Add(Me.ffff)
@@ -229,21 +179,21 @@ Partial Class adminDashboard
         Me.Panel8.Controls.Add(Me.Panel7)
         Me.Panel8.Controls.Add(Me.Panel11)
         Me.Panel8.Controls.Add(Me.Panel12)
-        Me.Panel8.Location = New System.Drawing.Point(184, 36)
+        Me.Panel8.Location = New System.Drawing.Point(236, 36)
         Me.Panel8.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel8.Name = "Panel8"
-        Me.Panel8.Size = New System.Drawing.Size(797, 450)
+        Me.Panel8.Size = New System.Drawing.Size(724, 429)
         Me.Panel8.TabIndex = 7
         '
         'Label2
         '
         Me.Label2.AutoSize = True
         Me.Label2.BackColor = System.Drawing.Color.Transparent
-        Me.Label2.Font = New System.Drawing.Font("Cambria", 27.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Font = New System.Drawing.Font("Trebuchet MS", 28.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(107, Byte), Integer), CType(CType(67, Byte), Integer), CType(CType(150, Byte), Integer))
-        Me.Label2.Location = New System.Drawing.Point(316, 39)
+        Me.Label2.Location = New System.Drawing.Point(295, 39)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(401, 55)
+        Me.Label2.Size = New System.Drawing.Size(423, 61)
         Me.Label2.TabIndex = 15
         Me.Label2.Text = "Welcome, Admin!"
         '
@@ -253,21 +203,21 @@ Partial Class adminDashboard
         Me.Panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Panel2.Controls.Add(Me.Label5)
         Me.Panel2.Controls.Add(Me.lblTotalEmp1)
-        Me.Panel2.Location = New System.Drawing.Point(517, 230)
+        Me.Panel2.Location = New System.Drawing.Point(425, 245)
         Me.Panel2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(221, 114)
+        Me.Panel2.Size = New System.Drawing.Size(284, 120)
         Me.Panel2.TabIndex = 19
         '
         'Label5
         '
         Me.Label5.AutoSize = True
         Me.Label5.BackColor = System.Drawing.Color.Transparent
-        Me.Label5.Font = New System.Drawing.Font("Cambria", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Font = New System.Drawing.Font("Trebuchet MS", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.ForeColor = System.Drawing.Color.White
-        Me.Label5.Location = New System.Drawing.Point(3, 85)
+        Me.Label5.Location = New System.Drawing.Point(112, 79)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(164, 22)
+        Me.Label5.Size = New System.Drawing.Size(171, 24)
         Me.Label5.TabIndex = 5
         Me.Label5.Text = "TOTAL Employees"
         '
@@ -278,7 +228,7 @@ Partial Class adminDashboard
         Me.lblTotalEmp1.CausesValidation = False
         Me.lblTotalEmp1.Font = New System.Drawing.Font("Microsoft Sans Serif", 28.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblTotalEmp1.ForeColor = System.Drawing.Color.White
-        Me.lblTotalEmp1.Location = New System.Drawing.Point(3, 14)
+        Me.lblTotalEmp1.Location = New System.Drawing.Point(225, 14)
         Me.lblTotalEmp1.Name = "lblTotalEmp1"
         Me.lblTotalEmp1.Size = New System.Drawing.Size(51, 55)
         Me.lblTotalEmp1.TabIndex = 4
@@ -288,11 +238,11 @@ Partial Class adminDashboard
         '
         Me.ffff.AutoSize = True
         Me.ffff.BackColor = System.Drawing.Color.Transparent
-        Me.ffff.Font = New System.Drawing.Font("Cambria", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ffff.Font = New System.Drawing.Font("Trebuchet MS", 13.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ffff.ForeColor = System.Drawing.Color.PaleVioletRed
         Me.ffff.Location = New System.Drawing.Point(449, 7)
         Me.ffff.Name = "ffff"
-        Me.ffff.Size = New System.Drawing.Size(61, 28)
+        Me.ffff.Size = New System.Drawing.Size(64, 29)
         Me.ffff.TabIndex = 21
         Me.ffff.Text = "date"
         '
@@ -302,7 +252,7 @@ Partial Class adminDashboard
         Me.Panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Panel4.Controls.Add(Me.Label9)
         Me.Panel4.Controls.Add(Me.Label10)
-        Me.Panel4.Location = New System.Drawing.Point(564, 107)
+        Me.Panel4.Location = New System.Drawing.Point(535, 107)
         Me.Panel4.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Panel4.Name = "Panel4"
         Me.Panel4.Size = New System.Drawing.Size(171, 114)
@@ -311,11 +261,11 @@ Partial Class adminDashboard
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Font = New System.Drawing.Font("Cambria", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.Font = New System.Drawing.Font("Trebuchet MS", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label9.ForeColor = System.Drawing.Color.FromArgb(CType(CType(40, Byte), Integer), CType(CType(52, Byte), Integer), CType(CType(59, Byte), Integer))
         Me.Label9.Location = New System.Drawing.Point(27, 84)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(95, 22)
+        Me.Label9.Size = New System.Drawing.Size(98, 24)
         Me.Label9.TabIndex = 5
         Me.Label9.Text = "On-LEAVE"
         '
@@ -338,7 +288,7 @@ Partial Class adminDashboard
         Me.Panel7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Panel7.Controls.Add(Me.Label11)
         Me.Panel7.Controls.Add(Me.lblAbsent)
-        Me.Panel7.Location = New System.Drawing.Point(217, 107)
+        Me.Panel7.Location = New System.Drawing.Point(188, 107)
         Me.Panel7.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Panel7.Name = "Panel7"
         Me.Panel7.Size = New System.Drawing.Size(163, 114)
@@ -348,11 +298,11 @@ Partial Class adminDashboard
         '
         Me.Label11.AutoSize = True
         Me.Label11.BackColor = System.Drawing.Color.Transparent
-        Me.Label11.Font = New System.Drawing.Font("Cambria", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label11.Font = New System.Drawing.Font("Trebuchet MS", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label11.ForeColor = System.Drawing.Color.FromArgb(CType(CType(40, Byte), Integer), CType(CType(52, Byte), Integer), CType(CType(59, Byte), Integer))
         Me.Label11.Location = New System.Drawing.Point(27, 84)
         Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(80, 22)
+        Me.Label11.Size = New System.Drawing.Size(79, 24)
         Me.Label11.TabIndex = 5
         Me.Label11.Text = "ABSENT"
         '
@@ -376,7 +326,7 @@ Partial Class adminDashboard
         Me.Panel11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Panel11.Controls.Add(Me.Label12)
         Me.Panel11.Controls.Add(Me.lblOntime1)
-        Me.Panel11.Location = New System.Drawing.Point(47, 107)
+        Me.Panel11.Location = New System.Drawing.Point(18, 107)
         Me.Panel11.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Panel11.Name = "Panel11"
         Me.Panel11.Size = New System.Drawing.Size(165, 114)
@@ -386,11 +336,11 @@ Partial Class adminDashboard
         '
         Me.Label12.AutoSize = True
         Me.Label12.BackColor = System.Drawing.Color.Transparent
-        Me.Label12.Font = New System.Drawing.Font("Cambria", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label12.Font = New System.Drawing.Font("Trebuchet MS", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label12.ForeColor = System.Drawing.Color.FromArgb(CType(CType(40, Byte), Integer), CType(CType(52, Byte), Integer), CType(CType(59, Byte), Integer))
         Me.Label12.Location = New System.Drawing.Point(23, 84)
         Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(86, 22)
+        Me.Label12.Size = New System.Drawing.Size(84, 24)
         Me.Label12.TabIndex = 5
         Me.Label12.Text = "ON TIME"
         '
@@ -413,7 +363,7 @@ Partial Class adminDashboard
         Me.Panel12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Panel12.Controls.Add(Me.Label14)
         Me.Panel12.Controls.Add(Me.lblLate)
-        Me.Panel12.Location = New System.Drawing.Point(387, 107)
+        Me.Panel12.Location = New System.Drawing.Point(358, 107)
         Me.Panel12.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Panel12.Name = "Panel12"
         Me.Panel12.Size = New System.Drawing.Size(171, 114)
@@ -423,11 +373,11 @@ Partial Class adminDashboard
         '
         Me.Label14.AutoSize = True
         Me.Label14.BackColor = System.Drawing.Color.Transparent
-        Me.Label14.Font = New System.Drawing.Font("Cambria", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label14.Font = New System.Drawing.Font("Trebuchet MS", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label14.ForeColor = System.Drawing.Color.FromArgb(CType(CType(40, Byte), Integer), CType(CType(52, Byte), Integer), CType(CType(59, Byte), Integer))
         Me.Label14.Location = New System.Drawing.Point(27, 84)
         Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(53, 22)
+        Me.Label14.Size = New System.Drawing.Size(56, 24)
         Me.Label14.TabIndex = 5
         Me.Label14.Text = "LATE"
         '
@@ -446,24 +396,54 @@ Partial Class adminDashboard
         '
         'Panel13
         '
-        Me.Panel13.BackColor = System.Drawing.Color.FromArgb(CType(CType(244, Byte), Integer), CType(CType(185, Byte), Integer), CType(CType(250, Byte), Integer))
+        Me.Panel13.BackColor = System.Drawing.Color.Tan
+        Me.Panel13.Controls.Add(Me.Button2)
+        Me.Panel13.Controls.Add(Me.Button1)
         Me.Panel13.Controls.Add(Me.Button9)
-        Me.Panel13.Location = New System.Drawing.Point(0, 36)
+        Me.Panel13.Location = New System.Drawing.Point(11, 100)
         Me.Panel13.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel13.Name = "Panel13"
-        Me.Panel13.Size = New System.Drawing.Size(185, 450)
+        Me.Panel13.Size = New System.Drawing.Size(215, 301)
         Me.Panel13.TabIndex = 23
+        '
+        'Button2
+        '
+        Me.Button2.BackColor = System.Drawing.Color.Gray
+        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.Button2.Font = New System.Drawing.Font("Trebuchet MS", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button2.ForeColor = System.Drawing.Color.Wheat
+        Me.Button2.Location = New System.Drawing.Point(9, 199)
+        Me.Button2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(197, 86)
+        Me.Button2.TabIndex = 28
+        Me.Button2.Text = "Daily Records"
+        Me.Button2.UseVisualStyleBackColor = False
+        '
+        'Button1
+        '
+        Me.Button1.BackColor = System.Drawing.Color.Gray
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.Button1.Font = New System.Drawing.Font("Trebuchet MS", 13.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.ForeColor = System.Drawing.Color.Wheat
+        Me.Button1.Location = New System.Drawing.Point(9, 106)
+        Me.Button1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(197, 86)
+        Me.Button1.TabIndex = 27
+        Me.Button1.Text = "Employees"
+        Me.Button1.UseVisualStyleBackColor = False
         '
         'Button9
         '
-        Me.Button9.BackColor = System.Drawing.Color.FromArgb(CType(CType(120, Byte), Integer), CType(CType(76, Byte), Integer), CType(CType(144, Byte), Integer))
+        Me.Button9.BackColor = System.Drawing.Color.Gray
         Me.Button9.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.Button9.Font = New System.Drawing.Font("Cambria", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button9.ForeColor = System.Drawing.Color.White
-        Me.Button9.Location = New System.Drawing.Point(17, 133)
+        Me.Button9.Font = New System.Drawing.Font("Trebuchet MS", 13.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button9.ForeColor = System.Drawing.Color.Wheat
+        Me.Button9.Location = New System.Drawing.Point(9, 13)
         Me.Button9.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Button9.Name = "Button9"
-        Me.Button9.Size = New System.Drawing.Size(160, 49)
+        Me.Button9.Size = New System.Drawing.Size(197, 86)
         Me.Button9.TabIndex = 26
         Me.Button9.Text = "Dashboard"
         Me.Button9.UseVisualStyleBackColor = False
@@ -472,8 +452,8 @@ Partial Class adminDashboard
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
-        Me.ClientSize = New System.Drawing.Size(1139, 700)
+        Me.BackColor = System.Drawing.Color.SlateGray
+        Me.ClientSize = New System.Drawing.Size(1034, 550)
         Me.Controls.Add(Me.Panel10)
         Me.Controls.Add(Me.Label15)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
@@ -507,12 +487,6 @@ Partial Class adminDashboard
     Friend WithEvents Panel10 As Panel
     Friend WithEvents Panel9 As Panel
     Friend WithEvents MenuStrip1 As MenuStrip
-    Friend WithEvents SumifruToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents DToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents AddNewEmployeeToolStripMenuItem1 As ToolStripMenuItem
-    Friend WithEvents Button3 As ToolStripMenuItem
-    Friend WithEvents TimeSheetToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents Button6 As ToolStripMenuItem
     Friend WithEvents UserToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ToolStripMenuItem1 As ToolStripMenuItem
     Friend WithEvents AddPayToolStripMenuItem As ToolStripMenuItem
@@ -540,4 +514,6 @@ Partial Class adminDashboard
     Friend WithEvents Button9 As Button
     Friend WithEvents AddNewUserToolStripMenuItem1 As ToolStripMenuItem
     Friend WithEvents ViewUsersToolStripMenuItem1 As ToolStripMenuItem
+    Friend WithEvents Button1 As Button
+    Friend WithEvents Button2 As Button
 End Class

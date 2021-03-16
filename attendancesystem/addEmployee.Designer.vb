@@ -156,7 +156,7 @@ Partial Class addEmployee
         Me.Panel2.Controls.Add(Me.txtLname)
         Me.Panel2.Controls.Add(Me.txtFname)
         Me.Panel2.Controls.Add(Me.Panel1)
-        Me.Panel2.Location = New System.Drawing.Point(48, 34)
+        Me.Panel2.Location = New System.Drawing.Point(12, 24)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(446, 412)
         Me.Panel2.TabIndex = 7
@@ -241,10 +241,10 @@ Partial Class addEmployee
         Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button1.ForeColor = System.Drawing.Color.White
-        Me.Button1.Location = New System.Drawing.Point(335, 463)
+        Me.Button1.Location = New System.Drawing.Point(12, 441)
         Me.Button1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(116, 46)
+        Me.Button1.Size = New System.Drawing.Size(228, 46)
         Me.Button1.TabIndex = 16
         Me.Button1.Text = "Save"
         Me.Button1.UseVisualStyleBackColor = False
@@ -255,10 +255,10 @@ Partial Class addEmployee
         Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button2.ForeColor = System.Drawing.Color.White
-        Me.Button2.Location = New System.Drawing.Point(103, 463)
+        Me.Button2.Location = New System.Drawing.Point(246, 441)
         Me.Button2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(116, 46)
+        Me.Button2.Size = New System.Drawing.Size(212, 46)
         Me.Button2.TabIndex = 17
         Me.Button2.Text = "Cancel"
         Me.Button2.UseVisualStyleBackColor = False
@@ -267,7 +267,7 @@ Partial Class addEmployee
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(553, 544)
+        Me.ClientSize = New System.Drawing.Size(468, 498)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Panel2)
