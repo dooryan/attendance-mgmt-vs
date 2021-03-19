@@ -49,9 +49,9 @@ Partial Class login
         Me.Panel1.Controls.Add(Me.Label1)
         Me.Panel1.Controls.Add(Me.txtpassword)
         Me.Panel1.Controls.Add(Me.txtusername)
-        Me.Panel1.Location = New System.Drawing.Point(13, 15)
+        Me.Panel1.Location = New System.Drawing.Point(23, 21)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(356, 250)
+        Me.Panel1.Size = New System.Drawing.Size(356, 257)
         Me.Panel1.TabIndex = 1
         '
         'PictureBox3
@@ -131,22 +131,22 @@ Partial Class login
         Me.Panel2.BackColor = System.Drawing.Color.Gray
         Me.Panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Panel2.Controls.Add(Me.Panel1)
-        Me.Panel2.Location = New System.Drawing.Point(374, 43)
+        Me.Panel2.Location = New System.Drawing.Point(353, 29)
         Me.Panel2.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(382, 277)
+        Me.Panel2.Size = New System.Drawing.Size(403, 300)
         Me.Panel2.TabIndex = 6
         '
         'Label3
         '
         Me.Label3.AutoSize = True
         Me.Label3.BackColor = System.Drawing.Color.Transparent
-        Me.Label3.Font = New System.Drawing.Font("Elephant", 36.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Font = New System.Drawing.Font("Trebuchet MS", 48.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.White
-        Me.Label3.Location = New System.Drawing.Point(31, 127)
+        Me.Label3.Location = New System.Drawing.Point(29, 103)
         Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(316, 80)
+        Me.Label3.Size = New System.Drawing.Size(297, 100)
         Me.Label3.TabIndex = 7
         Me.Label3.Text = "LEMCO"
         '
@@ -154,14 +154,16 @@ Partial Class login
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.Color.Tan
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
-        Me.ClientSize = New System.Drawing.Size(788, 360)
+        Me.ClientSize = New System.Drawing.Size(777, 360)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Panel2)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.Name = "login"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "login"
+        Me.Text = "Login"
+        Me.TransparencyKey = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()

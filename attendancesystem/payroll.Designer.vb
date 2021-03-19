@@ -22,6 +22,7 @@ Partial Class payroll
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(payroll))
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.txtName = New System.Windows.Forms.TextBox()
@@ -97,6 +98,7 @@ Partial Class payroll
         Me.txtperHour.Name = "txtperHour"
         Me.txtperHour.Size = New System.Drawing.Size(257, 45)
         Me.txtperHour.TabIndex = 5
+        Me.txtperHour.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'Label3
         '
@@ -135,6 +137,7 @@ Partial Class payroll
         Me.txtMonth.Name = "txtMonth"
         Me.txtMonth.Size = New System.Drawing.Size(257, 45)
         Me.txtMonth.TabIndex = 8
+        Me.txtMonth.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'Label6
         '
@@ -155,6 +158,7 @@ Partial Class payroll
         Me.txtPerDay.Name = "txtPerDay"
         Me.txtPerDay.Size = New System.Drawing.Size(257, 45)
         Me.txtPerDay.TabIndex = 10
+        Me.txtPerDay.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'Label7
         '
@@ -175,6 +179,7 @@ Partial Class payroll
         Me.txtdays.Name = "txtdays"
         Me.txtdays.Size = New System.Drawing.Size(257, 45)
         Me.txtdays.TabIndex = 13
+        Me.txtdays.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'Label9
         '
@@ -194,6 +199,7 @@ Partial Class payroll
         Me.txtCAd.Name = "txtCAd"
         Me.txtCAd.Size = New System.Drawing.Size(205, 45)
         Me.txtCAd.TabIndex = 16
+        Me.txtCAd.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'txtPhil
         '
@@ -203,6 +209,7 @@ Partial Class payroll
         Me.txtPhil.Name = "txtPhil"
         Me.txtPhil.Size = New System.Drawing.Size(205, 45)
         Me.txtPhil.TabIndex = 18
+        Me.txtPhil.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'Label10
         '
@@ -222,6 +229,7 @@ Partial Class payroll
         Me.txtSSS.Name = "txtSSS"
         Me.txtSSS.Size = New System.Drawing.Size(205, 45)
         Me.txtSSS.TabIndex = 20
+        Me.txtSSS.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'Label11
         '
@@ -241,6 +249,7 @@ Partial Class payroll
         Me.txtpagibig.Name = "txtpagibig"
         Me.txtpagibig.Size = New System.Drawing.Size(205, 45)
         Me.txtpagibig.TabIndex = 22
+        Me.txtpagibig.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'Label12
         '
@@ -255,6 +264,7 @@ Partial Class payroll
         'btnPay
         '
         Me.btnPay.BackColor = System.Drawing.Color.Tomato
+        Me.btnPay.BackgroundImage = CType(resources.GetObject("btnPay.BackgroundImage"), System.Drawing.Image)
         Me.btnPay.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnPay.Location = New System.Drawing.Point(13, 383)
         Me.btnPay.Name = "btnPay"
@@ -266,6 +276,7 @@ Partial Class payroll
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.Wheat
+        Me.Panel1.BackgroundImage = CType(resources.GetObject("Panel1.BackgroundImage"), System.Drawing.Image)
         Me.Panel1.Controls.Add(Me.ComboBox1)
         Me.Panel1.Controls.Add(Me.DateTimePicker2)
         Me.Panel1.Controls.Add(Me.DateTimePicker1)
@@ -328,11 +339,13 @@ Partial Class payroll
         Me.btnTotalPay.Size = New System.Drawing.Size(363, 100)
         Me.btnTotalPay.TabIndex = 27
         Me.btnTotalPay.Text = "Total"
+        Me.btnTotalPay.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'btnCompute
         '
         Me.btnCompute.BackColor = System.Drawing.Color.Tan
         Me.btnCompute.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnCompute.Image = CType(resources.GetObject("btnCompute.Image"), System.Drawing.Image)
         Me.btnCompute.Location = New System.Drawing.Point(13, 329)
         Me.btnCompute.Name = "btnCompute"
         Me.btnCompute.Size = New System.Drawing.Size(410, 48)
@@ -404,6 +417,7 @@ Partial Class payroll
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.SlateGray
+        Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.ClientSize = New System.Drawing.Size(827, 465)
         Me.Controls.Add(Me.Panel4)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow

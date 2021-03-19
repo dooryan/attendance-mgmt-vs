@@ -200,7 +200,7 @@ Public Class EmpTimesheet
 
         Dim DA = New DataTable()
         Dim sqlAdapter = New MySqlDataAdapter
-        Dim v = ComboBox1.SelectedItem
+        'Dim v = ComboBox1.SelectedItem
         'Dim LogQuery As String = "SELECT USERNAME, PASSWORD, USER_TYPE FROM tbl_user WHERE USERNAME=@USERNAME AND PASSWORD=@PASSWORD "
         Using con As MySqlConnection = New MySqlConnection("server=localhost;user id=root;password=esperanza;database=db_attendance")
             Using cmd As MySqlCommand = New MySqlCommand("", con)
@@ -221,14 +221,14 @@ Public Class EmpTimesheet
                     row = 0
                     While Not DA.Rows.Count - 1 < row
                         With DataGridView1
-                            .Rows(row).Cells(0).Value = dataAttendance.Rows(row).Item("id").ToString
-                            .Rows(row).Cells(1).Value = dataAttendance.Rows(row).Item("f_name").ToString
-                            .Rows(row).Cells(2).Value = dataAttendance.Rows(row).Item("l_name").ToString
+                            .Rows(row).Cells(0).Value = DA.Rows(row).Item("id").ToString
+                            .Rows(row).Cells(1).Value = DA.Rows(row).Item("f_name").ToString
+                            .Rows(row).Cells(2).Value = DA.Rows(row).Item("l_name").ToString
 
-                            .Rows(row).Cells(3).Value = dataAttendance.Rows(row).Item("date").ToString
-                            .Rows(row).Cells(4).Value = dataAttendance.Rows(row).Item("time_in").ToString
-                            .Rows(row).Cells(5).Value = dataAttendance.Rows(row).Item("time_out").ToString
-                            .Rows(row).Cells(6).Value = dataAttendance.Rows(row).Item("total_hours").ToString
+                            .Rows(row).Cells(3).Value = DA.Rows(row).Item("date").ToString
+                            .Rows(row).Cells(4).Value = DA.Rows(row).Item("time_in").ToString
+                            .Rows(row).Cells(5).Value = DA.Rows(row).Item("time_out").ToString
+                            .Rows(row).Cells(6).Value = DA.Rows(row).Item("total_hours").ToString
 
                         End With
                         row = row + 1
@@ -243,5 +243,7 @@ Public Class EmpTimesheet
         End Using
     End Sub
 
+    Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Panel1.Paint
 
+    End Sub
 End Class

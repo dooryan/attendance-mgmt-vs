@@ -2,6 +2,7 @@
 Public Class adminDashboard
 
     Shared Property adminDashboard As String
+
     Private Sub Button1_Click(sender As Object, e As EventArgs)
 
     End Sub
@@ -46,10 +47,10 @@ Public Class adminDashboard
                     Using dt As New DataTable()
                         sda.Fill(dt)
                         If dt.Rows.Count > 0 Then
-                            lblOntime1.Text = dt.Rows.Count.ToString()
+                            lblpresent.Text = dt.Rows.Count.ToString()
 
                         Else
-                            lblOntime1.Text = ""
+                            lblpresent.Text = "0"
 
                         End If
                     End Using
@@ -57,6 +58,55 @@ Public Class adminDashboard
             End Using
         End Using
 
+
+
+        Using q As MySqlConnection = New MySqlConnection("server=localhost;user id=root;password=esperanza;database=db_attendance")
+            Using cmd As MySqlCommand = New MySqlCommand("", q)
+
+                cmd.CommandText = "prc_late"
+                cmd.CommandType = CommandType.StoredProcedure
+                cmd.Parameters.Clear()
+                cmd.Parameters.AddWithValue("datenow", Date.Now.ToString("yyyy/MM/dd"))
+                Using s As New MySqlDataAdapter()
+                    s.SelectCommand = cmd
+                    Using d As New DataTable()
+                        s.Fill(d)
+                        If d.Rows.Count > 0 Then
+                            lblLate.Text = d.Rows.Count.ToString()
+
+                        Else
+                            lblLate.Text = "0"
+
+                        End If
+
+                    End Using
+                End Using
+            End Using
+        End Using
+
+        Using q As MySqlConnection = New MySqlConnection("server=localhost;user id=root;password=esperanza;database=db_attendance")
+            Using cmd As MySqlCommand = New MySqlCommand("", q)
+
+                cmd.CommandText = "prc_ontime"
+                cmd.CommandType = CommandType.StoredProcedure
+                cmd.Parameters.Clear()
+                cmd.Parameters.AddWithValue("datenow", Date.Now.ToString("yyyy/MM/dd"))
+                Using s As New MySqlDataAdapter()
+                    s.SelectCommand = cmd
+                    Using d As New DataTable()
+                        s.Fill(d)
+                        If d.Rows.Count > 0 Then
+                            lblontime.Text = d.Rows.Count.ToString()
+
+                        Else
+                            lblontime.Text = "0"
+
+                        End If
+
+                    End Using
+                End Using
+            End Using
+        End Using
 
 
     End Sub
@@ -181,5 +231,20 @@ Public Class adminDashboard
 
     Private Sub ViewUsersToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles ViewUsersToolStripMenuItem1.Click
         viewUsers.Show()
+    End Sub
+
+    Private Sub lblLate_Click(sender As Object, e As EventArgs) Handles lblLate.Click
+
+        dailystat.fla = "late"
+        dailystat.Show()
+    End Sub
+
+    Private Sub lblontime_Click_1(sender As Object, e As EventArgs) Handles lblontime.Click
+        dailystat.fla = "ontime"
+        dailystat.Show()
+    End Sub
+
+    Private Sub lblTotalEmp1_Click_1(sender As Object, e As EventArgs) Handles lblTotalEmp1.Click
+        Form1.Show()
     End Sub
 End Class

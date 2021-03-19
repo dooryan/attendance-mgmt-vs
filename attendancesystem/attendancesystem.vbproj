@@ -105,6 +105,12 @@
     <Compile Include="AttendanceRecords.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="dailystat.Designer.vb">
+      <DependentUpon>dailystat.vb</DependentUpon>
+    </Compile>
+    <Compile Include="dailystat.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Employee.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -147,10 +153,10 @@
     <Compile Include="payroll.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="timesheet.Designer.vb">
-      <DependentUpon>timesheet.vb</DependentUpon>
+    <Compile Include="daily_status.Designer.vb">
+      <DependentUpon>daily_status.vb</DependentUpon>
     </Compile>
-    <Compile Include="timesheet.vb">
+    <Compile Include="daily_status.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="viewUsers.Designer.vb">
@@ -176,6 +182,9 @@
     <EmbeddedResource Include="AttendanceRecords.resx">
       <DependentUpon>AttendanceRecords.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="dailystat.resx">
+      <DependentUpon>dailystat.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Employee.resx">
       <DependentUpon>Employee.vb</DependentUpon>
     </EmbeddedResource>
@@ -193,6 +202,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="payroll.resx">
       <DependentUpon>payroll.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="daily_status.resx">
+      <DependentUpon>daily_status.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="viewUsers.resx">
       <DependentUpon>viewUsers.vb</DependentUpon>

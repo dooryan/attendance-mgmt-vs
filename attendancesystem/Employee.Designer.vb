@@ -23,16 +23,14 @@ Partial Class Form1
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.BackgroundWorker1 = New System.ComponentModel.BackgroundWorker()
         Me.DirectorySearcher1 = New System.DirectoryServices.DirectorySearcher()
         Me.DirectorySearcher2 = New System.DirectoryServices.DirectorySearcher()
         Me.chkAuto = New System.Windows.Forms.CheckBox()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.textSearch = New System.Windows.Forms.TextBox()
         Me.btnSearch = New System.Windows.Forms.Button()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Panel7 = New System.Windows.Forms.Panel()
@@ -40,25 +38,27 @@ Partial Class Form1
         Me.Button3 = New System.Windows.Forms.Button()
         Me.Button6 = New System.Windows.Forms.Button()
         Me.Button7 = New System.Windows.Forms.Button()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.id1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.deptID = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.deptnsme = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.fname = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.lname = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.addr = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.bdate = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.gendr = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.dhired = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.cont = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.textSearch = New System.Windows.Forms.TextBox()
+        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
+        Me.cont = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.dhired = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.gendr = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.bdate = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.addr = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.lname = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.fname = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.deptnsme = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.deptID = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.id1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.Panel7.SuspendLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.Panel3.SuspendLayout()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'DirectorySearcher1
@@ -89,17 +89,6 @@ Partial Class Form1
         Me.chkAuto.Text = "AutoComplete"
         Me.chkAuto.UseVisualStyleBackColor = False
         '
-        'ComboBox1
-        '
-        Me.ComboBox1.BackColor = System.Drawing.Color.White
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Items.AddRange(New Object() {"EMPLOYEE ID", "EMPLOYEE NAME"})
-        Me.ComboBox1.Location = New System.Drawing.Point(184, 48)
-        Me.ComboBox1.Margin = New System.Windows.Forms.Padding(4)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(255, 24)
-        Me.ComboBox1.TabIndex = 6
-        '
         'Label3
         '
         Me.Label3.AutoSize = True
@@ -111,15 +100,6 @@ Partial Class Form1
         Me.Label3.Size = New System.Drawing.Size(161, 24)
         Me.Label3.TabIndex = 3
         Me.Label3.Text = "Search Employee:"
-        '
-        'textSearch
-        '
-        Me.textSearch.BackColor = System.Drawing.Color.White
-        Me.textSearch.Location = New System.Drawing.Point(184, 16)
-        Me.textSearch.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.textSearch.Name = "textSearch"
-        Me.textSearch.Size = New System.Drawing.Size(255, 22)
-        Me.textSearch.TabIndex = 2
         '
         'btnSearch
         '
@@ -215,110 +195,27 @@ Partial Class Form1
         Me.Button7.TabIndex = 1
         Me.Button7.UseVisualStyleBackColor = False
         '
-        'DataGridView1
-        '
-        Me.DataGridView1.BackgroundColor = System.Drawing.Color.WhiteSmoke
-        Me.DataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.id1, Me.deptID, Me.deptnsme, Me.fname, Me.lname, Me.addr, Me.bdate, Me.gendr, Me.dhired, Me.cont})
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DataGridView1.DefaultCellStyle = DataGridViewCellStyle1
-        Me.DataGridView1.GridColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.DataGridView1.Location = New System.Drawing.Point(28, 104)
-        Me.DataGridView1.Name = "DataGridView1"
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridView1.RowHeadersDefaultCellStyle = DataGridViewCellStyle2
-        DataGridViewCellStyle3.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.White
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White
-        Me.DataGridView1.RowsDefaultCellStyle = DataGridViewCellStyle3
-        Me.DataGridView1.RowTemplate.Height = 24
-        Me.DataGridView1.Size = New System.Drawing.Size(608, 353)
-        Me.DataGridView1.TabIndex = 40
-        '
-        'id1
-        '
-        Me.id1.HeaderText = "ID"
-        Me.id1.Name = "id1"
-        '
-        'deptID
-        '
-        Me.deptID.HeaderText = "Dept ID"
-        Me.deptID.Name = "deptID"
-        '
-        'deptnsme
-        '
-        Me.deptnsme.HeaderText = "Department Name"
-        Me.deptnsme.Name = "deptnsme"
-        '
-        'fname
-        '
-        Me.fname.HeaderText = "First Name"
-        Me.fname.Name = "fname"
-        '
-        'lname
-        '
-        Me.lname.HeaderText = "Last Name"
-        Me.lname.Name = "lname"
-        '
-        'addr
-        '
-        Me.addr.HeaderText = "Address"
-        Me.addr.Name = "addr"
-        '
-        'bdate
-        '
-        Me.bdate.HeaderText = "Birthdate"
-        Me.bdate.Name = "bdate"
-        '
-        'gendr
-        '
-        Me.gendr.HeaderText = "Gender"
-        Me.gendr.Name = "gendr"
-        '
-        'dhired
-        '
-        Me.dhired.HeaderText = "Date Hired"
-        Me.dhired.Name = "dhired"
-        '
-        'cont
-        '
-        Me.cont.HeaderText = "Contact No."
-        Me.cont.Name = "cont"
-        '
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.Gray
         Me.Panel1.Controls.Add(Me.Panel2)
         Me.Panel1.Location = New System.Drawing.Point(12, 12)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(940, 493)
+        Me.Panel1.Size = New System.Drawing.Size(940, 507)
         Me.Panel1.TabIndex = 41
         '
         'Panel2
         '
-        Me.Panel2.BackColor = System.Drawing.Color.Tan
+        Me.Panel2.BackColor = System.Drawing.Color.White
+        Me.Panel2.Controls.Add(Me.ComboBox1)
+        Me.Panel2.Controls.Add(Me.textSearch)
         Me.Panel2.Controls.Add(Me.Panel3)
         Me.Panel2.Controls.Add(Me.DataGridView1)
         Me.Panel2.Controls.Add(Me.chkAuto)
         Me.Panel2.Controls.Add(Me.Label3)
-        Me.Panel2.Controls.Add(Me.ComboBox1)
         Me.Panel2.Controls.Add(Me.Label4)
         Me.Panel2.Controls.Add(Me.btnSearch)
-        Me.Panel2.Controls.Add(Me.textSearch)
-        Me.Panel2.Location = New System.Drawing.Point(16, 18)
+        Me.Panel2.Location = New System.Drawing.Point(16, 16)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(909, 474)
         Me.Panel2.TabIndex = 41
@@ -332,25 +229,136 @@ Partial Class Form1
         Me.Panel3.Size = New System.Drawing.Size(257, 353)
         Me.Panel3.TabIndex = 41
         '
+        'textSearch
+        '
+        Me.textSearch.Location = New System.Drawing.Point(184, 14)
+        Me.textSearch.Name = "textSearch"
+        Me.textSearch.Size = New System.Drawing.Size(255, 22)
+        Me.textSearch.TabIndex = 42
+        '
+        'ComboBox1
+        '
+        Me.ComboBox1.FormattingEnabled = True
+        Me.ComboBox1.Items.AddRange(New Object() {"EMPLOYEE ID", "EMPLOYEE NAME"})
+        Me.ComboBox1.Location = New System.Drawing.Point(184, 48)
+        Me.ComboBox1.Name = "ComboBox1"
+        Me.ComboBox1.Size = New System.Drawing.Size(256, 24)
+        Me.ComboBox1.TabIndex = 43
+        '
+        'cont
+        '
+        Me.cont.HeaderText = "Contact No."
+        Me.cont.Name = "cont"
+        Me.cont.ReadOnly = True
+        '
+        'dhired
+        '
+        Me.dhired.HeaderText = "Date Hired"
+        Me.dhired.Name = "dhired"
+        Me.dhired.ReadOnly = True
+        '
+        'gendr
+        '
+        Me.gendr.HeaderText = "Gender"
+        Me.gendr.Name = "gendr"
+        Me.gendr.ReadOnly = True
+        '
+        'bdate
+        '
+        Me.bdate.HeaderText = "Birthdate"
+        Me.bdate.Name = "bdate"
+        Me.bdate.ReadOnly = True
+        '
+        'addr
+        '
+        Me.addr.HeaderText = "Address"
+        Me.addr.Name = "addr"
+        Me.addr.ReadOnly = True
+        '
+        'lname
+        '
+        Me.lname.HeaderText = "Last Name"
+        Me.lname.Name = "lname"
+        Me.lname.ReadOnly = True
+        '
+        'fname
+        '
+        Me.fname.HeaderText = "First Name"
+        Me.fname.Name = "fname"
+        Me.fname.ReadOnly = True
+        '
+        'deptnsme
+        '
+        Me.deptnsme.HeaderText = "Department Name"
+        Me.deptnsme.Name = "deptnsme"
+        Me.deptnsme.ReadOnly = True
+        '
+        'deptID
+        '
+        Me.deptID.HeaderText = "Dept ID"
+        Me.deptID.Name = "deptID"
+        Me.deptID.ReadOnly = True
+        '
+        'id1
+        '
+        Me.id1.HeaderText = "ID"
+        Me.id1.Name = "id1"
+        Me.id1.ReadOnly = True
+        '
+        'DataGridView1
+        '
+        Me.DataGridView1.BackgroundColor = System.Drawing.Color.Tan
+        Me.DataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.id1, Me.deptID, Me.deptnsme, Me.fname, Me.lname, Me.addr, Me.bdate, Me.gendr, Me.dhired, Me.cont})
+        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle7.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle7.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DataGridView1.DefaultCellStyle = DataGridViewCellStyle7
+        Me.DataGridView1.GridColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.DataGridView1.Location = New System.Drawing.Point(28, 109)
+        Me.DataGridView1.Name = "DataGridView1"
+        Me.DataGridView1.ReadOnly = True
+        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle8.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle8.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridView1.RowHeadersDefaultCellStyle = DataGridViewCellStyle8
+        DataGridViewCellStyle9.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.White
+        DataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.White
+        Me.DataGridView1.RowsDefaultCellStyle = DataGridViewCellStyle9
+        Me.DataGridView1.RowTemplate.Height = 24
+        Me.DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect
+        Me.DataGridView1.Size = New System.Drawing.Size(608, 353)
+        Me.DataGridView1.TabIndex = 40
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.SlateGray
-        Me.ClientSize = New System.Drawing.Size(964, 517)
+        Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
+        Me.ClientSize = New System.Drawing.Size(964, 534)
         Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.Location = New System.Drawing.Point(184, 36)
         Me.Name = "Form1"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Employees"
-        Me.TransparencyKey = System.Drawing.Color.White
         Me.Panel7.ResumeLayout(False)
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
         Me.Panel3.ResumeLayout(False)
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -363,11 +371,14 @@ Partial Class Form1
     Friend WithEvents Button6 As Button
     Friend WithEvents Button7 As Button
     Friend WithEvents chkAuto As CheckBox
-    Friend WithEvents ComboBox1 As ComboBox
     Friend WithEvents Label3 As Label
-    Friend WithEvents textSearch As TextBox
     Friend WithEvents btnSearch As Button
     Friend WithEvents Label4 As Label
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents Panel2 As Panel
+    Friend WithEvents Panel3 As Panel
+    Friend WithEvents ComboBox1 As ComboBox
+    Friend WithEvents textSearch As TextBox
     Friend WithEvents DataGridView1 As DataGridView
     Friend WithEvents id1 As DataGridViewTextBoxColumn
     Friend WithEvents deptID As DataGridViewTextBoxColumn
@@ -379,7 +390,4 @@ Partial Class Form1
     Friend WithEvents gendr As DataGridViewTextBoxColumn
     Friend WithEvents dhired As DataGridViewTextBoxColumn
     Friend WithEvents cont As DataGridViewTextBoxColumn
-    Friend WithEvents Panel1 As Panel
-    Friend WithEvents Panel2 As Panel
-    Friend WithEvents Panel3 As Panel
 End Class

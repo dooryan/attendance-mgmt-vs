@@ -79,7 +79,7 @@ Public Class login
         End If
 
 
-
+        Me.Hide()
 
 
     End Sub

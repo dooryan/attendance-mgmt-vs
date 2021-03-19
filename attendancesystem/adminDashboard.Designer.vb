@@ -23,6 +23,7 @@ Partial Class adminDashboard
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(adminDashboard))
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.Label15 = New System.Windows.Forms.Label()
         Me.Panel10 = New System.Windows.Forms.Panel()
@@ -46,10 +47,10 @@ Partial Class adminDashboard
         Me.Label10 = New System.Windows.Forms.Label()
         Me.Panel7 = New System.Windows.Forms.Panel()
         Me.Label11 = New System.Windows.Forms.Label()
-        Me.lblAbsent = New System.Windows.Forms.Label()
+        Me.lblontime = New System.Windows.Forms.Label()
         Me.Panel11 = New System.Windows.Forms.Panel()
         Me.Label12 = New System.Windows.Forms.Label()
-        Me.lblOntime1 = New System.Windows.Forms.Label()
+        Me.lblpresent = New System.Windows.Forms.Label()
         Me.Panel12 = New System.Windows.Forms.Panel()
         Me.Label14 = New System.Windows.Forms.Label()
         Me.lblLate = New System.Windows.Forms.Label()
@@ -86,10 +87,10 @@ Partial Class adminDashboard
         Me.Panel10.BackColor = System.Drawing.Color.Gray
         Me.Panel10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Panel10.Controls.Add(Me.Panel9)
-        Me.Panel10.Location = New System.Drawing.Point(13, 13)
+        Me.Panel10.Location = New System.Drawing.Point(27, 30)
         Me.Panel10.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel10.Name = "Panel10"
-        Me.Panel10.Size = New System.Drawing.Size(1012, 528)
+        Me.Panel10.Size = New System.Drawing.Size(1008, 507)
         Me.Panel10.TabIndex = 38
         '
         'Panel9
@@ -99,15 +100,15 @@ Partial Class adminDashboard
         Me.Panel9.Controls.Add(Me.MenuStrip1)
         Me.Panel9.Controls.Add(Me.Panel8)
         Me.Panel9.Controls.Add(Me.Panel13)
-        Me.Panel9.Location = New System.Drawing.Point(16, 20)
+        Me.Panel9.Location = New System.Drawing.Point(11, 11)
         Me.Panel9.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel9.Name = "Panel9"
-        Me.Panel9.Size = New System.Drawing.Size(981, 486)
+        Me.Panel9.Size = New System.Drawing.Size(988, 488)
         Me.Panel9.TabIndex = 33
         '
         'MenuStrip1
         '
-        Me.MenuStrip1.BackColor = System.Drawing.Color.White
+        Me.MenuStrip1.BackColor = System.Drawing.Color.Snow
         Me.MenuStrip1.Dock = System.Windows.Forms.DockStyle.None
         Me.MenuStrip1.ImageScalingSize = New System.Drawing.Size(20, 20)
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.UserToolStripMenuItem, Me.ToolStripMenuItem1, Me.LogOutToolStripMenuItem})
@@ -171,7 +172,7 @@ Partial Class adminDashboard
         '
         'Panel8
         '
-        Me.Panel8.BackColor = System.Drawing.Color.Tan
+        Me.Panel8.BackColor = System.Drawing.Color.SlateGray
         Me.Panel8.Controls.Add(Me.Label2)
         Me.Panel8.Controls.Add(Me.Panel2)
         Me.Panel8.Controls.Add(Me.ffff)
@@ -182,7 +183,7 @@ Partial Class adminDashboard
         Me.Panel8.Location = New System.Drawing.Point(236, 36)
         Me.Panel8.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel8.Name = "Panel8"
-        Me.Panel8.Size = New System.Drawing.Size(724, 429)
+        Me.Panel8.Size = New System.Drawing.Size(718, 429)
         Me.Panel8.TabIndex = 7
         '
         'Label2
@@ -203,7 +204,7 @@ Partial Class adminDashboard
         Me.Panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Panel2.Controls.Add(Me.Label5)
         Me.Panel2.Controls.Add(Me.lblTotalEmp1)
-        Me.Panel2.Location = New System.Drawing.Point(425, 245)
+        Me.Panel2.Location = New System.Drawing.Point(422, 245)
         Me.Panel2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(284, 120)
@@ -287,7 +288,7 @@ Partial Class adminDashboard
         Me.Panel7.BackColor = System.Drawing.Color.FromArgb(CType(CType(244, Byte), Integer), CType(CType(185, Byte), Integer), CType(CType(250, Byte), Integer))
         Me.Panel7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Panel7.Controls.Add(Me.Label11)
-        Me.Panel7.Controls.Add(Me.lblAbsent)
+        Me.Panel7.Controls.Add(Me.lblontime)
         Me.Panel7.Location = New System.Drawing.Point(188, 107)
         Me.Panel7.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Panel7.Name = "Panel7"
@@ -302,22 +303,22 @@ Partial Class adminDashboard
         Me.Label11.ForeColor = System.Drawing.Color.FromArgb(CType(CType(40, Byte), Integer), CType(CType(52, Byte), Integer), CType(CType(59, Byte), Integer))
         Me.Label11.Location = New System.Drawing.Point(27, 84)
         Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(79, 24)
+        Me.Label11.Size = New System.Drawing.Size(84, 24)
         Me.Label11.TabIndex = 5
-        Me.Label11.Text = "ABSENT"
+        Me.Label11.Text = "ON TIME"
         '
-        'lblAbsent
+        'lblontime
         '
-        Me.lblAbsent.AutoSize = True
-        Me.lblAbsent.BackColor = System.Drawing.Color.Transparent
-        Me.lblAbsent.CausesValidation = False
-        Me.lblAbsent.Font = New System.Drawing.Font("Microsoft Sans Serif", 28.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblAbsent.ForeColor = System.Drawing.Color.White
-        Me.lblAbsent.Location = New System.Drawing.Point(3, 14)
-        Me.lblAbsent.Name = "lblAbsent"
-        Me.lblAbsent.Size = New System.Drawing.Size(51, 55)
-        Me.lblAbsent.TabIndex = 4
-        Me.lblAbsent.Text = "0"
+        Me.lblontime.AutoSize = True
+        Me.lblontime.BackColor = System.Drawing.Color.Transparent
+        Me.lblontime.CausesValidation = False
+        Me.lblontime.Font = New System.Drawing.Font("Microsoft Sans Serif", 28.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblontime.ForeColor = System.Drawing.Color.White
+        Me.lblontime.Location = New System.Drawing.Point(3, 14)
+        Me.lblontime.Name = "lblontime"
+        Me.lblontime.Size = New System.Drawing.Size(51, 55)
+        Me.lblontime.TabIndex = 4
+        Me.lblontime.Text = "0"
         '
         'Panel11
         '
@@ -325,7 +326,7 @@ Partial Class adminDashboard
         Me.Panel11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Panel11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Panel11.Controls.Add(Me.Label12)
-        Me.Panel11.Controls.Add(Me.lblOntime1)
+        Me.Panel11.Controls.Add(Me.lblpresent)
         Me.Panel11.Location = New System.Drawing.Point(18, 107)
         Me.Panel11.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Panel11.Name = "Panel11"
@@ -340,22 +341,22 @@ Partial Class adminDashboard
         Me.Label12.ForeColor = System.Drawing.Color.FromArgb(CType(CType(40, Byte), Integer), CType(CType(52, Byte), Integer), CType(CType(59, Byte), Integer))
         Me.Label12.Location = New System.Drawing.Point(23, 84)
         Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(84, 24)
+        Me.Label12.Size = New System.Drawing.Size(130, 24)
         Me.Label12.TabIndex = 5
-        Me.Label12.Text = "ON TIME"
+        Me.Label12.Text = "ALL PRESENT"
         '
-        'lblOntime1
+        'lblpresent
         '
-        Me.lblOntime1.AutoSize = True
-        Me.lblOntime1.BackColor = System.Drawing.Color.Transparent
-        Me.lblOntime1.CausesValidation = False
-        Me.lblOntime1.Font = New System.Drawing.Font("Microsoft Sans Serif", 28.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblOntime1.ForeColor = System.Drawing.Color.White
-        Me.lblOntime1.Location = New System.Drawing.Point(3, 14)
-        Me.lblOntime1.Name = "lblOntime1"
-        Me.lblOntime1.Size = New System.Drawing.Size(51, 55)
-        Me.lblOntime1.TabIndex = 4
-        Me.lblOntime1.Text = "0"
+        Me.lblpresent.AutoSize = True
+        Me.lblpresent.BackColor = System.Drawing.Color.Transparent
+        Me.lblpresent.CausesValidation = False
+        Me.lblpresent.Font = New System.Drawing.Font("Microsoft Sans Serif", 28.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblpresent.ForeColor = System.Drawing.Color.White
+        Me.lblpresent.Location = New System.Drawing.Point(3, 14)
+        Me.lblpresent.Name = "lblpresent"
+        Me.lblpresent.Size = New System.Drawing.Size(51, 55)
+        Me.lblpresent.TabIndex = 4
+        Me.lblpresent.Text = "0"
         '
         'Panel12
         '
@@ -396,7 +397,7 @@ Partial Class adminDashboard
         '
         'Panel13
         '
-        Me.Panel13.BackColor = System.Drawing.Color.Tan
+        Me.Panel13.BackColor = System.Drawing.Color.LightSlateGray
         Me.Panel13.Controls.Add(Me.Button2)
         Me.Panel13.Controls.Add(Me.Button1)
         Me.Panel13.Controls.Add(Me.Button9)
@@ -453,7 +454,8 @@ Partial Class adminDashboard
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.SlateGray
-        Me.ClientSize = New System.Drawing.Size(1034, 550)
+        Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
+        Me.ClientSize = New System.Drawing.Size(1062, 569)
         Me.Controls.Add(Me.Panel10)
         Me.Controls.Add(Me.Label15)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
@@ -503,10 +505,10 @@ Partial Class adminDashboard
     Friend WithEvents Label10 As Label
     Friend WithEvents Panel7 As Panel
     Friend WithEvents Label11 As Label
-    Friend WithEvents lblAbsent As Label
+    Friend WithEvents lblontime As Label
     Friend WithEvents Panel11 As Panel
     Friend WithEvents Label12 As Label
-    Friend WithEvents lblOntime1 As Label
+    Friend WithEvents lblpresent As Label
     Friend WithEvents Panel12 As Panel
     Friend WithEvents Label14 As Label
     Friend WithEvents lblLate As Label

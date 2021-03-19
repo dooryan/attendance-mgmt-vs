@@ -82,14 +82,15 @@
 
                 End With
 
-                F = False
+                'F = False
                 Me.Refresh()
                 Me.Dispose()
             Catch ex As Exception
                 MessageBox.Show("" & ex.Message)
 
             End Try
-        Else
+
+        ElseIf (flag = False)
 
             Try
                 With command
@@ -112,7 +113,7 @@
                 End With
 
 
-                F = False
+                ' F = False
                 Me.Refresh()
                 Me.Dispose()
             Catch ex As Exception
@@ -125,7 +126,7 @@
         End If
 
 
-        F = False
+        'F = False
 
 
         Me.Hide()

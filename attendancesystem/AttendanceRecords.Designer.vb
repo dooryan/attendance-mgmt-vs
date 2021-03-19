@@ -22,6 +22,7 @@ Partial Class AttendanceRecords
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(AttendanceRecords))
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.id1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.lname = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -44,7 +45,7 @@ Partial Class AttendanceRecords
         Me.DataGridView1.Location = New System.Drawing.Point(13, 77)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.RowTemplate.Height = 24
-        Me.DataGridView1.Size = New System.Drawing.Size(607, 440)
+        Me.DataGridView1.Size = New System.Drawing.Size(607, 427)
         Me.DataGridView1.TabIndex = 0
         '
         'id1
@@ -106,9 +107,9 @@ Partial Class AttendanceRecords
         Me.Panel1.Controls.Add(Me.DataGridView1)
         Me.Panel1.Controls.Add(Me.btnSearch)
         Me.Panel1.Controls.Add(Me.TextBox1)
-        Me.Panel1.Location = New System.Drawing.Point(11, 13)
+        Me.Panel1.Location = New System.Drawing.Point(17, 19)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(635, 532)
+        Me.Panel1.Size = New System.Drawing.Size(638, 533)
         Me.Panel1.TabIndex = 18
         '
         'AttendanceRecords
@@ -116,7 +117,8 @@ Partial Class AttendanceRecords
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.SlateGray
-        Me.ClientSize = New System.Drawing.Size(661, 558)
+        Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
+        Me.ClientSize = New System.Drawing.Size(672, 567)
         Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.Name = "AttendanceRecords"
