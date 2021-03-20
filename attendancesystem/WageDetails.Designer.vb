@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class WageDetails
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class WageDetails
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Button1 = New System.Windows.Forms.Button()
@@ -29,12 +29,14 @@ Partial Class WageDetails
         Me.Label2 = New System.Windows.Forms.Label()
         Me.txtName = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.txtDailyRate = New System.Windows.Forms.TextBox()
+        Me.txtHourlyRate = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.txtDept = New System.Windows.Forms.TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.txtJobStat = New System.Windows.Forms.TextBox()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.cmbPayBasis = New System.Windows.Forms.ComboBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.txtsss = New System.Windows.Forms.TextBox()
         Me.Label8 = New System.Windows.Forms.Label()
@@ -45,9 +47,13 @@ Partial Class WageDetails
         Me.txtpagibig = New System.Windows.Forms.TextBox()
         Me.btnSave = New System.Windows.Forms.Button()
         Me.btnUpdate = New System.Windows.Forms.Button()
+        Me.Panel4 = New System.Windows.Forms.Panel()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.txtGrossWage = New System.Windows.Forms.TextBox()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.Panel3.SuspendLayout()
+        Me.Panel4.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel1
@@ -57,9 +63,9 @@ Partial Class WageDetails
         Me.Panel1.Controls.Add(Me.txtID)
         Me.Panel1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Panel1.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Panel1.Location = New System.Drawing.Point(13, 12)
+        Me.Panel1.Location = New System.Drawing.Point(15, 12)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(305, 67)
+        Me.Panel1.Size = New System.Drawing.Size(303, 67)
         Me.Panel1.TabIndex = 0
         '
         'Button1
@@ -112,19 +118,21 @@ Partial Class WageDetails
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(27, 286)
+        Me.Label4.Location = New System.Drawing.Point(66, 20)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(111, 17)
+        Me.Label4.Size = New System.Drawing.Size(83, 17)
         Me.Label4.TabIndex = 4
-        Me.Label4.Text = "Basic Daily Rate"
+        Me.Label4.Text = "Hourly Rate"
         '
-        'txtDailyRate
+        'txtHourlyRate
         '
-        Me.txtDailyRate.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtDailyRate.Location = New System.Drawing.Point(175, 276)
-        Me.txtDailyRate.Name = "txtDailyRate"
-        Me.txtDailyRate.Size = New System.Drawing.Size(128, 27)
-        Me.txtDailyRate.TabIndex = 3
+        Me.txtHourlyRate.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtHourlyRate.Location = New System.Drawing.Point(503, 28)
+        Me.txtHourlyRate.Name = "txtHourlyRate"
+        Me.txtHourlyRate.Size = New System.Drawing.Size(128, 27)
+        Me.txtHourlyRate.TabIndex = 3
+        Me.txtHourlyRate.Text = "00"
+        Me.txtHourlyRate.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'Label6
         '
@@ -166,6 +174,8 @@ Partial Class WageDetails
         '
         'Panel2
         '
+        Me.Panel2.Controls.Add(Me.Label11)
+        Me.Panel2.Controls.Add(Me.cmbPayBasis)
         Me.Panel2.Controls.Add(Me.txtJobStat)
         Me.Panel2.Controls.Add(Me.Label7)
         Me.Panel2.Controls.Add(Me.txtName)
@@ -174,13 +184,34 @@ Partial Class WageDetails
         Me.Panel2.Controls.Add(Me.Label6)
         Me.Panel2.Location = New System.Drawing.Point(15, 85)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(303, 167)
+        Me.Panel2.Size = New System.Drawing.Size(303, 193)
         Me.Panel2.TabIndex = 8
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label11.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.Label11.Location = New System.Drawing.Point(13, 155)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(85, 20)
+        Me.Label11.TabIndex = 9
+        Me.Label11.Text = "Pay Basis"
+        '
+        'cmbPayBasis
+        '
+        Me.cmbPayBasis.FormattingEnabled = True
+        Me.cmbPayBasis.Items.AddRange(New Object() {"HOURLY", "SALARY"})
+        Me.cmbPayBasis.Location = New System.Drawing.Point(108, 151)
+        Me.cmbPayBasis.Name = "cmbPayBasis"
+        Me.cmbPayBasis.Size = New System.Drawing.Size(180, 24)
+        Me.cmbPayBasis.TabIndex = 8
+        Me.cmbPayBasis.Text = "HOURLY"
         '
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(36, 83)
+        Me.Label5.Location = New System.Drawing.Point(24, 83)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(35, 17)
         Me.Label5.TabIndex = 12
@@ -189,7 +220,7 @@ Partial Class WageDetails
         'txtsss
         '
         Me.txtsss.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtsss.Location = New System.Drawing.Point(178, 73)
+        Me.txtsss.Location = New System.Drawing.Point(160, 73)
         Me.txtsss.Name = "txtsss"
         Me.txtsss.Size = New System.Drawing.Size(128, 27)
         Me.txtsss.TabIndex = 11
@@ -197,7 +228,7 @@ Partial Class WageDetails
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(33, 50)
+        Me.Label8.Location = New System.Drawing.Point(21, 50)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(93, 17)
         Me.Label8.TabIndex = 10
@@ -206,7 +237,7 @@ Partial Class WageDetails
         'txtphilhealth
         '
         Me.txtphilhealth.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtphilhealth.Location = New System.Drawing.Point(178, 40)
+        Me.txtphilhealth.Location = New System.Drawing.Point(160, 40)
         Me.txtphilhealth.Name = "txtphilhealth"
         Me.txtphilhealth.Size = New System.Drawing.Size(128, 27)
         Me.txtphilhealth.TabIndex = 9
@@ -214,11 +245,11 @@ Partial Class WageDetails
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(15, 9)
+        Me.Label9.Location = New System.Drawing.Point(3, 11)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(89, 17)
+        Me.Label9.Size = New System.Drawing.Size(171, 17)
         Me.Label9.TabIndex = 13
-        Me.Label9.Text = "Withholdings"
+        Me.Label9.Text = "DEDUCTION AND TAXES"
         '
         'Panel3
         '
@@ -229,15 +260,15 @@ Partial Class WageDetails
         Me.Panel3.Controls.Add(Me.txtsss)
         Me.Panel3.Controls.Add(Me.Label8)
         Me.Panel3.Controls.Add(Me.txtphilhealth)
-        Me.Panel3.Location = New System.Drawing.Point(351, 12)
+        Me.Panel3.Location = New System.Drawing.Point(337, 125)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(323, 192)
+        Me.Panel3.Size = New System.Drawing.Size(303, 153)
         Me.Panel3.TabIndex = 14
         '
         'Label10
         '
         Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(36, 116)
+        Me.Label10.Location = New System.Drawing.Point(24, 116)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(68, 17)
         Me.Label10.TabIndex = 15
@@ -246,14 +277,14 @@ Partial Class WageDetails
         'txtpagibig
         '
         Me.txtpagibig.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtpagibig.Location = New System.Drawing.Point(178, 106)
+        Me.txtpagibig.Location = New System.Drawing.Point(160, 106)
         Me.txtpagibig.Name = "txtpagibig"
         Me.txtpagibig.Size = New System.Drawing.Size(128, 27)
         Me.txtpagibig.TabIndex = 14
         '
         'btnSave
         '
-        Me.btnSave.Location = New System.Drawing.Point(553, 306)
+        Me.btnSave.Location = New System.Drawing.Point(337, 295)
         Me.btnSave.Name = "btnSave"
         Me.btnSave.Size = New System.Drawing.Size(123, 40)
         Me.btnSave.TabIndex = 15
@@ -262,25 +293,54 @@ Partial Class WageDetails
         '
         'btnUpdate
         '
-        Me.btnUpdate.Location = New System.Drawing.Point(553, 352)
+        Me.btnUpdate.Location = New System.Drawing.Point(195, 295)
         Me.btnUpdate.Name = "btnUpdate"
         Me.btnUpdate.Size = New System.Drawing.Size(123, 40)
         Me.btnUpdate.TabIndex = 16
         Me.btnUpdate.Text = "Update"
         Me.btnUpdate.UseVisualStyleBackColor = True
         '
+        'Panel4
+        '
+        Me.Panel4.Controls.Add(Me.Label3)
+        Me.Panel4.Controls.Add(Me.txtGrossWage)
+        Me.Panel4.Controls.Add(Me.Label4)
+        Me.Panel4.Location = New System.Drawing.Point(337, 12)
+        Me.Panel4.Name = "Panel4"
+        Me.Panel4.Size = New System.Drawing.Size(303, 104)
+        Me.Panel4.TabIndex = 17
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(66, 55)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(87, 17)
+        Me.Label3.TabIndex = 6
+        Me.Label3.Text = "Gross Wage"
+        '
+        'txtGrossWage
+        '
+        Me.txtGrossWage.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtGrossWage.Location = New System.Drawing.Point(166, 49)
+        Me.txtGrossWage.Name = "txtGrossWage"
+        Me.txtGrossWage.Size = New System.Drawing.Size(128, 27)
+        Me.txtGrossWage.TabIndex = 5
+        Me.txtGrossWage.Text = "00"
+        Me.txtGrossWage.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
         'WageDetails
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(688, 423)
+        Me.ClientSize = New System.Drawing.Size(654, 357)
         Me.Controls.Add(Me.btnUpdate)
         Me.Controls.Add(Me.btnSave)
         Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.Panel2)
-        Me.Controls.Add(Me.Label4)
-        Me.Controls.Add(Me.txtDailyRate)
+        Me.Controls.Add(Me.txtHourlyRate)
         Me.Controls.Add(Me.Panel1)
+        Me.Controls.Add(Me.Panel4)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.Name = "WageDetails"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
@@ -290,6 +350,8 @@ Partial Class WageDetails
         Me.Panel2.PerformLayout()
         Me.Panel3.ResumeLayout(False)
         Me.Panel3.PerformLayout()
+        Me.Panel4.ResumeLayout(False)
+        Me.Panel4.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -305,7 +367,7 @@ Partial Class WageDetails
     Friend WithEvents Label1 As Label
     Friend WithEvents txtID As TextBox
     Friend WithEvents Label4 As Label
-    Friend WithEvents txtDailyRate As TextBox
+    Friend WithEvents txtHourlyRate As TextBox
     Friend WithEvents Panel2 As Panel
     Friend WithEvents Label5 As Label
     Friend WithEvents txtsss As TextBox
@@ -318,4 +380,9 @@ Partial Class WageDetails
     Friend WithEvents Button1 As Button
     Friend WithEvents btnSave As Button
     Friend WithEvents btnUpdate As Button
+    Friend WithEvents Label11 As Label
+    Friend WithEvents cmbPayBasis As ComboBox
+    Friend WithEvents Panel4 As Panel
+    Friend WithEvents Label3 As Label
+    Friend WithEvents txtGrossWage As TextBox
 End Class

@@ -45,12 +45,13 @@ Public Class payroll
         Dim mes = MessageBox.Show("Confirm PAY?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
         If mes = vbYes Then
             Dim petsa = Date.Now.ToString("yyyy/MM/dd")
-            Dim gross As Decimal = Val(txtPerDay.Text) * Val(txtdays.Text)
-            Dim deduct As Decimal = Val(txtCAd.Text) + Val(txtpagibig.Text) + Val(txtPhil.Text) + Val(txtSSS.Text)
-            Dim totalpay As Decimal = gross - deduct
-            Dim daysperiod As Integer = txtdays.Text
+            Dim gross As Decimal = Val(txtttlpay.Text)
+            Dim deduct As Decimal = Val(txtTtlDeductions.Text)
+            Dim totalpay As Decimal = Val(txtTotalPay.Text)
+            Dim hourstotal As Integer = txtHours.Text
             Dim id = ComboBox1.Text
-            btnTotalPay.Text = totalpay
+
+            'btnTotalPay.Text = totalpay
 
 
             Try
@@ -64,7 +65,7 @@ Public Class payroll
                     .Parameters.AddWithValue("gpay", gross)
                     .Parameters.AddWithValue("ttldeduction", deduct)
                     .Parameters.AddWithValue("ttlpay", totalpay)
-                    .Parameters.AddWithValue("days", daysperiod)
+                    .Parameters.AddWithValue("hours", hourstotal)
                     .ExecuteNonQuery()
 
 
@@ -108,14 +109,18 @@ Public Class payroll
                 sqlAdapter.Fill(DA)
 
 
-                txtperHour.Text = DA(0)(1)
-                txtPerDay.Text = DA(0)(2)
-                txtMonth.Text = Val(txtPerDay.Text) * Val(txtdays.Text)
 
+                txtGrosspay.Text = Val(txtHours.Text) * CDec(DA(0)(1))
+                txtttlpay.Text = Val(txtGrosspay.Text)
                 txtPhil.Text = DA(0)(4)
                 txtSSS.Text = DA(0)(5)
                 txtpagibig.Text = DA(0)(6)
-
+                txtTtlDeductions.Text = Val(txtPhil.Text) + Val(txtSSS.Text) + Val(txtpagibig.Text) + Val(txtCAd.Text)
+                txtTotalPay.Text = Val(txtttlpay.Text) - Val(txtTtlDeductions.Text)
+                txtHourlyRate.Text = DA(0)(1)
+                txtBasicPay.Text = Val(txtHourlyRate.Text) * 8
+                txtMonthly.Text = Val(((Val(txtHourlyRate.Text) * 48) * 52) / 12)
+                txtOTPay.Text = (Val(txtOvertime.Text) * Val(txtHourlyRate.Text)) * 1.5
             End Using
         End Using
 
@@ -124,6 +129,7 @@ Public Class payroll
     Private Sub btnFilter_Click(sender As Object, e As EventArgs) Handles btnFilter.Click
         getDaysCount()
         DisplayPayDetails()
+        DisplayPayHistory()
 
         Dim DA = New DataTable()
         Dim sqlAdapter = New MySqlDataAdapter
@@ -156,11 +162,12 @@ Public Class payroll
 
         Dim DA = New DataTable()
         Dim sqlAdapter = New MySqlDataAdapter
+        Dim dt = New DataSet
         'Dim cmd = New MySqlCommand
 
-        Dim LogQuery As String = "SELECT USERNAME, PASSWORD, USER_TYPE FROM tbl_user WHERE USERNAME=@USERNAME AND PASSWORD=@PASSWORD "
+        ' Dim LogQuery As String = "SELECT USERNAME, PASSWORD, USER_TYPE FROM tbl_user WHERE USERNAME=@USERNAME AND PASSWORD=@PASSWORD "
         Using con As MySqlConnection = New MySqlConnection("server=localhost;user id=root;password=esperanza;database=db_attendance")
-            Using cmd As MySqlCommand = New MySqlCommand(LogQuery, con)
+            Using cmd As MySqlCommand = New MySqlCommand("", con)
 
                 cmd.CommandText = "prcFilterSummaryHours"
                 cmd.CommandType = CommandType.StoredProcedure
@@ -172,16 +179,42 @@ Public Class payroll
                 sqlAdapter.SelectCommand = cmd
                 DA.Clear()
                 sqlAdapter.Fill(DA)
-
-
-
                 row = 0
+                Dim counter = 0
+                Dim x As Integer = 0
+                Dim totalHours As Integer = 0
+                Dim countOT As Integer = 0
+                'For i As Integer = 0 To DA.Rows.Count
+
+                'x = CInt(DA(i)(6))
+                'totalHours = totalHours + x
+                'i = i + 1
+                'Next
+
+                While counter < DA.Rows.Count
+                    x = CInt(DA(counter)(6))
+                    totalHours = totalHours + x - 1
+
+
+                    If (CInt(DA(counter)(6)) > 9) Then
+                        countOT = (CInt(DA(counter)(6)) - 1) - 8
+                    End If
+                    counter = counter + 1
+                End While
+
+
+                'x = x + Convert.ToInt32(DA(i)(6))
+
                 If DA IsNot Nothing AndAlso DA.Rows.Count > 0 Then
                     'some code
-                    txtdays.Text = DA.Rows.Count.ToString
+                    'txtHours.Text = DA.Rows.Count.ToString
+
+                    txtHours.Text = totalHours
+                    txtOvertime.Text = countOT
                 Else
                     'some code
-                    txtdays.Text = "0"
+                    txtHours.Text = "0"
+                    txtOvertime.Text = "0"
                 End If
 
 
@@ -193,27 +226,70 @@ Public Class payroll
 
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btnCompute.Click
-        Dim gross = Val(txtPerDay.Text) * Val(txtdays.Text)
-        Dim deduct = Val(txtCAd.Text) + Val(txtpagibig.Text) + Val(txtPhil.Text) + Val(txtSSS.Text)
-        Dim totalpay = gross - deduct
-        Dim daysperiod = txtdays
+    Private Sub Button1_Click(sender As Object, e As EventArgs)
+        'Dim gross = Val(txtperHour.Text) * Val(txtHours.Text)
+        'Dim deduct = Val(txtCAd.Text) + Val(txtpagibig.Text) + Val(txtPhil.Text) + Val(txtSSS.Text)
+        ' Dim totalpay = gross - deduct
+        'Dim daysperiod = txtHours
 
-        Dim hourly = Val(txtPerDay.Text) / 8
+        'Dim hourly = Val(txtPerDay.Text) / 8
         'txtperHour.Text = hourly
         'txtMonth.Text = Val(txtPerDay.Text) * 20
 
-        btnTotalPay.Text = totalpay
+        'btnTotalPay.Text = totalpay
 
     End Sub
 
     Private Sub btnCompute_Click(sender As Object, e As EventArgs) Handles btnPay.Click
         AddPay()
-
-
-
+        DisplayPayHistory()
     End Sub
+    Private Sub DisplayPayHistory()
+        Dim DA = New DataTable()
+        Dim sqlAdapter = New MySqlDataAdapter
+        Dim dt = New DataSet
 
+        Using con As MySqlConnection = New MySqlConnection("server=localhost;user id=root;password=esperanza;database=db_attendance")
+            Using cmd As MySqlCommand = New MySqlCommand("", con)
+
+                cmd.CommandText = "prcDisplayPayHistorybyEmp"
+                cmd.CommandType = CommandType.StoredProcedure
+                cmd.Parameters.Clear()
+                cmd.Parameters.AddWithValue("e_ID", ComboBox1.Text)
+
+                sqlAdapter.SelectCommand = cmd
+                DA.Clear()
+                sqlAdapter.Fill(DA)
+
+                If DA.Rows.Count > 0 Then
+                    DataGridView1.RowCount = DA.Rows.Count
+                    Dim name = DA(0)(5) & DA(0)(6)
+                    row = 0
+                    While Not DA.Rows.Count - 1 < row
+                        With DataGridView1
+                            .Rows(row).Cells(0).Value = name
+                            .Rows(row).Cells(1).Value = DA.Rows(row).Item("date").ToString
+                            .Rows(row).Cells(2).Value = DA.Rows(row).Item("total_hours").ToString
+                            .Rows(row).Cells(3).Value = DA.Rows(row).Item("gross_pay").ToString
+                            .Rows(row).Cells(4).Value = DA.Rows(row).Item("total_deduction").ToString
+                            .Rows(row).Cells(5).Value = DA.Rows(row).Item("total_pay").ToString
+
+
+                        End With
+                        row = row + 1
+                    End While
+                Else
+                    MessageBox.Show("No record found...")
+
+
+
+                End If
+
+
+
+            End Using
+        End Using
+    End Sub
     Private Sub ComboBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox1.SelectedIndexChanged
 
     End Sub

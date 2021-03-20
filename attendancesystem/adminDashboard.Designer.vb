@@ -35,6 +35,7 @@ Partial Class adminDashboard
         Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.AddPayToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PayRecordsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.WagesDetailsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.LogOutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Panel8 = New System.Windows.Forms.Panel()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -116,7 +117,7 @@ Partial Class adminDashboard
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Padding = New System.Windows.Forms.Padding(8, 2, 0, 2)
         Me.MenuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional
-        Me.MenuStrip1.Size = New System.Drawing.Size(347, 32)
+        Me.MenuStrip1.Size = New System.Drawing.Size(462, 32)
         Me.MenuStrip1.TabIndex = 32
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -143,7 +144,7 @@ Partial Class adminDashboard
         '
         'ToolStripMenuItem1
         '
-        Me.ToolStripMenuItem1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AddPayToolStripMenuItem, Me.PayRecordsToolStripMenuItem})
+        Me.ToolStripMenuItem1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AddPayToolStripMenuItem, Me.PayRecordsToolStripMenuItem, Me.WagesDetailsToolStripMenuItem})
         Me.ToolStripMenuItem1.Font = New System.Drawing.Font("Trebuchet MS", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ToolStripMenuItem1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(74, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(139, Byte), Integer))
         Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
@@ -153,14 +154,20 @@ Partial Class adminDashboard
         'AddPayToolStripMenuItem
         '
         Me.AddPayToolStripMenuItem.Name = "AddPayToolStripMenuItem"
-        Me.AddPayToolStripMenuItem.Size = New System.Drawing.Size(188, 28)
+        Me.AddPayToolStripMenuItem.Size = New System.Drawing.Size(205, 28)
         Me.AddPayToolStripMenuItem.Text = "Add Pay"
         '
         'PayRecordsToolStripMenuItem
         '
         Me.PayRecordsToolStripMenuItem.Name = "PayRecordsToolStripMenuItem"
-        Me.PayRecordsToolStripMenuItem.Size = New System.Drawing.Size(188, 28)
+        Me.PayRecordsToolStripMenuItem.Size = New System.Drawing.Size(205, 28)
         Me.PayRecordsToolStripMenuItem.Text = "Pay Records"
+        '
+        'WagesDetailsToolStripMenuItem
+        '
+        Me.WagesDetailsToolStripMenuItem.Name = "WagesDetailsToolStripMenuItem"
+        Me.WagesDetailsToolStripMenuItem.Size = New System.Drawing.Size(205, 28)
+        Me.WagesDetailsToolStripMenuItem.Text = "Wages Details"
         '
         'LogOutToolStripMenuItem
         '
@@ -518,4 +525,5 @@ Partial Class adminDashboard
     Friend WithEvents ViewUsersToolStripMenuItem1 As ToolStripMenuItem
     Friend WithEvents Button1 As Button
     Friend WithEvents Button2 As Button
+    Friend WithEvents WagesDetailsToolStripMenuItem As ToolStripMenuItem
 End Class

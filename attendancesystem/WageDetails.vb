@@ -2,7 +2,7 @@
 
 Public Class WageDetails
     Private Sub WageDetails_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        checkDatabaseConnection()
     End Sub
 
     Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs) Handles txtID.TextChanged
@@ -27,13 +27,15 @@ Public Class WageDetails
                 sqlAdapter.Fill(DA)
 
                 If DA.Rows.Count > 0 Then
+                    txtHourlyRate.Text = DA(0)(1)
+                    txtGrossWage.Text = 48 * Val(txtHourlyRate.Text) * 2
                     txtName.Text = DA(0)(8)
                     txtDept.Text = DA(0)(10)
                     txtJobStat.Text = DA(0)(7)
                     txtphilhealth.Text = CDec(DA(0)(4))
                     txtsss.Text = CDec(DA(0)(5))
                     txtpagibig.Text = CDec(DA(0)(6))
-
+                    txtDept.Text = DA(0)(11)
                     btnSave.Enabled = False
                     btnUpdate.Enabled = True
                     'txtBasic.Text = DA(0)(11)
@@ -47,14 +49,19 @@ Public Class WageDetails
                         txtJobStat.Clear()
                         txtphilhealth.Clear()
                         txtsss.Clear()
+                        txtphilhealth.Clear()
                         txtpagibig.Clear()
-                        'txtBasic.Clear()
+                        txtHourlyRate.Clear()
+                        txtGrossWage.Clear()
+
                         btnUpdate.Enabled = False
                         btnSave.Enabled = True
                     End If
 
                 End If
+
             End Using
+            con.Dispose()
         End Using
 
         'Multiply your monthly premium by 12 And 
@@ -66,66 +73,101 @@ Public Class WageDetails
         EmployeeInfo()
     End Sub
 
-    Private Sub InsertPayDetails()
+    Private Sub InsertPayDetails(ByVal flag)
 
-        Dim rate_hour = txtDailyRate.Text / 8
-        Dim rate_month = txtDailyRate.Text * 22
+        Dim rate_day = txtHourlyRate.Text * 8
+        Dim rate_month = ((Val(txtHourlyRate.Text) * 48) * 52) / 12
 
-        Using con As MySqlConnection = New MySqlConnection("server=localhost;user id=root;password=esperanza;database=db_attendance")
-            Using c As MySqlCommand = New MySqlCommand("", con)
+        Try
+            With command
 
-                c.CommandText = "prcInsertPayDetails"
-                c.CommandType = CommandType.StoredProcedure
-                c.Parameters.Clear()
-                c.Parameters.AddWithValue("id", txtID.Text)
-                c.Parameters.AddWithValue("ratehour", rate_hour)
-                c.Parameters.AddWithValue("rateday", txtDailyRate.Text)
-                c.Parameters.AddWithValue("ratemonth", rate_month)
-                c.Parameters.AddWithValue("phealth", txtphilhealth.Text)
-                c.Parameters.AddWithValue("ss", txtsss.Text)
-                c.Parameters.AddWithValue("pibig", txtpagibig.Text)
-                c.Parameters.AddWithValue("jobstat", txtJobStat.Text)
+                If (flag = "insert") Then
+                    .CommandText = "prcInsertPayDetails"
 
-                c.ExecuteNonQuery()
-                MessageBox.Show("Successfully updated Employee", "", MessageBoxButtons.OK,
-                                MessageBoxIcon.Information)
-            End Using
-        End Using
+                    .Parameters.Clear()
+                    .CommandType = CommandType.StoredProcedure
+                        .Parameters.AddWithValue("id", txtID.Text)
+                        .Parameters.AddWithValue("ratehour", txtHourlyRate.Text)
+                        .Parameters.AddWithValue("rateday", rate_day)
+                        .Parameters.AddWithValue("ratemonth", rate_month)
+                        .Parameters.AddWithValue("phealth", txtphilhealth.Text)
+                        .Parameters.AddWithValue("ss", txtsss.Text)
+                        .Parameters.AddWithValue("pibig", txtpagibig.Text)
+                        .Parameters.AddWithValue("jobstat", txtJobStat.Text)
+                        .ExecuteNonQuery()
+
+                        MessageBox.Show("Successfully added.", "Information", MessageBoxButtons.OK,
+                                        MessageBoxIcon.Information)
+
+
+                ElseIf (flag = "update")
+
+
+                    .Parameters.Clear()
+                    .CommandText = "prcUpdatePayDetails"
+                    .CommandType = CommandType.StoredProcedure
+                    .Parameters.AddWithValue("id", txtID.Text)
+                    .Parameters.AddWithValue("hr", txtHourlyRate.Text)
+                    .Parameters.AddWithValue("rd", rate_day)
+                    .Parameters.AddWithValue("rm", rate_month)
+                    .Parameters.AddWithValue("ph", txtphilhealth.Text)
+                    .Parameters.AddWithValue("sss", txtsss.Text)
+                    .Parameters.AddWithValue("pibig", txtpagibig.Text)
+                    .Parameters.AddWithValue("jobstat", txtJobStat.Text)
+                    .ExecuteNonQuery()
+
+                    MessageBox.Show("Successfully updated.", "Information", MessageBoxButtons.OK,
+                                            MessageBoxIcon.Information)
+
+
+                    'End Using
+                    'End Using
+
+                End If
+
+            End With
+
+            'End Using
+            'End Using
+        Catch ex As Exception
+
+        End Try
+
+
     End Sub
 
-    Private Sub txtDailyRate_TextChanged(sender As Object, e As EventArgs) Handles txtDailyRate.TextChanged
-        txtphilhealth.Text = ((txtDailyRate.Text * 22) * 0.035)
-        txtsss.Text = ((txtDailyRate.Text * 22) * 0.0363)
-        txtpagibig.Text = ((txtDailyRate.Text * 22) * 0.02)
+    Private Sub txtDailyRate_TextChanged(sender As Object, e As EventArgs) Handles txtHourlyRate.TextChanged
+        If ((Val(txtHourlyRate.Text) * 48) * 52) / 12 <= 10000 Then
+            txtphilhealth.Text = 350 / 2
+        Else
+            txtphilhealth.Text = (((txtHourlyRate.Text * 8) * 22) * 0.035) / 2
+        End If
+
+
+        txtsss.Text = (((Val(txtHourlyRate.Text) * 48) * 52) / 12) * 0.0363
+        txtpagibig.Text = (((Val(txtHourlyRate.Text) * 48) * 52) / 12) * 0.02
+        txtGrossWage.Text = 48 * Val(txtHourlyRate.Text) * 2
 
     End Sub
 
     Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
-        InsertPayDetails()
+        InsertPayDetails("insert")
 
     End Sub
 
     Private Sub btnUpdate_Click(sender As Object, e As EventArgs) Handles btnUpdate.Click
-        Dim rate_hour = txtDailyRate.Text / 8
-        Dim rate_month = txtDailyRate.Text * 22
+        InsertPayDetails("update")
+        'Dim rate_day = txtHourlyRate.Text * 8
+        'Dim rate_month = ((Val(txtHourlyRate.Text) * 48) * 52) / 12
 
-        Using connect As MySqlConnection = New MySqlConnection("server=localhost;user id=root;password=esperanza;database=db_attendance")
-            Using command As MySqlCommand = New MySqlCommand("", connect)
+        'command.Connection = conAttendanceSystem
 
-                command.CommandText = "prcInsertPayDetails"
-                command.CommandType = CommandType.StoredProcedure
-                command.Parameters.Clear()
-                command.Parameters.AddWithValue("id", txtID.Text)
-                command.Parameters.AddWithValue("ratehour", rate_hour)
-                command.Parameters.AddWithValue("rateday", txtDailyRate.Text)
-                command.Parameters.AddWithValue("ratemonth", rate_month)
-                command.Parameters.AddWithValue("phealth", txtphilhealth.Text)
-                command.Parameters.AddWithValue("ss", txtsss.Text)
-                command.Parameters.AddWithValue("pibig", txtpagibig.Text)
-                command.Parameters.AddWithValue("jobstat", txtJobStat.Text)
 
-                MessageBox.Show("Successfully added")
-            End Using
-        End Using
+
+
+    End Sub
+
+    Private Sub Panel3_Paint(sender As Object, e As PaintEventArgs) Handles Panel3.Paint
+
     End Sub
 End Class

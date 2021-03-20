@@ -247,4 +247,8 @@ Public Class adminDashboard
     Private Sub lblTotalEmp1_Click_1(sender As Object, e As EventArgs) Handles lblTotalEmp1.Click
         Form1.Show()
     End Sub
+
+    Private Sub WagesDetailsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles WagesDetailsToolStripMenuItem.Click
+        WageDetails.Show()
+    End Sub
 End Class

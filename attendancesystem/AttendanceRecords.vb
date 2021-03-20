@@ -38,7 +38,7 @@ Public Class AttendanceRecords
                             .Rows(row).Cells(2).Value = dataAttendance.Rows(row).Item("gross_pay").ToString
                             .Rows(row).Cells(3).Value = dataAttendance.Rows(row).Item("total_deduction").ToString
                             .Rows(row).Cells(4).Value = dataAttendance.Rows(row).Item("total_pay").ToString
-                            .Rows(row).Cells(5).Value = dataAttendance.Rows(row).Item("day_period").ToString
+                            .Rows(row).Cells(5).Value = dataAttendance.Rows(row).Item("total_hours").ToString
 
                         End With
 
@@ -89,7 +89,7 @@ Public Class AttendanceRecords
                             .Rows(row).Cells(2).Value = dataAttendance.Rows(row).Item("gross_pay").ToString
                             .Rows(row).Cells(3).Value = dataAttendance.Rows(row).Item("total_deduction").ToString
                             .Rows(row).Cells(4).Value = dataAttendance.Rows(row).Item("total_pay").ToString
-                            .Rows(row).Cells(5).Value = dataAttendance.Rows(row).Item("day_period").ToString
+                            .Rows(row).Cells(5).Value = dataAttendance.Rows(row).Item("total_hours").ToString
 
 
 
@@ -138,7 +138,7 @@ Public Class AttendanceRecords
                             .Rows(row).Cells(2).Value = dataAttendance.Rows(row).Item("gross_pay").ToString
                             .Rows(row).Cells(3).Value = dataAttendance.Rows(row).Item("total_deduction").ToString
                             .Rows(row).Cells(4).Value = dataAttendance.Rows(row).Item("total_pay").ToString
-                            .Rows(row).Cells(5).Value = dataAttendance.Rows(row).Item("day_period").ToString
+                            .Rows(row).Cells(5).Value = dataAttendance.Rows(row).Item("total_hours").ToString
 
                         End With
 

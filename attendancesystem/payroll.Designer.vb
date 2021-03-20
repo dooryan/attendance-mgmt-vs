@@ -26,15 +26,10 @@ Partial Class payroll
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.txtName = New System.Windows.Forms.TextBox()
-        Me.txtperHour = New System.Windows.Forms.TextBox()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.txtMonth = New System.Windows.Forms.TextBox()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.txtPerDay = New System.Windows.Forms.TextBox()
+        Me.txtGrosspay = New System.Windows.Forms.TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
-        Me.txtdays = New System.Windows.Forms.TextBox()
+        Me.txtHours = New System.Windows.Forms.TextBox()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.txtCAd = New System.Windows.Forms.TextBox()
         Me.txtPhil = New System.Windows.Forms.TextBox()
@@ -49,16 +44,41 @@ Partial Class payroll
         Me.DateTimePicker2 = New System.Windows.Forms.DateTimePicker()
         Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
         Me.btnFilter = New System.Windows.Forms.Button()
-        Me.btnTotalPay = New System.Windows.Forms.TextBox()
-        Me.btnCompute = New System.Windows.Forms.Button()
+        Me.txtTotalPay = New System.Windows.Forms.TextBox()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Panel4 = New System.Windows.Forms.Panel()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.name1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.date1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.hours = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.gpay = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.deduct = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.tpay = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.txtttlpay = New System.Windows.Forms.TextBox()
+        Me.txtTtlDeductions = New System.Windows.Forms.TextBox()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.Panel5 = New System.Windows.Forms.Panel()
+        Me.Label14 = New System.Windows.Forms.Label()
+        Me.txtHourlyRate = New System.Windows.Forms.TextBox()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.txtBasicPay = New System.Windows.Forms.TextBox()
+        Me.Label15 = New System.Windows.Forms.Label()
+        Me.txtMonthly = New System.Windows.Forms.TextBox()
+        Me.Label16 = New System.Windows.Forms.Label()
+        Me.Label17 = New System.Windows.Forms.Label()
+        Me.txtOvertime = New System.Windows.Forms.TextBox()
+        Me.Label18 = New System.Windows.Forms.Label()
+        Me.txtOTPay = New System.Windows.Forms.TextBox()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.Panel3.SuspendLayout()
         Me.Panel4.SuspendLayout()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel5.SuspendLayout()
         Me.SuspendLayout()
         '
         'Label1
@@ -89,175 +109,124 @@ Partial Class payroll
         Me.txtName.Size = New System.Drawing.Size(166, 34)
         Me.txtName.TabIndex = 4
         '
-        'txtperHour
-        '
-        Me.txtperHour.BackColor = System.Drawing.Color.SlateGray
-        Me.txtperHour.Font = New System.Drawing.Font("Microsoft Sans Serif", 19.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtperHour.ForeColor = System.Drawing.Color.White
-        Me.txtperHour.Location = New System.Drawing.Point(144, 57)
-        Me.txtperHour.Name = "txtperHour"
-        Me.txtperHour.Size = New System.Drawing.Size(257, 45)
-        Me.txtperHour.TabIndex = 5
-        Me.txtperHour.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(37, 70)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(69, 20)
-        Me.Label3.TabIndex = 6
-        Me.Label3.Text = "Income"
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(3, 72)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(128, 20)
-        Me.Label4.TabIndex = 7
-        Me.Label4.Text = "Rate per Hour"
-        '
         'Label5
         '
         Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.Location = New System.Drawing.Point(13, 93)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(0, 17)
         Me.Label5.TabIndex = 9
         '
-        'txtMonth
+        'txtGrosspay
         '
-        Me.txtMonth.BackColor = System.Drawing.Color.SlateGray
-        Me.txtMonth.Font = New System.Drawing.Font("Microsoft Sans Serif", 19.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtMonth.ForeColor = System.Drawing.Color.White
-        Me.txtMonth.Location = New System.Drawing.Point(144, 155)
-        Me.txtMonth.Name = "txtMonth"
-        Me.txtMonth.Size = New System.Drawing.Size(257, 45)
-        Me.txtMonth.TabIndex = 8
-        Me.txtMonth.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(9, 21)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(120, 20)
-        Me.Label6.TabIndex = 11
-        Me.Label6.Text = "Rate per Day"
-        '
-        'txtPerDay
-        '
-        Me.txtPerDay.BackColor = System.Drawing.Color.SlateGray
-        Me.txtPerDay.Font = New System.Drawing.Font("Microsoft Sans Serif", 19.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtPerDay.ForeColor = System.Drawing.Color.White
-        Me.txtPerDay.Location = New System.Drawing.Point(144, 9)
-        Me.txtPerDay.Name = "txtPerDay"
-        Me.txtPerDay.Size = New System.Drawing.Size(257, 45)
-        Me.txtPerDay.TabIndex = 10
-        Me.txtPerDay.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        Me.txtGrosspay.BackColor = System.Drawing.Color.SlateGray
+        Me.txtGrosspay.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtGrosspay.ForeColor = System.Drawing.Color.White
+        Me.txtGrosspay.Location = New System.Drawing.Point(163, 146)
+        Me.txtGrosspay.Name = "txtGrosspay"
+        Me.txtGrosspay.Size = New System.Drawing.Size(99, 22)
+        Me.txtGrosspay.TabIndex = 8
+        Me.txtGrosspay.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(29, 120)
+        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.Location = New System.Drawing.Point(13, 19)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(100, 20)
+        Me.Label7.Size = New System.Drawing.Size(129, 17)
         Me.Label7.TabIndex = 12
-        Me.Label7.Text = "Total Days"
+        Me.Label7.Text = "Total hours worked"
         '
-        'txtdays
+        'txtHours
         '
-        Me.txtdays.BackColor = System.Drawing.Color.SlateGray
-        Me.txtdays.Font = New System.Drawing.Font("Microsoft Sans Serif", 19.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtdays.ForeColor = System.Drawing.Color.White
-        Me.txtdays.Location = New System.Drawing.Point(144, 106)
-        Me.txtdays.Name = "txtdays"
-        Me.txtdays.Size = New System.Drawing.Size(257, 45)
-        Me.txtdays.TabIndex = 13
-        Me.txtdays.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        Me.txtHours.BackColor = System.Drawing.Color.SlateGray
+        Me.txtHours.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtHours.ForeColor = System.Drawing.Color.White
+        Me.txtHours.Location = New System.Drawing.Point(161, 14)
+        Me.txtHours.Name = "txtHours"
+        Me.txtHours.Size = New System.Drawing.Size(99, 22)
+        Me.txtHours.TabIndex = 13
+        Me.txtHours.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.Location = New System.Drawing.Point(14, 27)
+        Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.Location = New System.Drawing.Point(16, 38)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(129, 20)
+        Me.Label9.Size = New System.Drawing.Size(99, 17)
         Me.Label9.TabIndex = 15
         Me.Label9.Text = "Cash Advance"
         '
         'txtCAd
         '
         Me.txtCAd.BackColor = System.Drawing.Color.Silver
-        Me.txtCAd.Font = New System.Drawing.Font("Microsoft Sans Serif", 19.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtCAd.Location = New System.Drawing.Point(148, 9)
+        Me.txtCAd.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtCAd.Location = New System.Drawing.Point(134, 33)
         Me.txtCAd.Name = "txtCAd"
-        Me.txtCAd.Size = New System.Drawing.Size(205, 45)
+        Me.txtCAd.Size = New System.Drawing.Size(129, 22)
         Me.txtCAd.TabIndex = 16
         Me.txtCAd.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'txtPhil
         '
         Me.txtPhil.BackColor = System.Drawing.Color.DimGray
-        Me.txtPhil.Font = New System.Drawing.Font("Microsoft Sans Serif", 19.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtPhil.Location = New System.Drawing.Point(149, 56)
+        Me.txtPhil.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtPhil.Location = New System.Drawing.Point(134, 61)
         Me.txtPhil.Name = "txtPhil"
-        Me.txtPhil.Size = New System.Drawing.Size(205, 45)
+        Me.txtPhil.Size = New System.Drawing.Size(129, 22)
         Me.txtPhil.TabIndex = 18
         Me.txtPhil.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'Label10
         '
         Me.Label10.AutoSize = True
-        Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label10.Location = New System.Drawing.Point(50, 78)
+        Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label10.Location = New System.Drawing.Point(45, 66)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(92, 20)
+        Me.Label10.Size = New System.Drawing.Size(70, 17)
         Me.Label10.TabIndex = 17
         Me.Label10.Text = "Philhealth"
         '
         'txtSSS
         '
         Me.txtSSS.BackColor = System.Drawing.Color.DimGray
-        Me.txtSSS.Font = New System.Drawing.Font("Microsoft Sans Serif", 19.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtSSS.Location = New System.Drawing.Point(150, 102)
+        Me.txtSSS.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtSSS.Location = New System.Drawing.Point(134, 117)
         Me.txtSSS.Name = "txtSSS"
-        Me.txtSSS.Size = New System.Drawing.Size(205, 45)
+        Me.txtSSS.Size = New System.Drawing.Size(129, 22)
         Me.txtSSS.TabIndex = 20
         Me.txtSSS.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'Label11
         '
         Me.Label11.AutoSize = True
-        Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.Location = New System.Drawing.Point(96, 124)
+        Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label11.Location = New System.Drawing.Point(80, 123)
         Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(45, 20)
+        Me.Label11.Size = New System.Drawing.Size(35, 17)
         Me.Label11.TabIndex = 19
         Me.Label11.Text = "SSS"
         '
         'txtpagibig
         '
         Me.txtpagibig.BackColor = System.Drawing.Color.DimGray
-        Me.txtpagibig.Font = New System.Drawing.Font("Microsoft Sans Serif", 19.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtpagibig.Location = New System.Drawing.Point(150, 149)
+        Me.txtpagibig.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtpagibig.Location = New System.Drawing.Point(134, 89)
         Me.txtpagibig.Name = "txtpagibig"
-        Me.txtpagibig.Size = New System.Drawing.Size(205, 45)
+        Me.txtpagibig.Size = New System.Drawing.Size(129, 22)
         Me.txtpagibig.TabIndex = 22
         Me.txtpagibig.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'Label12
         '
         Me.Label12.AutoSize = True
-        Me.Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label12.Location = New System.Drawing.Point(65, 167)
+        Me.Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label12.Location = New System.Drawing.Point(68, 94)
         Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(78, 20)
+        Me.Label12.Size = New System.Drawing.Size(60, 17)
         Me.Label12.TabIndex = 21
         Me.Label12.Text = "Pag-ibig"
         '
@@ -266,17 +235,16 @@ Partial Class payroll
         Me.btnPay.BackColor = System.Drawing.Color.Tomato
         Me.btnPay.BackgroundImage = CType(resources.GetObject("btnPay.BackgroundImage"), System.Drawing.Image)
         Me.btnPay.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btnPay.Location = New System.Drawing.Point(13, 383)
+        Me.btnPay.Location = New System.Drawing.Point(29, 365)
         Me.btnPay.Name = "btnPay"
-        Me.btnPay.Size = New System.Drawing.Size(410, 51)
+        Me.btnPay.Size = New System.Drawing.Size(189, 51)
         Me.btnPay.TabIndex = 23
-        Me.btnPay.Text = "Confirm Pay"
+        Me.btnPay.Text = "Generate Payroll"
         Me.btnPay.UseVisualStyleBackColor = False
         '
         'Panel1
         '
-        Me.Panel1.BackColor = System.Drawing.Color.Wheat
-        Me.Panel1.BackgroundImage = CType(resources.GetObject("Panel1.BackgroundImage"), System.Drawing.Image)
+        Me.Panel1.BackColor = System.Drawing.Color.White
         Me.Panel1.Controls.Add(Me.ComboBox1)
         Me.Panel1.Controls.Add(Me.DateTimePicker2)
         Me.Panel1.Controls.Add(Me.DateTimePicker1)
@@ -286,7 +254,7 @@ Partial Class payroll
         Me.Panel1.Controls.Add(Me.Label1)
         Me.Panel1.Location = New System.Drawing.Point(13, 10)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(779, 96)
+        Me.Panel1.Size = New System.Drawing.Size(813, 96)
         Me.Panel1.TabIndex = 26
         '
         'ComboBox1
@@ -306,7 +274,7 @@ Partial Class payroll
         Me.DateTimePicker2.Name = "DateTimePicker2"
         Me.DateTimePicker2.Size = New System.Drawing.Size(196, 34)
         Me.DateTimePicker2.TabIndex = 28
-        Me.DateTimePicker2.Value = New Date(2021, 3, 11, 0, 0, 0, 0)
+        Me.DateTimePicker2.Value = New Date(2021, 3, 20, 0, 0, 0, 0)
         '
         'DateTimePicker1
         '
@@ -329,62 +297,54 @@ Partial Class payroll
         Me.btnFilter.Text = "GO"
         Me.btnFilter.UseVisualStyleBackColor = False
         '
-        'btnTotalPay
+        'txtTotalPay
         '
-        Me.btnTotalPay.BackColor = System.Drawing.Color.White
-        Me.btnTotalPay.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.btnTotalPay.Font = New System.Drawing.Font("Microsoft Sans Serif", 52.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnTotalPay.Location = New System.Drawing.Point(429, 331)
-        Me.btnTotalPay.Name = "btnTotalPay"
-        Me.btnTotalPay.Size = New System.Drawing.Size(363, 100)
-        Me.btnTotalPay.TabIndex = 27
-        Me.btnTotalPay.Text = "Total"
-        Me.btnTotalPay.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-        '
-        'btnCompute
-        '
-        Me.btnCompute.BackColor = System.Drawing.Color.Tan
-        Me.btnCompute.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btnCompute.Image = CType(resources.GetObject("btnCompute.Image"), System.Drawing.Image)
-        Me.btnCompute.Location = New System.Drawing.Point(13, 329)
-        Me.btnCompute.Name = "btnCompute"
-        Me.btnCompute.Size = New System.Drawing.Size(410, 48)
-        Me.btnCompute.TabIndex = 32
-        Me.btnCompute.Text = "Compute"
-        Me.btnCompute.UseVisualStyleBackColor = False
+        Me.txtTotalPay.BackColor = System.Drawing.Color.White
+        Me.txtTotalPay.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.txtTotalPay.Font = New System.Drawing.Font("Microsoft Sans Serif", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtTotalPay.Location = New System.Drawing.Point(322, 313)
+        Me.txtTotalPay.Name = "txtTotalPay"
+        Me.txtTotalPay.Size = New System.Drawing.Size(276, 46)
+        Me.txtTotalPay.TabIndex = 27
+        Me.txtTotalPay.Text = "Total"
+        Me.txtTotalPay.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'Panel2
         '
         Me.Panel2.BackColor = System.Drawing.Color.White
-        Me.Panel2.Controls.Add(Me.Label13)
-        Me.Panel2.Controls.Add(Me.txtdays)
-        Me.Panel2.Controls.Add(Me.Label7)
-        Me.Panel2.Controls.Add(Me.Label6)
-        Me.Panel2.Controls.Add(Me.txtPerDay)
-        Me.Panel2.Controls.Add(Me.Label5)
-        Me.Panel2.Controls.Add(Me.txtMonth)
+        Me.Panel2.Controls.Add(Me.Label18)
+        Me.Panel2.Controls.Add(Me.txtOTPay)
+        Me.Panel2.Controls.Add(Me.Label17)
+        Me.Panel2.Controls.Add(Me.txtOvertime)
         Me.Panel2.Controls.Add(Me.Label4)
-        Me.Panel2.Controls.Add(Me.Label3)
-        Me.Panel2.Controls.Add(Me.txtperHour)
+        Me.Panel2.Controls.Add(Me.txtttlpay)
+        Me.Panel2.Controls.Add(Me.Label13)
+        Me.Panel2.Controls.Add(Me.txtHours)
+        Me.Panel2.Controls.Add(Me.Label7)
+        Me.Panel2.Controls.Add(Me.Label5)
+        Me.Panel2.Controls.Add(Me.txtGrosspay)
         Me.Panel2.Location = New System.Drawing.Point(13, 114)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(410, 208)
+        Me.Panel2.Size = New System.Drawing.Size(284, 245)
         Me.Panel2.TabIndex = 33
         '
         'Label13
         '
         Me.Label13.AutoSize = True
-        Me.Label13.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label13.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label13.ForeColor = System.Drawing.SystemColors.Desktop
-        Me.Label13.Location = New System.Drawing.Point(29, 165)
+        Me.Label13.Location = New System.Drawing.Point(70, 149)
         Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(97, 20)
+        Me.Label13.Size = New System.Drawing.Size(70, 17)
         Me.Label13.TabIndex = 33
-        Me.Label13.Text = "Gross Pay"
+        Me.Label13.Text = "Basic Pay"
         '
         'Panel3
         '
         Me.Panel3.BackColor = System.Drawing.Color.White
+        Me.Panel3.Controls.Add(Me.txtTtlDeductions)
+        Me.Panel3.Controls.Add(Me.Label6)
+        Me.Panel3.Controls.Add(Me.Label3)
         Me.Panel3.Controls.Add(Me.txtpagibig)
         Me.Panel3.Controls.Add(Me.Label12)
         Me.Panel3.Controls.Add(Me.txtSSS)
@@ -393,24 +353,245 @@ Partial Class payroll
         Me.Panel3.Controls.Add(Me.Label10)
         Me.Panel3.Controls.Add(Me.txtCAd)
         Me.Panel3.Controls.Add(Me.Label9)
-        Me.Panel3.Location = New System.Drawing.Point(429, 114)
+        Me.Panel3.Location = New System.Drawing.Point(305, 114)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(363, 208)
+        Me.Panel3.Size = New System.Drawing.Size(276, 193)
         Me.Panel3.TabIndex = 34
         '
         'Panel4
         '
         Me.Panel4.BackColor = System.Drawing.Color.Gray
+        Me.Panel4.Controls.Add(Me.Panel5)
+        Me.Panel4.Controls.Add(Me.DataGridView1)
         Me.Panel4.Controls.Add(Me.Panel3)
-        Me.Panel4.Controls.Add(Me.btnCompute)
         Me.Panel4.Controls.Add(Me.Panel2)
-        Me.Panel4.Controls.Add(Me.btnTotalPay)
+        Me.Panel4.Controls.Add(Me.txtTotalPay)
         Me.Panel4.Controls.Add(Me.Panel1)
         Me.Panel4.Controls.Add(Me.btnPay)
         Me.Panel4.Location = New System.Drawing.Point(11, 9)
         Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(804, 445)
+        Me.Panel4.Size = New System.Drawing.Size(849, 564)
         Me.Panel4.TabIndex = 35
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(3, 3)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(149, 17)
+        Me.Label3.TabIndex = 23
+        Me.Label3.Text = "Deductions and Taxes"
+        '
+        'DataGridView1
+        '
+        Me.DataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.name1, Me.date1, Me.hours, Me.gpay, Me.deduct, Me.tpay})
+        Me.DataGridView1.Location = New System.Drawing.Point(14, 419)
+        Me.DataGridView1.Name = "DataGridView1"
+        Me.DataGridView1.RowTemplate.Height = 24
+        Me.DataGridView1.Size = New System.Drawing.Size(774, 128)
+        Me.DataGridView1.TabIndex = 35
+        '
+        'name1
+        '
+        Me.name1.HeaderText = "Name"
+        Me.name1.Name = "name1"
+        '
+        'date1
+        '
+        Me.date1.HeaderText = "Date"
+        Me.date1.Name = "date1"
+        '
+        'hours
+        '
+        Me.hours.HeaderText = "Hours Worked"
+        Me.hours.Name = "hours"
+        '
+        'gpay
+        '
+        Me.gpay.HeaderText = "Gross Pay"
+        Me.gpay.Name = "gpay"
+        '
+        'deduct
+        '
+        Me.deduct.HeaderText = "Total Deductions"
+        Me.deduct.Name = "deduct"
+        '
+        'tpay
+        '
+        Me.tpay.HeaderText = "Total Pay"
+        Me.tpay.Name = "tpay"
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.ForeColor = System.Drawing.SystemColors.Desktop
+        Me.Label4.Location = New System.Drawing.Point(40, 177)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(112, 17)
+        Me.Label4.TabIndex = 35
+        Me.Label4.Text = "TOTAL SALARY"
+        '
+        'txtttlpay
+        '
+        Me.txtttlpay.BackColor = System.Drawing.Color.SlateGray
+        Me.txtttlpay.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtttlpay.ForeColor = System.Drawing.Color.White
+        Me.txtttlpay.Location = New System.Drawing.Point(163, 174)
+        Me.txtttlpay.Name = "txtttlpay"
+        Me.txtttlpay.Size = New System.Drawing.Size(99, 22)
+        Me.txtttlpay.TabIndex = 34
+        Me.txtttlpay.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
+        'txtTtlDeductions
+        '
+        Me.txtTtlDeductions.BackColor = System.Drawing.Color.DimGray
+        Me.txtTtlDeductions.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtTtlDeductions.Location = New System.Drawing.Point(134, 151)
+        Me.txtTtlDeductions.Name = "txtTtlDeductions"
+        Me.txtTtlDeductions.Size = New System.Drawing.Size(129, 22)
+        Me.txtTtlDeductions.TabIndex = 25
+        Me.txtTtlDeductions.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.Location = New System.Drawing.Point(7, 154)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(115, 17)
+        Me.Label6.TabIndex = 24
+        Me.Label6.Text = "Total Deductions"
+        '
+        'Panel5
+        '
+        Me.Panel5.BackColor = System.Drawing.Color.White
+        Me.Panel5.Controls.Add(Me.txtMonthly)
+        Me.Panel5.Controls.Add(Me.Label16)
+        Me.Panel5.Controls.Add(Me.txtBasicPay)
+        Me.Panel5.Controls.Add(Me.Label15)
+        Me.Panel5.Controls.Add(Me.txtHourlyRate)
+        Me.Panel5.Controls.Add(Me.Label8)
+        Me.Panel5.Controls.Add(Me.Label14)
+        Me.Panel5.Location = New System.Drawing.Point(587, 112)
+        Me.Panel5.Name = "Panel5"
+        Me.Panel5.Size = New System.Drawing.Size(222, 195)
+        Me.Panel5.TabIndex = 36
+        '
+        'Label14
+        '
+        Me.Label14.AutoSize = True
+        Me.Label14.Location = New System.Drawing.Point(3, 3)
+        Me.Label14.Name = "Label14"
+        Me.Label14.Size = New System.Drawing.Size(61, 17)
+        Me.Label14.TabIndex = 23
+        Me.Label14.Text = "INCOME"
+        '
+        'txtHourlyRate
+        '
+        Me.txtHourlyRate.BackColor = System.Drawing.Color.DimGray
+        Me.txtHourlyRate.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtHourlyRate.Location = New System.Drawing.Point(112, 37)
+        Me.txtHourlyRate.Name = "txtHourlyRate"
+        Me.txtHourlyRate.Size = New System.Drawing.Size(104, 22)
+        Me.txtHourlyRate.TabIndex = 27
+        Me.txtHourlyRate.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.Location = New System.Drawing.Point(12, 40)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(83, 17)
+        Me.Label8.TabIndex = 26
+        Me.Label8.Text = "Hourly Rate"
+        '
+        'txtBasicPay
+        '
+        Me.txtBasicPay.BackColor = System.Drawing.Color.DimGray
+        Me.txtBasicPay.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtBasicPay.Location = New System.Drawing.Point(112, 61)
+        Me.txtBasicPay.Name = "txtBasicPay"
+        Me.txtBasicPay.Size = New System.Drawing.Size(104, 22)
+        Me.txtBasicPay.TabIndex = 29
+        Me.txtBasicPay.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
+        'Label15
+        '
+        Me.Label15.AutoSize = True
+        Me.Label15.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label15.Location = New System.Drawing.Point(25, 61)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Size = New System.Drawing.Size(70, 17)
+        Me.Label15.TabIndex = 28
+        Me.Label15.Text = "Basic Pay"
+        '
+        'txtMonthly
+        '
+        Me.txtMonthly.BackColor = System.Drawing.Color.DimGray
+        Me.txtMonthly.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtMonthly.Location = New System.Drawing.Point(112, 89)
+        Me.txtMonthly.Name = "txtMonthly"
+        Me.txtMonthly.Size = New System.Drawing.Size(104, 22)
+        Me.txtMonthly.TabIndex = 31
+        Me.txtMonthly.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
+        'Label16
+        '
+        Me.Label16.AutoSize = True
+        Me.Label16.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label16.Location = New System.Drawing.Point(12, 92)
+        Me.Label16.Name = "Label16"
+        Me.Label16.Size = New System.Drawing.Size(123, 17)
+        Me.Label16.TabIndex = 30
+        Me.Label16.Text = "Monthly Basic Pay"
+        '
+        'Label17
+        '
+        Me.Label17.AutoSize = True
+        Me.Label17.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label17.ForeColor = System.Drawing.SystemColors.Desktop
+        Me.Label17.Location = New System.Drawing.Point(70, 45)
+        Me.Label17.Name = "Label17"
+        Me.Label17.Size = New System.Drawing.Size(74, 17)
+        Me.Label17.TabIndex = 37
+        Me.Label17.Text = "Over Time"
+        '
+        'txtOvertime
+        '
+        Me.txtOvertime.BackColor = System.Drawing.Color.SlateGray
+        Me.txtOvertime.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtOvertime.ForeColor = System.Drawing.Color.White
+        Me.txtOvertime.Location = New System.Drawing.Point(161, 40)
+        Me.txtOvertime.Name = "txtOvertime"
+        Me.txtOvertime.Size = New System.Drawing.Size(99, 22)
+        Me.txtOvertime.TabIndex = 36
+        Me.txtOvertime.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
+        'Label18
+        '
+        Me.Label18.AutoSize = True
+        Me.Label18.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label18.ForeColor = System.Drawing.SystemColors.Desktop
+        Me.Label18.Location = New System.Drawing.Point(16, 117)
+        Me.Label18.Name = "Label18"
+        Me.Label18.Size = New System.Drawing.Size(128, 17)
+        Me.Label18.TabIndex = 39
+        Me.Label18.Text = "Total Overtime pay"
+        '
+        'txtOTPay
+        '
+        Me.txtOTPay.BackColor = System.Drawing.Color.SlateGray
+        Me.txtOTPay.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtOTPay.ForeColor = System.Drawing.Color.White
+        Me.txtOTPay.Location = New System.Drawing.Point(163, 114)
+        Me.txtOTPay.Name = "txtOTPay"
+        Me.txtOTPay.Size = New System.Drawing.Size(99, 22)
+        Me.txtOTPay.TabIndex = 38
+        Me.txtOTPay.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'payroll
         '
@@ -418,7 +599,7 @@ Partial Class payroll
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.SlateGray
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
-        Me.ClientSize = New System.Drawing.Size(827, 465)
+        Me.ClientSize = New System.Drawing.Size(872, 585)
         Me.Controls.Add(Me.Panel4)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.Name = "payroll"
@@ -432,6 +613,9 @@ Partial Class payroll
         Me.Panel3.PerformLayout()
         Me.Panel4.ResumeLayout(False)
         Me.Panel4.PerformLayout()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel5.ResumeLayout(False)
+        Me.Panel5.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -439,15 +623,10 @@ Partial Class payroll
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents txtName As TextBox
-    Friend WithEvents txtperHour As TextBox
-    Friend WithEvents Label3 As Label
-    Friend WithEvents Label4 As Label
     Friend WithEvents Label5 As Label
-    Friend WithEvents txtMonth As TextBox
-    Friend WithEvents Label6 As Label
-    Friend WithEvents txtPerDay As TextBox
+    Friend WithEvents txtGrosspay As TextBox
     Friend WithEvents Label7 As Label
-    Friend WithEvents txtdays As TextBox
+    Friend WithEvents txtHours As TextBox
     Friend WithEvents Label9 As Label
     Friend WithEvents txtCAd As TextBox
     Friend WithEvents txtPhil As TextBox
@@ -459,8 +638,7 @@ Partial Class payroll
     Friend WithEvents btnPay As Button
     Friend WithEvents Panel1 As Panel
     Friend WithEvents btnFilter As Button
-    Friend WithEvents btnTotalPay As TextBox
-    Friend WithEvents btnCompute As Button
+    Friend WithEvents txtTotalPay As TextBox
     Friend WithEvents DateTimePicker2 As DateTimePicker
     Friend WithEvents DateTimePicker1 As DateTimePicker
     Friend WithEvents ComboBox1 As ComboBox
@@ -468,4 +646,28 @@ Partial Class payroll
     Friend WithEvents Label13 As Label
     Friend WithEvents Panel3 As Panel
     Friend WithEvents Panel4 As Panel
+    Friend WithEvents Label3 As Label
+    Friend WithEvents Label4 As Label
+    Friend WithEvents txtttlpay As TextBox
+    Friend WithEvents txtTtlDeductions As TextBox
+    Friend WithEvents Label6 As Label
+    Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents name1 As DataGridViewTextBoxColumn
+    Friend WithEvents date1 As DataGridViewTextBoxColumn
+    Friend WithEvents hours As DataGridViewTextBoxColumn
+    Friend WithEvents gpay As DataGridViewTextBoxColumn
+    Friend WithEvents deduct As DataGridViewTextBoxColumn
+    Friend WithEvents tpay As DataGridViewTextBoxColumn
+    Friend WithEvents Panel5 As Panel
+    Friend WithEvents txtMonthly As TextBox
+    Friend WithEvents Label16 As Label
+    Friend WithEvents txtBasicPay As TextBox
+    Friend WithEvents Label15 As Label
+    Friend WithEvents txtHourlyRate As TextBox
+    Friend WithEvents Label8 As Label
+    Friend WithEvents Label14 As Label
+    Friend WithEvents Label17 As Label
+    Friend WithEvents txtOvertime As TextBox
+    Friend WithEvents Label18 As Label
+    Friend WithEvents txtOTPay As TextBox
 End Class
