@@ -110,17 +110,20 @@ Public Class payroll
 
 
 
-                txtGrosspay.Text = Val(txtHours.Text) * CDec(DA(0)(1))
-                txtttlpay.Text = Val(txtGrosspay.Text)
+                'txtGrosspay.Text = Val(txtHours.Text) * CDec(DA(0)(1))
+                txtHourlyRate.Text = DA(0)(1)
                 txtPhil.Text = DA(0)(4)
                 txtSSS.Text = DA(0)(5)
                 txtpagibig.Text = DA(0)(6)
-                txtTtlDeductions.Text = Val(txtPhil.Text) + Val(txtSSS.Text) + Val(txtpagibig.Text) + Val(txtCAd.Text)
-                txtTotalPay.Text = Val(txtttlpay.Text) - Val(txtTtlDeductions.Text)
-                txtHourlyRate.Text = DA(0)(1)
-                txtBasicPay.Text = Val(txtHourlyRate.Text) * 8
+                txtTtlDeductions.Text = Val(txtPhil.Text) + Val(txtSSS.Text) + Val(txtpagibig.Text)
+
                 txtMonthly.Text = Val(((Val(txtHourlyRate.Text) * 48) * 52) / 12)
-                txtOTPay.Text = (Val(txtOvertime.Text) * Val(txtHourlyRate.Text)) * 1.5
+                txtBasicRate.Text = Val(txtMonthly.Text) / 2
+                txtOTPay.Text = (Val(txtOvertime.Text) * Val(txtHourlyRate.Text)) * 1.25
+                txtttlpay.Text = (Val(txtHours.Text) * CDec(DA(0)(1))) + Val(txtOTPay.Text)
+                txtTotalPay.Text = Val(txtttlpay.Text) - Val(txtTtlDeductions.Text)
+
+
             End Using
         End Using
 
@@ -146,7 +149,7 @@ Public Class payroll
                 DA.Clear()
                 sqlAdapter.Fill(DA)
 
-                txtName.Text = DA(0)(0)
+                txtName.Text = DA(0)(0) & ", " & DA(0)(1)
 
             End Using
         End Using
@@ -197,7 +200,8 @@ Public Class payroll
 
 
                     If (CInt(DA(counter)(6)) > 9) Then
-                        countOT = (CInt(DA(counter)(6)) - 1) - 8
+                        countOT = countOT + (CInt(DA(counter)(6)) - 1) - 8
+                        totalHours = totalHours - countOT
                     End If
                     counter = counter + 1
                 End While
@@ -263,7 +267,7 @@ Public Class payroll
 
                 If DA.Rows.Count > 0 Then
                     DataGridView1.RowCount = DA.Rows.Count
-                    Dim name = DA(0)(5) & DA(0)(6)
+                    Dim name = DA(0)(5) & "," & DA(0)(6)
                     row = 0
                     While Not DA.Rows.Count - 1 < row
                         With DataGridView1
