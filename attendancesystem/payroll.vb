@@ -318,7 +318,7 @@ Public Class payroll
             report1.SetDataSource(dt)
             Report.CrystalReportViewer1.ReportSource = report1
 
-
+            '
 
 
             Report.ShowDialog()
