@@ -24,9 +24,12 @@ Partial Class AttendanceRecords
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(AttendanceRecords))
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.btnSearch = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.DateTimePicker2 = New System.Windows.Forms.DateTimePicker()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.txtID = New System.Windows.Forms.TextBox()
+        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
         Me.id1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.name1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.lname = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -44,45 +47,64 @@ Partial Class AttendanceRecords
         Me.DataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.id1, Me.name1, Me.lname, Me.tdate, Me.ttime, Me.stat, Me.days})
-        Me.DataGridView1.Location = New System.Drawing.Point(13, 59)
+        Me.DataGridView1.Location = New System.Drawing.Point(13, 70)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.RowTemplate.Height = 24
         Me.DataGridView1.Size = New System.Drawing.Size(800, 322)
         Me.DataGridView1.TabIndex = 0
         '
-        'TextBox1
-        '
-        Me.TextBox1.BackColor = System.Drawing.Color.White
-        Me.TextBox1.Font = New System.Drawing.Font("Corbel", 13.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox1.Location = New System.Drawing.Point(14, 16)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(365, 36)
-        Me.TextBox1.TabIndex = 1
-        '
-        'btnSearch
-        '
-        Me.btnSearch.BackColor = System.Drawing.Color.Tan
-        Me.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnSearch.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnSearch.ForeColor = System.Drawing.Color.Black
-        Me.btnSearch.Location = New System.Drawing.Point(385, 14)
-        Me.btnSearch.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.btnSearch.Name = "btnSearch"
-        Me.btnSearch.Size = New System.Drawing.Size(179, 38)
-        Me.btnSearch.TabIndex = 17
-        Me.btnSearch.Text = "Search"
-        Me.btnSearch.UseVisualStyleBackColor = False
-        '
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.Gray
+        Me.Panel1.Controls.Add(Me.Button2)
+        Me.Panel1.Controls.Add(Me.DateTimePicker2)
+        Me.Panel1.Controls.Add(Me.Button1)
+        Me.Panel1.Controls.Add(Me.txtID)
+        Me.Panel1.Controls.Add(Me.DateTimePicker1)
         Me.Panel1.Controls.Add(Me.DataGridView1)
-        Me.Panel1.Controls.Add(Me.btnSearch)
-        Me.Panel1.Controls.Add(Me.TextBox1)
-        Me.Panel1.Location = New System.Drawing.Point(17, 19)
+        Me.Panel1.Location = New System.Drawing.Point(17, 12)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(829, 398)
+        Me.Panel1.Size = New System.Drawing.Size(829, 405)
         Me.Panel1.TabIndex = 18
+        '
+        'Button2
+        '
+        Me.Button2.Location = New System.Drawing.Point(681, 14)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(132, 36)
+        Me.Button2.TabIndex = 5
+        Me.Button2.Text = "Generate Report"
+        Me.Button2.UseVisualStyleBackColor = True
+        '
+        'DateTimePicker2
+        '
+        Me.DateTimePicker2.Location = New System.Drawing.Point(272, 37)
+        Me.DateTimePicker2.Name = "DateTimePicker2"
+        Me.DateTimePicker2.Size = New System.Drawing.Size(189, 22)
+        Me.DateTimePicker2.TabIndex = 4
+        '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(512, 14)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(101, 36)
+        Me.Button1.TabIndex = 3
+        Me.Button1.Text = "Button1"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
+        'txtID
+        '
+        Me.txtID.Location = New System.Drawing.Point(13, 14)
+        Me.txtID.Name = "txtID"
+        Me.txtID.Size = New System.Drawing.Size(184, 22)
+        Me.txtID.TabIndex = 2
+        '
+        'DateTimePicker1
+        '
+        Me.DateTimePicker1.Location = New System.Drawing.Point(272, 9)
+        Me.DateTimePicker1.Name = "DateTimePicker1"
+        Me.DateTimePicker1.Size = New System.Drawing.Size(189, 22)
+        Me.DateTimePicker1.TabIndex = 1
         '
         'id1
         '
@@ -111,12 +133,12 @@ Partial Class AttendanceRecords
         '
         'stat
         '
-        Me.stat.HeaderText = "TOTAL PAY"
+        Me.stat.HeaderText = "NET PAY"
         Me.stat.Name = "stat"
         '
         'days
         '
-        Me.days.HeaderText = "Working Days"
+        Me.days.HeaderText = "Total Working Hours"
         Me.days.Name = "days"
         '
         'AttendanceRecords
@@ -139,9 +161,12 @@ Partial Class AttendanceRecords
     End Sub
 
     Friend WithEvents DataGridView1 As DataGridView
-    Friend WithEvents TextBox1 As TextBox
-    Friend WithEvents btnSearch As Button
     Friend WithEvents Panel1 As Panel
+    Friend WithEvents DateTimePicker2 As DateTimePicker
+    Friend WithEvents Button1 As Button
+    Friend WithEvents txtID As TextBox
+    Friend WithEvents DateTimePicker1 As DateTimePicker
+    Friend WithEvents Button2 As Button
     Friend WithEvents id1 As DataGridViewTextBoxColumn
     Friend WithEvents name1 As DataGridViewTextBoxColumn
     Friend WithEvents lname As DataGridViewTextBoxColumn

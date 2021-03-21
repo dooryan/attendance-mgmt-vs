@@ -114,6 +114,18 @@
     <Compile Include="AttendanceRecords.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="CrystalPayrollReport.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalPayrollReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CrystalReport1.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReport1.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="dailystat.Designer.vb">
       <DependentUpon>dailystat.vb</DependentUpon>
     </Compile>
@@ -123,9 +135,6 @@
     <Compile Include="DataSet1.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DataSet1.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="DataSet1.vb">
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </Compile>
     <Compile Include="Employee.vb">
@@ -176,6 +185,28 @@
     <Compile Include="daily_status.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="PayrollReport.Designer.vb">
+      <DependentUpon>PayrollReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PayrollReport.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PayrollReportDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PayrollReportDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Payslip.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Payslip.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PayslipDataset.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PayslipDataset.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Report.Designer.vb">
       <DependentUpon>Report.vb</DependentUpon>
     </Compile>
@@ -211,6 +242,14 @@
     <EmbeddedResource Include="AttendanceRecords.resx">
       <DependentUpon>AttendanceRecords.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CrystalPayrollReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalPayrollReport.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReport1.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReport1.vb</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="dailystat.resx">
       <DependentUpon>dailystat.vb</DependentUpon>
     </EmbeddedResource>
@@ -234,6 +273,13 @@
     </EmbeddedResource>
     <EmbeddedResource Include="daily_status.resx">
       <DependentUpon>daily_status.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PayrollReport.resx">
+      <DependentUpon>PayrollReport.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Payslip.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Payslip.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Report.resx">
       <DependentUpon>Report.vb</DependentUpon>
@@ -269,6 +315,28 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="PayrollReportDataSet.xsc">
+      <DependentUpon>PayrollReportDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="PayrollReportDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PayrollReportDataSet.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="PayrollReportDataSet.xss">
+      <DependentUpon>PayrollReportDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="PayslipDataset.xsc">
+      <DependentUpon>PayslipDataset.xsd</DependentUpon>
+    </None>
+    <None Include="PayslipDataset.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PayslipDataset.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="PayslipDataset.xss">
+      <DependentUpon>PayslipDataset.xsd</DependentUpon>
+    </None>
     <None Include="Resources\19-198308_back-icon-png-image-free-download-searchpng-transparent.png" />
   </ItemGroup>
   <ItemGroup>

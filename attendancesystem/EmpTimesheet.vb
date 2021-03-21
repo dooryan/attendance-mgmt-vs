@@ -1,5 +1,7 @@
 ﻿Imports MySql.Data.MySqlClient
 Imports EXCEL = Microsoft.Office.Interop.Excel
+Imports CrystalDecisions.CrystalReports.Engine
+
 
 
 
@@ -245,5 +247,67 @@ Public Class EmpTimesheet
 
     Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Panel1.Paint
 
+    End Sub
+
+    Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles Button1.Click
+        Dim date1 As String = DateTimePicker1.Value.ToString("yyyy/MM/dd")
+
+        Dim date2 As String = DateTimePicker2.Value.ToString("yyyy/MM/dd")
+
+
+        Dim dt As New DataTable
+        With dt
+            .Columns.Add("ID")
+            .Columns.Add("Firstname")
+            .Columns.Add("Lastname")
+            .Columns.Add("Date")
+            .Columns.Add("Timein")
+            .Columns.Add("Timeout")
+            .Columns.Add("Totalhours")
+        End With
+
+        For Each dgr As DataGridViewRow In Me.DataGridView1.Rows
+            dt.Rows.Add(dgr.Cells(0).Value, dgr.Cells(1).Value, dgr.Cells(2).Value, dgr.Cells(3).Value, dgr.Cells(4).Value, dgr.Cells(5).Value, dgr.Cells(6).Value)
+        Next
+        Dim report1 As ReportDocument
+        report1 = New CrystalReport1
+        report1.SetDataSource(dt)
+        Report.CrystalReportViewer1.ReportSource = report1
+
+        Dim TxtDate1, TxtDate2 As TextObject
+
+
+        If CheckBox1.Checked = True Then
+            TxtDate1 = report1.ReportDefinition.ReportObjects("Text6")
+            TxtDate1.Text = date1
+        Else
+
+            TxtDate1 = report1.ReportDefinition.ReportObjects("Text4")
+            TxtDate1.Text = date1
+            TxtDate2 = report1.ReportDefinition.ReportObjects("Text6")
+            TxtDate2.Text = date2
+
+        End If
+
+        Report.ShowDialog()
+        Report.Dispose()
+    End Sub
+
+    Private Sub CheckBox1_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox1.CheckedChanged
+        If CheckBox1.Checked = True Then
+
+            Label1.Visible = False
+            ComboBox1.Visible = False
+            DateTimePicker2.Visible = False
+
+
+        Else
+
+            Label1.Visible = True
+            ComboBox1.Visible = True
+            DateTimePicker2.Visible = True
+
+
+        End If
     End Sub
 End Class

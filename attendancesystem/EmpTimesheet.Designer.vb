@@ -37,6 +37,8 @@ Partial Class EmpTimesheet
         Me.ttlhours = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.DateTimePicker2 = New System.Windows.Forms.DateTimePicker()
@@ -53,7 +55,7 @@ Partial Class EmpTimesheet
         '
         Me.DataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
         Me.DataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
-        Me.DataGridView1.BackgroundColor = System.Drawing.Color.RosyBrown
+        Me.DataGridView1.BackgroundColor = System.Drawing.Color.White
         Me.DataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None
         DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(46, Byte), Integer), CType(CType(104, Byte), Integer))
@@ -75,7 +77,7 @@ Partial Class EmpTimesheet
         DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
         DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
         Me.DataGridView1.DefaultCellStyle = DataGridViewCellStyle3
-        Me.DataGridView1.GridColor = System.Drawing.SystemColors.ButtonFace
+        Me.DataGridView1.GridColor = System.Drawing.Color.Black
         Me.DataGridView1.Location = New System.Drawing.Point(17, 19)
         Me.DataGridView1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.DataGridView1.Name = "DataGridView1"
@@ -144,7 +146,7 @@ Partial Class EmpTimesheet
         '
         'Panel3
         '
-        Me.Panel3.BackColor = System.Drawing.Color.SeaShell
+        Me.Panel3.BackColor = System.Drawing.Color.DimGray
         Me.Panel3.Controls.Add(Me.DataGridView1)
         Me.Panel3.Controls.Add(Me.Panel2)
         Me.Panel3.Location = New System.Drawing.Point(13, 12)
@@ -153,9 +155,35 @@ Partial Class EmpTimesheet
         Me.Panel3.Size = New System.Drawing.Size(832, 499)
         Me.Panel3.TabIndex = 21
         '
+        'CheckBox1
+        '
+        Me.CheckBox1.AutoSize = True
+        Me.CheckBox1.Location = New System.Drawing.Point(23, 374)
+        Me.CheckBox1.Name = "CheckBox1"
+        Me.CheckBox1.Size = New System.Drawing.Size(100, 21)
+        Me.CheckBox1.TabIndex = 22
+        Me.CheckBox1.Text = "CheckBox1"
+        Me.CheckBox1.UseVisualStyleBackColor = True
+        '
+        'Button1
+        '
+        Me.Button1.BackColor = System.Drawing.Color.Plum
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button1.Font = New System.Drawing.Font("Cambria", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(40, Byte), Integer), CType(CType(52, Byte), Integer), CType(CType(59, Byte), Integer))
+        Me.Button1.Location = New System.Drawing.Point(23, 295)
+        Me.Button1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(181, 59)
+        Me.Button1.TabIndex = 21
+        Me.Button1.Text = "Generate Report"
+        Me.Button1.UseVisualStyleBackColor = False
+        '
         'Panel2
         '
-        Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(246, Byte), Integer), CType(CType(184, Byte), Integer), CType(CType(214, Byte), Integer))
+        Me.Panel2.BackColor = System.Drawing.Color.White
+        Me.Panel2.Controls.Add(Me.Button1)
+        Me.Panel2.Controls.Add(Me.CheckBox1)
         Me.Panel2.Controls.Add(Me.Label1)
         Me.Panel2.Controls.Add(Me.DateTimePicker2)
         Me.Panel2.Controls.Add(Me.Button2)
@@ -164,24 +192,24 @@ Partial Class EmpTimesheet
         Me.Panel2.Location = New System.Drawing.Point(589, 19)
         Me.Panel2.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(222, 250)
+        Me.Panel2.Size = New System.Drawing.Size(232, 464)
         Me.Panel2.TabIndex = 0
         '
         'Label1
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Corbel", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(10, 29)
+        Me.Label1.Location = New System.Drawing.Point(20, 22)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(126, 17)
-        Me.Label1.TabIndex = 1
+        Me.Label1.TabIndex = 23
         Me.Label1.Text = "Select Employee ID"
         '
         'DateTimePicker2
         '
         Me.DateTimePicker2.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.DateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.DateTimePicker2.Location = New System.Drawing.Point(23, 120)
+        Me.DateTimePicker2.Location = New System.Drawing.Point(23, 139)
         Me.DateTimePicker2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.DateTimePicker2.Name = "DateTimePicker2"
         Me.DateTimePicker2.Size = New System.Drawing.Size(181, 28)
@@ -191,12 +219,13 @@ Partial Class EmpTimesheet
         'Button2
         '
         Me.Button2.BackColor = System.Drawing.Color.Plum
+        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button2.Font = New System.Drawing.Font("Cambria", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(40, Byte), Integer), CType(CType(52, Byte), Integer), CType(CType(59, Byte), Integer))
-        Me.Button2.Location = New System.Drawing.Point(23, 174)
+        Me.Button2.Location = New System.Drawing.Point(23, 229)
         Me.Button2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(181, 59)
+        Me.Button2.Size = New System.Drawing.Size(181, 48)
         Me.Button2.TabIndex = 17
         Me.Button2.Text = "Filter"
         Me.Button2.UseVisualStyleBackColor = False
@@ -205,7 +234,7 @@ Partial Class EmpTimesheet
         '
         Me.DateTimePicker1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.DateTimePicker1.Location = New System.Drawing.Point(23, 83)
+        Me.DateTimePicker1.Location = New System.Drawing.Point(23, 102)
         Me.DateTimePicker1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.DateTimePicker1.Name = "DateTimePicker1"
         Me.DateTimePicker1.Size = New System.Drawing.Size(181, 28)
@@ -219,10 +248,10 @@ Partial Class EmpTimesheet
         Me.ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBox1.FormatString = "N0"
         Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(142, 29)
+        Me.ComboBox1.Location = New System.Drawing.Point(23, 52)
         Me.ComboBox1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(65, 24)
+        Me.ComboBox1.Size = New System.Drawing.Size(181, 24)
         Me.ComboBox1.TabIndex = 16
         '
         'EmpTimesheet
@@ -257,9 +286,11 @@ Partial Class EmpTimesheet
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Panel3 As Panel
     Friend WithEvents Panel2 As Panel
-    Friend WithEvents Label1 As Label
     Friend WithEvents DateTimePicker2 As DateTimePicker
     Friend WithEvents Button2 As Button
     Friend WithEvents DateTimePicker1 As DateTimePicker
     Friend WithEvents ComboBox1 As ComboBox
+    Friend WithEvents Button1 As Button
+    Friend WithEvents CheckBox1 As CheckBox
+    Friend WithEvents Label1 As Label
 End Class

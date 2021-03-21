@@ -43,6 +43,8 @@ Partial Class payroll
         Me.btnFilter = New System.Windows.Forms.Button()
         Me.txtTotalPay = New System.Windows.Forms.TextBox()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.Label13 = New System.Windows.Forms.Label()
+        Me.txtHolidayHous = New System.Windows.Forms.TextBox()
         Me.Label17 = New System.Windows.Forms.Label()
         Me.txtOvertime = New System.Windows.Forms.TextBox()
         Me.Panel3 = New System.Windows.Forms.Panel()
@@ -51,6 +53,8 @@ Partial Class payroll
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.Panel6 = New System.Windows.Forms.Panel()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.txtHoliday = New System.Windows.Forms.TextBox()
         Me.Label18 = New System.Windows.Forms.Label()
         Me.txtOTPay = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
@@ -70,10 +74,6 @@ Partial Class payroll
         Me.gpay = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.deduct = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.tpay = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Label9 = New System.Windows.Forms.Label()
-        Me.txtHoliday = New System.Windows.Forms.TextBox()
-        Me.Label13 = New System.Windows.Forms.Label()
-        Me.txtHolidayHous = New System.Windows.Forms.TextBox()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.Panel3.SuspendLayout()
@@ -205,7 +205,7 @@ Partial Class payroll
         '
         Me.btnPay.BackColor = System.Drawing.Color.IndianRed
         Me.btnPay.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btnPay.Location = New System.Drawing.Point(728, 377)
+        Me.btnPay.Location = New System.Drawing.Point(728, 284)
         Me.btnPay.Name = "btnPay"
         Me.btnPay.Size = New System.Drawing.Size(245, 67)
         Me.btnPay.TabIndex = 23
@@ -272,7 +272,7 @@ Partial Class payroll
         Me.txtTotalPay.BackColor = System.Drawing.Color.White
         Me.txtTotalPay.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txtTotalPay.Font = New System.Drawing.Font("Microsoft Sans Serif", 25.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtTotalPay.Location = New System.Drawing.Point(727, 291)
+        Me.txtTotalPay.Location = New System.Drawing.Point(726, 201)
         Me.txtTotalPay.Name = "txtTotalPay"
         Me.txtTotalPay.Size = New System.Drawing.Size(246, 49)
         Me.txtTotalPay.TabIndex = 27
@@ -293,6 +293,28 @@ Partial Class payroll
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(357, 118)
         Me.Panel2.TabIndex = 33
+        '
+        'Label13
+        '
+        Me.Label13.AutoSize = True
+        Me.Label13.Font = New System.Drawing.Font("Arial Narrow", 10.2!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label13.ForeColor = System.Drawing.SystemColors.Desktop
+        Me.Label13.Location = New System.Drawing.Point(46, 89)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(145, 22)
+        Me.Label13.TabIndex = 39
+        Me.Label13.Text = "Total Holiday Hours"
+        '
+        'txtHolidayHous
+        '
+        Me.txtHolidayHous.BackColor = System.Drawing.Color.White
+        Me.txtHolidayHous.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtHolidayHous.ForeColor = System.Drawing.Color.Black
+        Me.txtHolidayHous.Location = New System.Drawing.Point(204, 83)
+        Me.txtHolidayHous.Name = "txtHolidayHous"
+        Me.txtHolidayHous.Size = New System.Drawing.Size(121, 30)
+        Me.txtHolidayHous.TabIndex = 38
+        Me.txtHolidayHous.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'Label17
         '
@@ -393,6 +415,28 @@ Partial Class payroll
         Me.Panel6.Size = New System.Drawing.Size(357, 152)
         Me.Panel6.TabIndex = 37
         '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Font = New System.Drawing.Font("Arial", 7.8!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.ForeColor = System.Drawing.SystemColors.Desktop
+        Me.Label9.Location = New System.Drawing.Point(108, 75)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(83, 16)
+        Me.Label9.TabIndex = 45
+        Me.Label9.Text = "Holiday pay"
+        '
+        'txtHoliday
+        '
+        Me.txtHoliday.BackColor = System.Drawing.Color.DarkKhaki
+        Me.txtHoliday.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtHoliday.ForeColor = System.Drawing.Color.Black
+        Me.txtHoliday.Location = New System.Drawing.Point(204, 61)
+        Me.txtHoliday.Name = "txtHoliday"
+        Me.txtHoliday.Size = New System.Drawing.Size(118, 30)
+        Me.txtHoliday.TabIndex = 44
+        Me.txtHoliday.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
         'Label18
         '
         Me.Label18.AutoSize = True
@@ -447,7 +491,7 @@ Partial Class payroll
         Me.Panel5.Controls.Add(Me.txtHourlyRate)
         Me.Panel5.Controls.Add(Me.Label8)
         Me.Panel5.Controls.Add(Me.Label14)
-        Me.Panel5.Location = New System.Drawing.Point(727, 102)
+        Me.Panel5.Location = New System.Drawing.Point(727, 3)
         Me.Panel5.Name = "Panel5"
         Me.Panel5.Size = New System.Drawing.Size(246, 183)
         Me.Panel5.TabIndex = 36
@@ -563,50 +607,6 @@ Partial Class payroll
         '
         Me.tpay.HeaderText = "Total Pay"
         Me.tpay.Name = "tpay"
-        '
-        'Label9
-        '
-        Me.Label9.AutoSize = True
-        Me.Label9.Font = New System.Drawing.Font("Arial", 7.8!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.ForeColor = System.Drawing.SystemColors.Desktop
-        Me.Label9.Location = New System.Drawing.Point(108, 75)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(83, 16)
-        Me.Label9.TabIndex = 45
-        Me.Label9.Text = "Holiday pay"
-        '
-        'txtHoliday
-        '
-        Me.txtHoliday.BackColor = System.Drawing.Color.DarkKhaki
-        Me.txtHoliday.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtHoliday.ForeColor = System.Drawing.Color.Black
-        Me.txtHoliday.Location = New System.Drawing.Point(204, 61)
-        Me.txtHoliday.Name = "txtHoliday"
-        Me.txtHoliday.Size = New System.Drawing.Size(118, 30)
-        Me.txtHoliday.TabIndex = 44
-        Me.txtHoliday.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-        '
-        'Label13
-        '
-        Me.Label13.AutoSize = True
-        Me.Label13.Font = New System.Drawing.Font("Arial Narrow", 10.2!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label13.ForeColor = System.Drawing.SystemColors.Desktop
-        Me.Label13.Location = New System.Drawing.Point(46, 89)
-        Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(145, 22)
-        Me.Label13.TabIndex = 39
-        Me.Label13.Text = "Total Holiday Hours"
-        '
-        'txtHolidayHous
-        '
-        Me.txtHolidayHous.BackColor = System.Drawing.Color.White
-        Me.txtHolidayHous.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtHolidayHous.ForeColor = System.Drawing.Color.Black
-        Me.txtHolidayHous.Location = New System.Drawing.Point(204, 83)
-        Me.txtHolidayHous.Name = "txtHolidayHous"
-        Me.txtHolidayHous.Size = New System.Drawing.Size(121, 30)
-        Me.txtHolidayHous.TabIndex = 38
-        Me.txtHolidayHous.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'payroll
         '
