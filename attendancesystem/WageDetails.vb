@@ -29,7 +29,7 @@ Public Class WageDetails
                 If DA.Rows.Count > 0 Then
                     txtHourlyRate.Text = DA(0)(1)
                     txtGrossWage.Text = 48 * Val(txtHourlyRate.Text) * 2
-                    txtName.Text = DA(0)(8)
+                    txtName.Text = DA(0)(8) & ", " & DA(0)(9)
                     txtDept.Text = DA(0)(10)
                     txtJobStat.Text = DA(0)(7)
                     txtphilhealth.Text = CDec(DA(0)(4))
@@ -138,9 +138,9 @@ Public Class WageDetails
 
     Private Sub txtDailyRate_TextChanged(sender As Object, e As EventArgs) Handles txtHourlyRate.TextChanged
         If ((Val(txtHourlyRate.Text) * 48) * 52) / 12 <= 10000 Then
-            txtphilhealth.Text = 350 / 2
+            txtphilhealth.Text = 350
         Else
-            txtphilhealth.Text = (((txtHourlyRate.Text * 8) * 22) * 0.035) / 2
+            txtphilhealth.Text = (Val(((Val(txtHourlyRate.Text) * 48) * 52) / 12) * 0.035)
         End If
 
 

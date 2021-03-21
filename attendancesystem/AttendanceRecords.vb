@@ -1,4 +1,5 @@
-﻿Imports MySql.Data.MySqlClient
+﻿Imports System.ComponentModel
+Imports MySql.Data.MySqlClient
 
 Public Class AttendanceRecords
 
@@ -9,6 +10,8 @@ Public Class AttendanceRecords
     Private Sub AttendanceRecords_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         checkDatabaseConnection()
         prcDisplayTimesheet()
+
+
 
 
     End Sub
@@ -78,18 +81,19 @@ Public Class AttendanceRecords
 
                 If dataAttendance.Rows.Count > 0 Then
                     DataGridView1.RowCount = dataAttendance.Rows.Count
-
+                    Dim name = dataAttendance(0)(5) & "," & dataAttendance(0)(6)
                     row = 0
                     While Not dataAttendance.Rows.Count - 1 < row
                         With DataGridView1
                             ' .Rows(row).Cells(0).Value = dataAttendance.Rows(row).Item("id").ToString
-                            .Rows(row).Cells(0).Value = dataAttendance.Rows(row).Item("emp_id").ToString
-                            .Rows(row).Cells(1).Value = dataAttendance.Rows(row).Item("date").ToString
+                            .Rows(row).Cells(0).Value = dataAttendance.Rows(row).Item("id").ToString
+                            .Rows(row).Cells(1).Value = dataAttendance(row)(5) & ", " & dataAttendance(row)(6)
+                            .Rows(row).Cells(2).Value = dataAttendance.Rows(row).Item("date").ToString
 
-                            .Rows(row).Cells(2).Value = dataAttendance.Rows(row).Item("gross_pay").ToString
-                            .Rows(row).Cells(3).Value = dataAttendance.Rows(row).Item("total_deduction").ToString
-                            .Rows(row).Cells(4).Value = dataAttendance.Rows(row).Item("total_pay").ToString
-                            .Rows(row).Cells(5).Value = dataAttendance.Rows(row).Item("total_hours").ToString
+                            .Rows(row).Cells(3).Value = dataAttendance.Rows(row).Item("gross_pay").ToString
+                            .Rows(row).Cells(4).Value = dataAttendance.Rows(row).Item("total_deduction").ToString
+                            .Rows(row).Cells(5).Value = dataAttendance.Rows(row).Item("total_pay").ToString
+                            .Rows(row).Cells(6).Value = dataAttendance.Rows(row).Item("total_hours").ToString
 
 
 

@@ -251,4 +251,8 @@ Public Class adminDashboard
     Private Sub WagesDetailsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles WagesDetailsToolStripMenuItem.Click
         WageDetails.Show()
     End Sub
+
+    Private Sub Button3_Click_2(sender As Object, e As EventArgs) Handles Button3.Click
+        Report.Show()
+    End Sub
 End Class

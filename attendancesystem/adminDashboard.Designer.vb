@@ -59,6 +59,7 @@ Partial Class adminDashboard
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Button9 = New System.Windows.Forms.Button()
+        Me.Button3 = New System.Windows.Forms.Button()
         Me.Panel10.SuspendLayout()
         Me.Panel9.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
@@ -98,6 +99,7 @@ Partial Class adminDashboard
         '
         Me.Panel9.BackColor = System.Drawing.Color.White
         Me.Panel9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Panel9.Controls.Add(Me.Button3)
         Me.Panel9.Controls.Add(Me.MenuStrip1)
         Me.Panel9.Controls.Add(Me.Panel8)
         Me.Panel9.Controls.Add(Me.Panel13)
@@ -117,7 +119,7 @@ Partial Class adminDashboard
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Padding = New System.Windows.Forms.Padding(8, 2, 0, 2)
         Me.MenuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional
-        Me.MenuStrip1.Size = New System.Drawing.Size(462, 32)
+        Me.MenuStrip1.Size = New System.Drawing.Size(347, 32)
         Me.MenuStrip1.TabIndex = 32
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -456,6 +458,15 @@ Partial Class adminDashboard
         Me.Button9.Text = "Dashboard"
         Me.Button9.UseVisualStyleBackColor = False
         '
+        'Button3
+        '
+        Me.Button3.Location = New System.Drawing.Point(69, 426)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(105, 39)
+        Me.Button3.TabIndex = 33
+        Me.Button3.Text = "Button3"
+        Me.Button3.UseVisualStyleBackColor = True
+        '
         'adminDashboard
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -526,4 +537,5 @@ Partial Class adminDashboard
     Friend WithEvents Button1 As Button
     Friend WithEvents Button2 As Button
     Friend WithEvents WagesDetailsToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents Button3 As Button
 End Class

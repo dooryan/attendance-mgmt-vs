@@ -1,5 +1,6 @@
 ﻿Imports MySql.Data.MySqlClient
 Public Class payroll
+    Dim totalHolidayHours = 0
     Private Sub Label11_Click(sender As Object, e As EventArgs) Handles Label11.Click
 
     End Sub
@@ -112,16 +113,18 @@ Public Class payroll
 
                 'txtGrosspay.Text = Val(txtHours.Text) * CDec(DA(0)(1))
                 txtHourlyRate.Text = DA(0)(1)
-                txtPhil.Text = DA(0)(4)
-                txtSSS.Text = DA(0)(5)
-                txtpagibig.Text = DA(0)(6)
+                txtPhil.Text = (CDec(DA(0)(4)) / 2) / 2
+                txtSSS.Text = CDec(DA(0)(5)) / 2
+                txtpagibig.Text = CDec(DA(0)(6)) / 2
                 txtTtlDeductions.Text = Val(txtPhil.Text) + Val(txtSSS.Text) + Val(txtpagibig.Text)
 
                 txtMonthly.Text = Val(((Val(txtHourlyRate.Text) * 48) * 52) / 12)
                 txtBasicRate.Text = Val(txtMonthly.Text) / 2
                 txtOTPay.Text = (Val(txtOvertime.Text) * Val(txtHourlyRate.Text)) * 1.25
-                txtttlpay.Text = (Val(txtHours.Text) * CDec(DA(0)(1))) + Val(txtOTPay.Text)
+                txtHoliday.Text = (totalHolidayHours * Val(txtHourlyRate.Text)) * 2
+                txtttlpay.Text = (((Val(txtHours.Text)) * CDec(DA(0)(1)))) + Val(txtOTPay.Text) + Val(txtHoliday.Text)
                 txtTotalPay.Text = Val(txtttlpay.Text) - Val(txtTtlDeductions.Text)
+                txtHolidayHous.Text = totalHolidayHours
 
 
             End Using
@@ -184,15 +187,23 @@ Public Class payroll
                 sqlAdapter.Fill(DA)
                 row = 0
                 Dim counter = 0
+                Dim c = 0
                 Dim x As Integer = 0
                 Dim totalHours As Integer = 0
                 Dim countOT As Integer = 0
+                Dim countHoliday As Integer = 0
                 'For i As Integer = 0 To DA.Rows.Count
 
                 'x = CInt(DA(i)(6))
                 'totalHours = totalHours + x
                 'i = i + 1
                 'Next
+                Dim holidaydates() As String = {"2021/01/01", "2021/02/12", "2021/04/01",
+                                                "2021/04/02", "2021/04/09", "2021/05/01",
+                                                "2021/01/01", "2021/01/01", "2021/05/13",
+                                                "2021/06/12", "2021/07/19", "2021/08/30",
+                                                "2021/11/30", "2021/12/08", "2021/12/25",
+                                                "2021/12/30"}
 
                 While counter < DA.Rows.Count
                     x = CInt(DA(counter)(6))
@@ -203,9 +214,26 @@ Public Class payroll
                         countOT = countOT + (CInt(DA(counter)(6)) - 1) - 8
                         totalHours = totalHours - countOT
                     End If
+
                     counter = counter + 1
                 End While
 
+                While c < DA.Rows.Count
+
+                    If (DA(c)(3) = holidaydates(0) Or DA(c)(3) = holidaydates(1) Or DA(c)(3) = holidaydates(2) Or
+                             DA(c)(3) = holidaydates(3) Or DA(c)(3) = holidaydates(4) Or DA(c)(3) = holidaydates(5) Or
+                              DA(c)(3) = holidaydates(6) Or DA(c)(3) = holidaydates(7) Or DA(c)(3) = holidaydates(8) Or
+                              DA(c)(3) = holidaydates(9) Or DA(c)(3) = holidaydates(10) Or DA(c)(3) = holidaydates(11) Or
+                              DA(c)(3) = holidaydates(12) Or DA(c)(3) = holidaydates(13) Or DA(c)(3) = holidaydates(14) Or
+                              DA(c)(3) = holidaydates(15)) Then
+                        x = CInt(DA(c)(6))
+                        countHoliday = countHoliday + x - 1
+                        totalHours = totalHours - countHoliday
+
+                    End If
+                    c = c + 1
+                End While
+                totalHolidayHours = countHoliday
 
                 'x = x + Convert.ToInt32(DA(i)(6))
 
@@ -215,6 +243,7 @@ Public Class payroll
 
                     txtHours.Text = totalHours
                     txtOvertime.Text = countOT
+                    txtHoliday.Text = countHoliday
                 Else
                     'some code
                     txtHours.Text = "0"
