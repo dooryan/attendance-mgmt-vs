@@ -24,12 +24,6 @@ Partial Class AttendanceRecords
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(AttendanceRecords))
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.DateTimePicker2 = New System.Windows.Forms.DateTimePicker()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.txtID = New System.Windows.Forms.TextBox()
-        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
         Me.id1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.name1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.lname = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -37,6 +31,15 @@ Partial Class AttendanceRecords
         Me.ttime = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.stat = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.days = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.DateTimePicker2 = New System.Windows.Forms.DateTimePicker()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.txtID = New System.Windows.Forms.TextBox()
+        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
@@ -52,59 +55,6 @@ Partial Class AttendanceRecords
         Me.DataGridView1.RowTemplate.Height = 24
         Me.DataGridView1.Size = New System.Drawing.Size(800, 322)
         Me.DataGridView1.TabIndex = 0
-        '
-        'Panel1
-        '
-        Me.Panel1.BackColor = System.Drawing.Color.Gray
-        Me.Panel1.Controls.Add(Me.Button2)
-        Me.Panel1.Controls.Add(Me.DateTimePicker2)
-        Me.Panel1.Controls.Add(Me.Button1)
-        Me.Panel1.Controls.Add(Me.txtID)
-        Me.Panel1.Controls.Add(Me.DateTimePicker1)
-        Me.Panel1.Controls.Add(Me.DataGridView1)
-        Me.Panel1.Location = New System.Drawing.Point(17, 12)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(829, 405)
-        Me.Panel1.TabIndex = 18
-        '
-        'Button2
-        '
-        Me.Button2.Location = New System.Drawing.Point(681, 14)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(132, 36)
-        Me.Button2.TabIndex = 5
-        Me.Button2.Text = "Generate Report"
-        Me.Button2.UseVisualStyleBackColor = True
-        '
-        'DateTimePicker2
-        '
-        Me.DateTimePicker2.Location = New System.Drawing.Point(272, 37)
-        Me.DateTimePicker2.Name = "DateTimePicker2"
-        Me.DateTimePicker2.Size = New System.Drawing.Size(189, 22)
-        Me.DateTimePicker2.TabIndex = 4
-        '
-        'Button1
-        '
-        Me.Button1.Location = New System.Drawing.Point(512, 14)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(101, 36)
-        Me.Button1.TabIndex = 3
-        Me.Button1.Text = "Button1"
-        Me.Button1.UseVisualStyleBackColor = True
-        '
-        'txtID
-        '
-        Me.txtID.Location = New System.Drawing.Point(13, 14)
-        Me.txtID.Name = "txtID"
-        Me.txtID.Size = New System.Drawing.Size(184, 22)
-        Me.txtID.TabIndex = 2
-        '
-        'DateTimePicker1
-        '
-        Me.DateTimePicker1.Location = New System.Drawing.Point(272, 9)
-        Me.DateTimePicker1.Name = "DateTimePicker1"
-        Me.DateTimePicker1.Size = New System.Drawing.Size(189, 22)
-        Me.DateTimePicker1.TabIndex = 1
         '
         'id1
         '
@@ -141,6 +91,96 @@ Partial Class AttendanceRecords
         Me.days.HeaderText = "Total Working Hours"
         Me.days.Name = "days"
         '
+        'Panel1
+        '
+        Me.Panel1.BackColor = System.Drawing.Color.Gray
+        Me.Panel1.Controls.Add(Me.Label3)
+        Me.Panel1.Controls.Add(Me.Label2)
+        Me.Panel1.Controls.Add(Me.Label1)
+        Me.Panel1.Controls.Add(Me.Button2)
+        Me.Panel1.Controls.Add(Me.DateTimePicker2)
+        Me.Panel1.Controls.Add(Me.Button1)
+        Me.Panel1.Controls.Add(Me.txtID)
+        Me.Panel1.Controls.Add(Me.DateTimePicker1)
+        Me.Panel1.Controls.Add(Me.DataGridView1)
+        Me.Panel1.Location = New System.Drawing.Point(17, 12)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(829, 405)
+        Me.Panel1.TabIndex = 18
+        '
+        'Button2
+        '
+        Me.Button2.BackColor = System.Drawing.Color.Purple
+        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button2.ForeColor = System.Drawing.Color.White
+        Me.Button2.Location = New System.Drawing.Point(681, 9)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(132, 56)
+        Me.Button2.TabIndex = 5
+        Me.Button2.Text = "Generate Report"
+        Me.Button2.UseVisualStyleBackColor = False
+        '
+        'DateTimePicker2
+        '
+        Me.DateTimePicker2.Location = New System.Drawing.Point(348, 38)
+        Me.DateTimePicker2.Name = "DateTimePicker2"
+        Me.DateTimePicker2.Size = New System.Drawing.Size(189, 22)
+        Me.DateTimePicker2.TabIndex = 4
+        Me.DateTimePicker2.Value = New Date(2021, 3, 22, 9, 50, 59, 0)
+        '
+        'Button1
+        '
+        Me.Button1.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button1.Location = New System.Drawing.Point(553, 10)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(93, 55)
+        Me.Button1.TabIndex = 3
+        Me.Button1.Text = "GO"
+        Me.Button1.UseVisualStyleBackColor = False
+        '
+        'txtID
+        '
+        Me.txtID.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtID.Location = New System.Drawing.Point(13, 26)
+        Me.txtID.Name = "txtID"
+        Me.txtID.Size = New System.Drawing.Size(253, 34)
+        Me.txtID.TabIndex = 2
+        '
+        'DateTimePicker1
+        '
+        Me.DateTimePicker1.Location = New System.Drawing.Point(348, 10)
+        Me.DateTimePicker1.Name = "DateTimePicker1"
+        Me.DateTimePicker1.Size = New System.Drawing.Size(189, 22)
+        Me.DateTimePicker1.TabIndex = 1
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(10, 6)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(59, 17)
+        Me.Label1.TabIndex = 6
+        Me.Label1.Text = "Enter ID"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(302, 15)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(40, 17)
+        Me.Label2.TabIndex = 7
+        Me.Label2.Text = "From"
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(302, 43)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(25, 17)
+        Me.Label3.TabIndex = 8
+        Me.Label3.Text = "To"
+        '
         'AttendanceRecords
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -174,4 +214,7 @@ Partial Class AttendanceRecords
     Friend WithEvents ttime As DataGridViewTextBoxColumn
     Friend WithEvents stat As DataGridViewTextBoxColumn
     Friend WithEvents days As DataGridViewTextBoxColumn
+    Friend WithEvents Label3 As Label
+    Friend WithEvents Label2 As Label
+    Friend WithEvents Label1 As Label
 End Class

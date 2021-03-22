@@ -71,8 +71,6 @@ Public Class payroll
                     .ExecuteNonQuery()
 
 
-                    MessageBox.Show("Success", "Information", MessageBoxButtons.OK,
-                                MessageBoxIcon.Information)
 
 
                 End With
@@ -277,7 +275,7 @@ Public Class payroll
     Private Sub btnCompute_Click(sender As Object, e As EventArgs) Handles btnPay.Click
         AddPay()
         DisplayPayHistory()
-        Dim mes = MessageBox.Show("", "Generate Payslip?", MessageBoxButtons.YesNo)
+        Dim mes = MessageBox.Show("Generate Payslip?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
 
         If (mes = vbYes) Then
             Dim dt As New DataTable
@@ -292,6 +290,7 @@ Public Class payroll
                 .Columns.Add("SSS")
                 .Columns.Add("TotalDeductions")
                 .Columns.Add("NetPay")
+                .Columns.Add("BasicPay")
             End With
 
             With dt
@@ -306,6 +305,7 @@ Public Class payroll
                 R("Pagibig") = txtpagibig.Text
                 R("TotalDeductions") = txtTtlDeductions.Text
                 R("NetPay") = txtTotalPay.Text
+                R("BasicPay") = Val(txtHours.Text) * Val(txtHourlyRate.Text)
 
                 dt.Rows.Add(R)
                 '.Rows.Add(dgr.Cells(0).Value

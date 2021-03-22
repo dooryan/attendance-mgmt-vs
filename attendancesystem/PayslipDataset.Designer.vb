@@ -303,6 +303,8 @@ Partial Public Class PayslipDataset
         
         Private columnNetPay As Global.System.Data.DataColumn
         
+        Private columnBasicPay As Global.System.Data.DataColumn
+        
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub New()
@@ -419,6 +421,14 @@ Partial Public Class PayslipDataset
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property BasicPayColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnBasicPay
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property Count() As Integer
@@ -455,9 +465,9 @@ Partial Public Class PayslipDataset
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Overloads Function AddDataTable1Row(ByVal ID As String, ByVal Name As String, ByVal Overtime As String, ByVal Holiday As String, ByVal TotalSalary As String, ByVal Philhealth As String, ByVal Pagibig As String, ByVal SSS As String, ByVal TotalDeductions As String, ByVal NetPay As String) As DataTable1Row
+        Public Overloads Function AddDataTable1Row(ByVal ID As String, ByVal Name As String, ByVal Overtime As String, ByVal Holiday As String, ByVal TotalSalary As String, ByVal Philhealth As String, ByVal Pagibig As String, ByVal SSS As String, ByVal TotalDeductions As String, ByVal NetPay As String, ByVal BasicPay As String) As DataTable1Row
             Dim rowDataTable1Row As DataTable1Row = CType(Me.NewRow,DataTable1Row)
-            Dim columnValuesArray() As Object = New Object() {ID, Name, Overtime, Holiday, TotalSalary, Philhealth, Pagibig, SSS, TotalDeductions, NetPay}
+            Dim columnValuesArray() As Object = New Object() {ID, Name, Overtime, Holiday, TotalSalary, Philhealth, Pagibig, SSS, TotalDeductions, NetPay, BasicPay}
             rowDataTable1Row.ItemArray = columnValuesArray
             Me.Rows.Add(rowDataTable1Row)
             Return rowDataTable1Row
@@ -490,6 +500,7 @@ Partial Public Class PayslipDataset
             Me.columnSSS = MyBase.Columns("SSS")
             Me.columnTotalDeductions = MyBase.Columns("TotalDeductions")
             Me.columnNetPay = MyBase.Columns("NetPay")
+            Me.columnBasicPay = MyBase.Columns("BasicPay")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -515,6 +526,8 @@ Partial Public Class PayslipDataset
             MyBase.Columns.Add(Me.columnTotalDeductions)
             Me.columnNetPay = New Global.System.Data.DataColumn("NetPay", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnNetPay)
+            Me.columnBasicPay = New Global.System.Data.DataColumn("BasicPay", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnBasicPay)
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -811,6 +824,21 @@ Partial Public Class PayslipDataset
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property BasicPay() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableDataTable1.BasicPayColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'BasicPay' in table 'DataTable1' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableDataTable1.BasicPayColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Function IsIDNull() As Boolean
             Return Me.IsNull(Me.tableDataTable1.IDColumn)
         End Function
@@ -927,6 +955,18 @@ Partial Public Class PayslipDataset
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub SetNetPayNull()
             Me(Me.tableDataTable1.NetPayColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsBasicPayNull() As Boolean
+            Return Me.IsNull(Me.tableDataTable1.BasicPayColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetBasicPayNull()
+            Me(Me.tableDataTable1.BasicPayColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     
